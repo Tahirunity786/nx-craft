@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-nx sticky-top">
             <div className="container-fluid">
-                <Link href="/" className="navbar-brand">
+                <Link href="/" className="navbar-brand d-flex align-items-center">
                     <Image
                         width={80}
                         height={60}
