@@ -1,0 +1,50 @@
+.nav-item{
+    font-size: 1rem;
+}
+.bg-nx{
+    background-color: #1456A3;
+
+}
+.search-input-nx{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+}
+.search-input-nx input{
+    background-color: white;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: small;
+}
+
+.btn-nx{
+    background-color: #ffffff;
+    color: black;
+    outline: none;
+    border: none;
+    width: 170px;
+    height: 45px;
+    border-radius: 50px;
+    font-size: small;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-nx:hover{
+background-color: whitesmoke;
+
+}
+@media (min-width:992px){
+    .search-input-nx{
+        width: 250px;
+        height: 45px;
+    }
+}
