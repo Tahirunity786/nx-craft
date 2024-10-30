@@ -1,13 +1,16 @@
 'use client'
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './style.css'
-import React from 'react'
+import './style.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 const Navbar = () => {
+    useEffect(() => {
+        // Dynamically import Bootstrap's JS for better client-side compatibility
+        import('bootstrap/dist/js/bootstrap.bundle.min.js');
+    }, []);
+
     return (
         <nav className="navbar navbar-expand-lg bg-nx sticky-top">
             <div className="container-fluid">
@@ -56,7 +59,6 @@ const Navbar = () => {
                             </div>
                         </li>
 
-                        {/* Optimized Navigation Links */}
                         {['/services', '/products', '/portfolio'].map((path, index) => (
                             <li key={index} className="nav-item ms-lg-3 me-lg-3">
                                 <Link href={path} className="nav-link text-light">
@@ -64,12 +66,8 @@ const Navbar = () => {
                                 </Link>
                             </li>
                         ))}
-
-
-
                     </ul>
                     <div className='d-flex justify-content-end w-100'>
-                        {/* Contact Button */}
                         <a href="tel:+923232963784" className="btn-nx" aria-label="Call Us">
                             <span className="me-2 ms-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-telephone-fill" viewBox="0 0 16 16" aria-label="Phone Icon">
