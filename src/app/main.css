@@ -1,0 +1,29 @@
+:root{
+    --nx-color-primary:#1456A3;
+    --nx-color-secondary:white;
+}
+main{
+    height: 80vh;
+    width: 100%;
+}
+.nx-top-h{
+    color: #FF4A35;
+   
+}
+.nx-heading{
+    font-size: 4rem;
+}
+.btn-main-nx{
+    outline: none;
+    border: none;
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+    width: 200px;
+    height: 50px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}

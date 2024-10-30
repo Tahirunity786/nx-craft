@@ -1,9 +1,19 @@
+@font-face {
+    font-family: Poppins;
+    src: url('/Assets/Fonts/Poppins-Regular.ttf');
+}
 .nav-item{
     font-size: 1rem;
 }
 .bg-nx{
     background-color: #1456A3;
 
+}
+.nx-brand{
+   font-family: Poppins;
+   font-size: larger;
+   font-weight: bold;
+   color: white;
 }
 .search-input-nx{
     background-color: white;

@@ -16,12 +16,13 @@ const Navbar = () => {
             <div className="container-fluid">
                 <Link href="/" className="navbar-brand">
                     <Image
-                        width={140}
+                        width={80}
                         height={60}
-                        src="/Assets/Images/NxCraft.svg"
+                        src="/Assets/Images/logo2.svg"
                         alt="NxCraft Logo"
                         priority // Optimize loading for logo
                     />
+                    <span className='nx-brand'>NxCraft</span>
                 </Link>
 
                 <button
