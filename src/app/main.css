@@ -3,7 +3,7 @@
     --nx-color-secondary:white;
 }
 main{
-    height: 80vh;
+    height: auto;
     width: 100%;
 }
 .nx-top-h{
