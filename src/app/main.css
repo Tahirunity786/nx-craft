@@ -27,3 +27,8 @@ main{
     text-decoration: none;
 
 }
+.srv-nx{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}

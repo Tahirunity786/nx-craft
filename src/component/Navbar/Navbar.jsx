@@ -2,12 +2,12 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
-import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
 
 const Navbar = () => {
     useEffect(() => {
-        // Dynamically import Bootstrap's JS for better client-side compatibility
+        // Dynamically import Bootstrap's JS 
         import('bootstrap/dist/js/bootstrap.bundle.min.js');
     }, []);
 
@@ -15,12 +15,16 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg bg-nx sticky-top">
             <div className="container-fluid">
                 <Link href="/" className="navbar-brand d-flex align-items-center">
-                    <Image
-                        width={80}
-                        height={60}
-                        src="/Assets/Images/logo2.svg"
-                        alt="NxCraft Logo"
-                        priority // Optimize loading for logo
+                    <CldImage
+                        src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/tlkoddhhexulduzotyhz" 
+                        width="80"
+                        height="60"
+                        crop={{
+                            type: 'auto',
+                            source: true
+                        }}
+                        alt="Logo"
+                        className='mb-2'
                     />
                     <span className='nx-brand'>NxCraft</span>
                 </Link>
