@@ -1,13 +1,17 @@
 :root{
-    --nx-color-primary:#1456A3;
+    --nx-color-primary:#143A52;
     --nx-color-secondary:white;
+    --nx-color-tertiary:#6E828A;
+    --nx-color-fourth:#CDE3EB;
+    --nx-color-alerming:#FF4A35;
+
 }
 main{
     height: auto;
     width: 100%;
 }
 .nx-top-h{
-    color: #FF4A35;
+    color: var(--nx-color-alerming);
    
 }
 .nx-heading{

@@ -3,10 +3,10 @@
     src: url('/Assets/Fonts/Poppins-Regular.ttf');
 }
 .nav-item{
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 .bg-nx{
-    background-color: #1456A3;
+    background-color: #143A52;
 
 }
 .nx-brand{
