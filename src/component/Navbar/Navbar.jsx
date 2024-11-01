@@ -17,14 +17,10 @@ const Navbar = () => {
                 <Link href="/" className="navbar-brand d-flex align-items-center">
                     <CldImage
                         src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/tlkoddhhexulduzotyhz" 
-                        width="70"
-                        height="50"
-                        crop={{
-                            type: 'auto',
-                            source: true
-                        }}
+                        width="65"
+                        height="45"
+                       
                         alt="Logo"
-                        className='mb-2'
                     />
                     <span className='nx-brand'>NxCraft</span>
                 </Link>
@@ -55,7 +51,7 @@ const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-                    <div className='d-flex justify-content-end w-100'>
+                    <div className='d-flex justify-content-end'>
                         {/* <a href="tel:+923232963784" className="btn-nx" aria-label="Call Us">
                             <span className="me-2 ms-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-telephone-fill" viewBox="0 0 16 16" aria-label="Phone Icon">
