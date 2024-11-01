@@ -64,7 +64,7 @@ const Navbar = () => {
                             </div>
                         </li>
 
-                        {['/services', '/products', '/portfolio'].map((path, index) => (
+                        {['/services', '/products', '/portfolio', '/blogs'].map((path, index) => (
                             <li key={index} className="nav-item ms-lg-3 me-lg-3">
                                 <Link href={path} className="nav-link text-light">
                                     {path.replace('/', '').toUpperCase()}

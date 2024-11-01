@@ -121,7 +121,7 @@ export default function Home() {
               </svg>
             </div>
             <div className="ser-h-nx mb-3">
-              <h3>Mobile App Development</h3>
+              <h3>SEO</h3>
             </div>
           </div>
           <div className="col p-3  ">
