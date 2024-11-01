@@ -185,19 +185,7 @@ export default function Home() {
         <h6 className="nx-top-h">About</h6>
         <h2 className="mb-3">We Are Helping People to Reach Their Customer Since 2024</h2>
       </header>
-      <p>
-        Education is a driving force that focuses on developing reflective
-        thinking and abilities so that the human race can discover how they
-        wish to exist in today's competitive and ever-changing global
-        economy. Amidst extraordinary uncertainty and dynamic world order,
-        Edify, a leading Study Abroad Consultant, is dedicated to helping
-        higher education leaders worldwide build resilience, seize growth
-        opportunities, and discover new ways to enhance their skill sets. With a
-        deep commitment to our clients' aspirations, we provide expert
-        guidance on educational pathways, universities, scholarships, and the
-        intricacies of the application process. We aim to enable students to
-        access the best education tailored to their ambitions.
-      </p>
+     
     </div>
   </div>
 </section>
