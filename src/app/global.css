@@ -4,7 +4,7 @@
     --nx-color-tertiary:#6E828A;
     --nx-color-fourth:#CDE3EB;
     --nx-color-alerming:#FF4A35;
-    --nx-color-bg:#E3EFF3;
+    --bs-body-bg:#E3EFF3;
 
 }
 
@@ -18,7 +18,7 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    background-color:  var(--nx-color-bg) !important;
+    background-color:  var(--bs-body-bg) !important;
 }
 /* Thin, beautiful scrollbar */
 ::-webkit-scrollbar {
