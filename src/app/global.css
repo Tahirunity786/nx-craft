@@ -8,7 +8,7 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    background-color: #E3EFF3;
+    background-color: #E3EFF3 !important;
 }
 /* Thin, beautiful scrollbar */
 ::-webkit-scrollbar {
