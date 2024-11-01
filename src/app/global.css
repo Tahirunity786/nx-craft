@@ -1,3 +1,13 @@
+:root{
+    --nx-color-primary:#143A52;
+    --nx-color-secondary:white;
+    --nx-color-tertiary:#6E828A;
+    --nx-color-fourth:#CDE3EB;
+    --nx-color-alerming:#FF4A35;
+    --nx-color-bg:#E3EFF3;
+
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -8,7 +18,7 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    background-color: #E3EFF3 !important;
+    background-color:  var(--nx-color-bg) !important;
 }
 /* Thin, beautiful scrollbar */
 ::-webkit-scrollbar {
@@ -20,11 +30,11 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #0a386d; /* Scrollbar thumb color */
+    background-color: var(--nx-color-primary); /* Scrollbar thumb color */
     /* border-radius: 4px; */
 }
 
 /* Optional styling for scrollbar thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #0c4b93;
+    background-color: var(--nx-color-primary);
 }

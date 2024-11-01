@@ -17,7 +17,7 @@ const Navbar = () => {
                 <Link href="/" className="navbar-brand d-flex align-items-center">
                     <CldImage
                         src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/tlkoddhhexulduzotyhz" 
-                        width="65"
+                        width="60"
                         height="45"
                        
                         alt="Logo"
