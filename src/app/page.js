@@ -93,12 +93,12 @@ export default function Home() {
                   <CldImage
                     src={item.image_pb_id} // Pass the public ID as-is, no `/media/` prefix
                     width="500"
-                    height="500"
+                    height="600"
                     crop="fill"
                     alt="Main image"
-                    className="w-100 h-100"
+                    className="w-100 h-100 rounded-4"
                   />
-                  <div className="bg-light">{item.title}</div>
+                  
                 </div>
               ))
             }
