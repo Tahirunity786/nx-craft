@@ -12,7 +12,7 @@ export default function Home() {
   const getData = async () => {
     let data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/all-services`);
     data = await data.json();
-    
+
     setActiveItem(data)
   }
   useEffect(() => {
@@ -89,17 +89,20 @@ export default function Home() {
 
             {
               activeItem.map((item) => (
-                <div key={item._id} className="col"  >
-                  <Image
-                  width={100}
-                  height={100}
-                  src={`${process.env.NEXT_PUBLIC_SERVER_END_POINT}${item.image}`}
-                  alt={item.title}
+                <div key={item._id} className="col">
+                  <CldImage
+                    src={item.image_pb_id} // Pass the public ID as-is, no `/media/` prefix
+                    width="500"
+                    height="500"
+                    crop="fill"
+                    alt="Main image"
+                    className="w-100 h-100"
                   />
                   <div className="bg-light">{item.title}</div>
                 </div>
               ))
             }
+
           </div>
         </div>
       </section>
