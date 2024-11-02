@@ -4,7 +4,7 @@ const nextConfig = {
         domains: ['127.0.0.1', 'localhost'],
     },
     env: {
-        NEXT_PUBLIC_SERVER_END_POINT: 'https://sitif62914.pythonanywhere.com/', // Adjust the endpoint as needed
+        NEXT_PUBLIC_SERVER_END_POINT: 'https://sitif62914q.pythonanywhere.com/ // Adjust the endpoint as needed
     },
 };
 
