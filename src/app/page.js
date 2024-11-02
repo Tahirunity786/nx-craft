@@ -8,10 +8,16 @@ import "./main.css";
 
 
 export default function Home() {
-  const [activeLayout, setActiveLayout] = useState('posts')
-  useEffect(()=>{
-
-  },[])
+  const [activeItem, setActiveItem] = useState([]);
+  const getData = async () => {
+    let data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/all-services`);
+    data = await data.json();
+    
+    setActiveItem(data)
+  }
+  useEffect(() => {
+    getData()
+  }, [])
   return (
     <>
       <main className="container-fluid mb-5 position-relative">
@@ -71,44 +77,29 @@ export default function Home() {
 
       </section>
 
-      <section className="container-fluid mb-5 text-center p-5">
+      <section className="container-fluid  text-center pe-5 ps-5 mb-5">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Service</h6>
           <h2 className="mb-2">We Provide Fastest & Unique <br /> Business Growing Service</h2>
           <p className="mb-2">It is a long established fact that a reader will be distracted by the readable <br /> content of a page when looking at its layout.</p>
         </header>
         <div className="w-100 text-center">
-          <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
-            <div className="col">
-              <div className="p-3 border bg-light">Row column</div>
-            </div>
+
+          <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3" id="service__spread">
+
+            {
+              activeItem.map((item) => (
+                <div key={item._id} className="col"  >
+                  <Image
+                  width={100}
+                  height={100}
+                  src={`${process.env.NEXT_PUBLIC_SERVER_END_POINT}${item.image}`}
+                  alt={item.title}
+                  />
+                  <div className="bg-light">{item.title}</div>
+                </div>
+              ))
+            }
           </div>
         </div>
       </section>
@@ -116,15 +107,12 @@ export default function Home() {
       <section className="container-fluid p-5 mb-5 text-center">
         <div className="row mb-4">
           <div className="col-lg-6 mb-2">
-
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1730459148/Images/n01yrhbyogaddmazskbf.svg"
               width="300" // Transform the image: auto-crop to square aspect_ratio
               height="400"
-
               alt="Main image"
               className="w-100 rounded-4"
-
             />
           </div>
           <div className="col-lg-6 text-start">
