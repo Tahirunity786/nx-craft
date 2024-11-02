@@ -3,10 +3,15 @@
 import Image from "next/image";
 import Link from 'next/link';
 import { CldImage } from 'next-cloudinary';
+import { useEffect, useState } from 'react'
 import "./main.css";
 
 
 export default function Home() {
+  const [activeLayout, setActiveLayout] = useState('posts')
+  useEffect(()=>{
+
+  },[])
   return (
     <>
       <main className="container-fluid mb-5 position-relative">

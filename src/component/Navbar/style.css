@@ -6,7 +6,7 @@
     font-size: 0.8rem;
 }
 .bg-nx{
-    background-color: #143A52;
+    background-color: var(--nx-color-primary);
 
 }
 .nx-brand{
@@ -35,8 +35,8 @@
 }
 
 .btn-nx{
-    background-color: #ffffff;
-    color: black;
+    background-color: var(--nx-color-primary);
+    color: white;
     outline: none;
     border: none;
     width: 170px;
@@ -50,7 +50,7 @@
     cursor: pointer;
 }
 .btn-nx:hover{
-background-color: whitesmoke;
+background-color: var(--nx-color-primary-hover);
 
 }
 @media (min-width:992px){
