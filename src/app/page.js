@@ -89,16 +89,21 @@ export default function Home() {
 
             {
               activeItem.map((item) => (
-                <div key={item._id} className="col">
-                  <CldImage
-                    src={item.image_pb_id} // Pass the public ID as-is, no `/media/` prefix
-                    width="500"
-                    height="600"
-                    crop="fill"
-                    alt="Main image"
-                    className="w-100 h-100 rounded-4"
-                  />
-                  
+                <div key={item._id} className="col p-2" style={{ height: '300px' }}>
+                  <div className="border-nx w-100 h-100 p-2 position-relative">
+                    <CldImage
+                      src={item.image_pb_id}
+                      width="500"
+                      height="600"
+                      priority
+                      alt="Main image"
+                      className="w-100 h-100 rounded-4"
+                    />
+                    <div className="hover-overlay d-flex align-items-center justify-content-center">
+                      <Link className="nx-hover-link" href={`services/${item.services_slug}`} >{item.title}</Link>
+                    </div>
+                  </div>
+
                 </div>
               ))
             }
