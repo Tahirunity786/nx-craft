@@ -47,12 +47,11 @@ main{
   .hover-overlay {
     position: absolute;
     top: -100%; /* Start hidden above the view */
-  
     right: 0;
     height: 75%;
     width: 75%;
     background-color: var(--nx-color-primary); /* Semi-transparent overlay */
-    transition: top 0.4s ease; /* Smooth sliding effect */
+    transition: top 0.7s ease; /* Smooth sliding effect */
     color: white;
     display: flex;
     align-items: center;
