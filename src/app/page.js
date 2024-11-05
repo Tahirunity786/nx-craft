@@ -85,7 +85,7 @@ export default function Home() {
         </header>
         <div className="w-100 text-center">
 
-          <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3" id="service__spread">
+          <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
 
             {
               activeItem.map((item) => (
@@ -99,7 +99,7 @@ export default function Home() {
                       alt="Main image"
                       className="w-100 h-100 rounded-4"
                     />
-                    <div className="hover-overlay d-flex align-items-center justify-content-center">
+                    <div className="hover-overlay d-flex align-items-center justify-content-center p-3">
                       <Link className="nx-hover-link" href={`services/${item.services_slug}`} >{item.title}</Link>
                     </div>
                   </div>
