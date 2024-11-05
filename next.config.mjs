@@ -5,7 +5,8 @@ const nextConfig = {
     },
     env: {
 
-        NEXT_PUBLIC_SERVER_END_POINT: 'https://sitif62914q.pythonanywhere.com/' 
+        // NEXT_PUBLIC_SERVER_END_POINT: 'https://sitif62914q.pythonanywhere.com/' 
+        NEXT_PUBLIC_SERVER_END_POINT: process.env.NEXT_PUBLIC_SERVER_END_POINT
     },
 };
 
