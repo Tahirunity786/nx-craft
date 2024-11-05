@@ -1,0 +1,38 @@
+.border-nx{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.position-relative {
+    position: relative;
+    overflow: hidden; /* Ensure overlay stays within bounds */
+  }
+  
+  .hover-overlay {
+    position: absolute;
+    top: -100%; /* Start hidden above the view */
+    right: 0;
+    height: 75%;
+    width: 75%;
+    background-color: var(--nx-color-primary); /* Semi-transparent overlay */
+    transition: top 0.7s ease; /* Smooth sliding effect */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    
+    opacity: 0; /* Fully hidden by default */
+  }
+  
+  .position-relative:hover .hover-overlay {
+    top: 0; /* Slide down into view */
+    opacity: 1; /* Make visible on hover */
+  }
+.nx-hover-link{
+    font-size: large;
+    color: var(--nx-color-fourth);
+    font-weight: bold;
+    text-decoration: none;
+}
+.mb-50{
+  margin-bottom: 50px;
+}

@@ -89,7 +89,7 @@ export default function Home() {
 
             {
               activeItem.map((item) => (
-                <div key={item._id} className="col p-2" style={{ height: '350px' }}>
+                <div key={item._id} className="col p-4" style={{ height: '350px' }}>
                   <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
                     <CldImage
                       src={item.image_pb_id}
