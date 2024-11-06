@@ -20,7 +20,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="container mb-50 ">
+      <div className="container-fluid mb-50 p-5">
         <div className="row mb-100 ">
           <div className="col-lg-7 d-flex align-items-center">
             <h1>Nx Craft Helps you to grow your business</h1>
@@ -53,7 +53,7 @@ const Page = () => {
             ))}
           </div>
         </div>
-        <div className="mb-100 ">
+        <div className="mb-100 container">
           <h2 className=' mb-50 text-center fs-1'>Our Workflow</h2>
           <div className="content-box">
             <div className="box">
