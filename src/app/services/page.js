@@ -20,8 +20,8 @@ const Page = () => {
 
   return (
     <>
-      <div className="container-fluid mb-50 p-5">
-        <div className="row mb-5">
+      <div className="container mb-50 ">
+        <div className="row mb-100 ">
           <div className="col-lg-7 d-flex align-items-center">
             <h1>Nx Craft Helps you to grow your business</h1>
           </div>
@@ -29,13 +29,13 @@ const Page = () => {
             <Form />
           </div>
         </div>
-        <div className="mb-50">
+        <div className="mb-100">
           <div className="mb-5 text-center">
             <h2>Discover Our Cutting-Edge Solutions</h2>
           </div>
           <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
             {packages.map((item) => (
-              <div key={item._id} className="col p-2" style={{ height: '350px' }}>
+              <div key={item._id} className="col p-4 text-center" style={{ height: '350px' }}>
                 <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
                   <CldImage
                     src={item.image_pb_id}
@@ -53,11 +53,75 @@ const Page = () => {
             ))}
           </div>
         </div>
-        <div className="mb-50">
-          <div className="mb-5 text-center">
-            <h2>How we will work</h2>
-          </div>
-          <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
+        <div className="mb-100 ">
+          <h2 className=' mb-50 text-center fs-1'>Our Workflow</h2>
+          <div className="content-box">
+            <div className="box">
+              <h6>Planning</h6>
+
+              <div className="dot">
+                <div className="circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                  </svg>
+                </div>
+
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+            </div>
+            <div className="box">
+              <h6>Designing</h6>
+
+              <div className="dot">
+                <div className="circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                  </svg>
+                </div>
+
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+            </div>
+            <div className="box">
+              <h6>Developing</h6>
+
+              <div className="dot">
+                <div className="circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                  </svg>
+                </div>
+
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+            </div>
+            <div className="box">
+              <h6>Testing</h6>
+
+              <div className="dot">
+                <div className="circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                  </svg>
+                </div>
+
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+            </div>
+            <div className="box">
+              <h6>Launch</h6>
+
+              <div className="dot">
+                <div className="circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                  </svg>
+                </div>
+
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+            </div>
+            
           </div>
         </div>
       </div>
