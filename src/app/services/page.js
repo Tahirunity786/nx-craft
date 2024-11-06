@@ -31,7 +31,8 @@ const Page = () => {
         </div>
         <div className="mb-100">
           <div className="mb-5 text-center">
-            <h2>Discover Our Cutting-Edge Solutions</h2>
+            <h2 className='mb-2'>Discover Our Cutting-Edge Solutions</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim sit nostrum.</p>
           </div>
           <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
             {packages.map((item) => (
@@ -54,7 +55,7 @@ const Page = () => {
           </div>
         </div>
         <div className="mb-100 container">
-          <h2 className=' mb-50 text-center fs-1'>Our Workflow</h2>
+          <h2 className=' mb-50 text-center fs-nx'>Our Workflow</h2>
           <div className="content-box">
             <div className="box">
               <h6>Planning</h6>
@@ -123,6 +124,9 @@ const Page = () => {
             </div>
             
           </div>
+        </div>
+        <div className="container mb-100">
+        <Link className='hire-nx' href={'/'}>Hire our top rated developer</Link>
         </div>
       </div>
     </>
