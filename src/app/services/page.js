@@ -60,9 +60,11 @@ const Page = () => {
             <h2 className='mb-2'>Discover Our Cutting-Edge Solutions</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim sit nostrum.</p>
           </div>
-          <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
+
+          <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
+
             {packages.map((item) => (
-              <div key={item._id} className="col p-4 text-center" style={{ height: '350px' }}>
+              <div key={item._id} className="col p-4 text-center s-nx">
                 <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
                   <CldImage
                     src={item.image_pb_id}
@@ -154,9 +156,9 @@ const Page = () => {
         <div className="mb-100 container">
           <h2 className='mb-50 text-center fs-nx'>A Scalable Cooperation Model Tailored <br /> for Your Business</h2>
           <div className="container text-center">
-            <div className="row g-4">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3">
 
-              <div className="col-4 ">
+              <div className="col mb-4">
                 <div className="nx-models">
                   <div className="nx-top-border"></div>
                   <div className=" p-3 d-flex align-items-center justify-content-between flex-column mt-4 ">
@@ -176,7 +178,7 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4 ">
+              <div className="col mb-4">
                 <div className="nx-models">
                   <div className="nx-top-border"></div>
                   <div className="p-3 d-flex align-items-center justify-content-between flex-column mt-4 ">
@@ -196,7 +198,7 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-4 ">
+              <div className="col mb-4">
                 <div className="nx-models">
                   <div className="nx-top-border"></div>
                   <div className="p-3 d-flex align-items-center justify-content-between flex-column mt-4 ">
