@@ -177,13 +177,38 @@ export default function Home() {
         </header>
         <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
           <div className="col">
-            <div className="p-3 border bg-light">Row column</div>
+          <div className=" border bg-light">
+            <CldImage
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+              width="500"
+              height="300"
+              alt="Main image"
+              className="img-fluid h-100 rounded-4"
+            />
+            </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">Row column</div>
+          
+            <div className=" border bg-light">
+            <CldImage
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+              width="500"
+              height="300"
+              alt="Main image"
+              className="img-fluid h-100 rounded-4"
+            />
+            </div>
           </div>
           <div className="col">
-            <div className="p-3 border bg-light">Row column</div>
+          <div className=" border bg-light">
+            <CldImage
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+              width="500"
+              height="300"
+              alt="Main image"
+              className="img-fluid h-100 rounded-4"
+            />
+            </div>
           </div>
 
         </div>
