@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-7">
             <div className="mb-4">
-              <h1 className='text-light'>MENU</h1>
+              <h2 className='text-light'>MENU</h2>
             </div>
             <ul className="mb-5 d-flex justify-content-between align-items-center flex-wrap ul-footer ps-1 pe-5">
               <li className='mb-2'>
