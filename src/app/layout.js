@@ -24,8 +24,10 @@ export default function RootLayout({ children }) {
         <meta name="author" content={metadata.author} />
         <meta name="robots" content={metadata.robots} />
         {/* Google site verification */}
-        <meta name="google-site-verification" content="Jr_3Z-ymiNvORdlkdvusQJyKkc8qH_BnZY3ARsR9q0I" />
       </Head>
+      <head>
+        <meta name="google-site-verification" content="Jr_3Z-ymiNvORdlkdvusQJyKkc8qH_BnZY3ARsR9q0I" />
+        </head>
       <body>
         <Navbar />
         <main>{children}</main>
