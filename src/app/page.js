@@ -21,8 +21,8 @@ export default function Home() {
   return (
     <>
       <main className="container-fluid mb-5 position-relative">
-        <div className="row p-5 align-items-center">
-          <div className="col-lg-6 mb-4">
+        <div className="row p-lg-5 p-md-5 p-sm-2 mt-5 align-items-center">
+          <div className="col-lg-6 mb-5">
             <header className="mb-2">
               <h6 className="nx-top-h ms-2">Priority</h6>
               <h1 className="nx-heading">We Grow Your Business Reach to Next Level</h1>
@@ -39,7 +39,7 @@ export default function Home() {
               Book a Meeting
             </Link>
           </div>
-          <div className="col-lg-6 position-relative">
+          <div className="col-lg-6 mt-4 position-relative text-center">
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/dw0nebh6t3v7utj5wshm"
               width="500" // Transform the image: auto-crop to square aspect_ratio
@@ -49,10 +49,10 @@ export default function Home() {
                 source: true
               }}
               alt="Main image"
-              className="w-100 h-100"
+              className="nx-img-m"
             />
 
-            <div className="social-icons position-absolute" style={{ top: '80px', right: '10px' }}>
+            <div className="social-icons position-absolute ico-nx" >
               {['instagram', 'pinterest', 'twitter', 'youtube'].map((icon, index) => (
                 <div key={index} className="icon-wrapper mb-5 bg-light rounded-pill d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px' }}>
                   <Image
@@ -77,7 +77,7 @@ export default function Home() {
 
       </section>
 
-      <section className="container-fluid  text-center pe-5 ps-5 mb-5">
+      <section className="container-fluid  text-center pe-lg-5 ps-lg-5 mb-5">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Service</h6>
           <h2 className="mb-2">We Provide Fastest & Unique <br /> Business Growing Service</h2>
@@ -85,11 +85,11 @@ export default function Home() {
         </header>
         <div className="w-100 text-center">
 
-          <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
 
             {
               activeItem.map((item) => (
-                <div key={item._id} className="col p-4" style={{ height: '350px' }}>
+                <div key={item._id} className="col p-4 s-nx">
                   <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
                     <CldImage
                       src={item.image_pb_id}
