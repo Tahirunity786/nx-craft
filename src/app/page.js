@@ -177,19 +177,21 @@ export default function Home() {
         </header>
         <div className="row row-cols-2 row-cols-lg-3 g-2 g-lg-3">
           <div className="col">
-          <div className=" border bg-light">
+          <div className=" border rounded-4 bg-light">
             <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg"
               width="500"
-              height="300"
+              height="400"
               alt="Main image"
-              className="img-fluid h-100 rounded-4"
+              style={{objectFit:"cover"}}
+
+              className="rounded-4 w-100"
             />
             </div>
           </div>
           <div className="col">
           
-            <div className=" border bg-light">
+            <div className=" border rounded-4 bg-light">
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
               width="500"
@@ -200,13 +202,14 @@ export default function Home() {
             </div>
           </div>
           <div className="col">
-          <div className=" border bg-light">
+          <div className=" border rounded-4 bg-light">
             <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg"
               width="500"
-              height="300"
+              height="400"
               alt="Main image"
-              className="img-fluid h-100 rounded-4"
+              className="w-100 rounded-4"
+              style={{objectFit:"cover"}}
             />
             </div>
           </div>
