@@ -176,8 +176,11 @@ main {
     .ico-nx {
 
         display: flex;
+        justify-content: space-around;
         position: relative !important;
-        bottom: 200px;
+        bottom:  200px;
+        padding: 10px;
+        z-index: 200;
     }
     .w-nx-b{
         height: 100px;
