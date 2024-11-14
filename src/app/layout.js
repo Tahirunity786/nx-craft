@@ -7,7 +7,7 @@ import Script from 'next/script';
 export const metadata = {
   title: "Home",
   description: `NXCraft provides cutting-edge IT solutions, specializing in web and mobile app development, cloud services, and digital transformation. We help businesses drive growth, boost efficiency, and stay competitive in the digital age.`,
-  keywords: `IT solutions, IT agency, web development, mobile app development, cloud services, digital transformation, software development, custom software solutions, digital strategy, technology consulting, scalable IT solutions, secure IT services, enterprise solutions, business growth technology, innovative IT services, tech agency, full-stack development, SaaS development, cloud computing, app development company, IT consulting, digital transformation services, software company, tech solutions for businesses, IT support services.`,
+  keywords: `NX craft, nx craft, Nx craft, NX CRAFT, IT solutions, IT agency, web development, mobile app development, cloud services, digital transformation, software development, custom software solutions, digital strategy, technology consulting, scalable IT solutions, secure IT services, enterprise solutions, business growth technology, innovative IT services, tech agency, full-stack development, SaaS development, cloud computing, app development company, IT consulting, digital transformation services, software company, tech solutions for businesses, IT support services.`,
   author: "Tahir Zaman",
   robots: "index, follow",
 };
