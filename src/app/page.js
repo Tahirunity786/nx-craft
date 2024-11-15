@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <main className="container-fluid mb-5 position-relative">
-        <div className="row p-lg-5 p-md-5 p-sm-2 mt-5 align-items-center">
+        <div className="row p-lg-5 p-md-5 p-sm-2 align-items-center">
           <div className="col-lg-6 mb-5">
             <header className="mb-2">
               <h6 className="nx-top-h ms-2">Priority</h6>
