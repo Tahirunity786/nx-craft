@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <main className="container-fluid mb-5 position-relative">
-        <div className="row p-lg-5 p-md-5 p-sm-2 align-items-center">
+        <div className="row p-lg-5 p-md-5 nx-mt-sm-5 p-sm-2 align-items-center">
           <div className="col-lg-6 mb-5">
             <header className="mb-2">
               <h6 className="nx-top-h ms-2">Priority</h6>
@@ -98,6 +98,7 @@ export default function Home() {
                       priority
                       alt="Main image"
                       className="w-100 h-100 rounded-4"
+                      style={{ objectFit: "fill" }}
                     />
                     <div className="hover-overlay d-flex align-items-center justify-content-center p-3">
                       <Link className="nx-hover-link" href={`services/${item.services_slug}`} >{item.title}</Link>
@@ -112,19 +113,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container-fluid p-5 mb-5 text-center">
+      <section className="container-fluid pe-5 ps-5 mb-5 text-center">
         <div className="row mb-4">
-          <div className="col-lg-6 mb-2">
+          <div className="col-lg-6 mb-4">
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1730459148/Images/n01yrhbyogaddmazskbf.svg"
               width="300" // Transform the image: auto-crop to square aspect_ratio
               height="400"
               alt="Main image"
-              className="w-100 rounded-4"
+              className="nx-w-100 rounded-4"
             />
           </div>
           <div className="col-lg-6 text-start">
-            <header className="mb-4">
+            <header className="mb-4 mt-3">
               <h6 className="nx-top-h mb-2">About</h6>
               <h2 className="mb-2">We Are Helping People to Reach
                 Their Customer Since 2024</h2>
@@ -169,7 +170,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container-fluid p-5 mb-5 text-center">
+      {/* <section className="container-fluid p-5 mb-5 text-center">
         <header className="mb-5">
           <h6 className="nx-top-h">Our Expert Members</h6>
           <h2 className="mb-3">Behind the Great Success of <br />
@@ -177,45 +178,164 @@ export default function Home() {
         </header>
         <div className="d-flex justify-content-between align-items-center">
           <div className="me-2 ms-2">
-          <div className=" border rounded-4 bg-light">
-            <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg"
-              width="500"
-              height="400"
-              alt="Main image"
-              style={{objectFit:"cover"}}
-              className="w-nx-b h-nx-b rounded-4 w-100"
-            />
-            </div>
-          </div>
-          <div className="me-2 ms-2">
-          
             <div className=" border rounded-4 bg-light">
-            <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
-              width="500"
-              height="400"
-              alt="Main image"
-              className="w-nx-b h-nx-b rounded-4"
-            />
+              <CldImage
+                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg"
+                width="500"
+                height="400"
+                alt="Main image"
+                style={{ objectFit: "cover" }}
+                className="w-nx-b h-nx-b rounded-4 w-100"
+              />
             </div>
           </div>
           <div className="me-2 ms-2">
-          <div className=" border rounded-4 bg-light">
-            <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg"
-              width="500"
-              height="400"
-              alt="Main image"
-              className="w-100 w-nx-b h-nx-b rounded-4"
-              style={{objectFit:"cover"}}
-            />
+
+            <div className=" border rounded-4 bg-light">
+              <CldImage
+                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+                width="500"
+                height="400"
+                alt="Main image"
+                className="w-nx-b h-nx-b rounded-4"
+              />
+            </div>
+          </div>
+          <div className="me-2 ms-2">
+            <div className=" border rounded-4 bg-light">
+              <CldImage
+                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg"
+                width="500"
+                height="400"
+                alt="Main image"
+                className="w-100 w-nx-b h-nx-b rounded-4"
+                style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
 
         </div>
-      </section>
+      </section> */}
 
+      <section className="nx-work-flow mb-5">
+        <div className="container p-5">
+
+          <div className="row">
+            <div className="col-lg-6 p-4">
+              <div className="mb-3 bg-light p-3 rounded-2" style={{ display: 'inline-block' }}>
+                <h6 className="mb-0">
+                  Work Process
+                </h6>
+              </div>
+              <h2 className="fs-1 text-light">
+                Sustainable and Responsible Computing
+              </h2>
+            </div>
+            <div className="col-lg-6 p-4 d-flex align-items-end">
+              <p className="text-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur eos dolor iusto eaque? Esse vitae perferendis harum quod totam inventore.</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-6 p-4">
+
+              <div className="mb-5 nx-work-bxs">
+                <div className="d-flex align-items-center">
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                    <p className="mb-0 fs-4 nx-font-we">01</p>
+                  </div>
+                  <div className="ms-4">
+                    <div className="mb-2">
+                      <h4 className="text-light">Planning</h4>
+                    </div>
+                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-5 nx-work-bxs">
+                <div className="d-flex align-items-center">
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                    <p className="mb-0 fs-4 nx-font-we">02</p>
+                  </div>
+                  <div className="ms-4">
+                    <div className="mb-2">
+                      <h4 className="text-light">Designing</h4>
+                    </div>
+                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-5 nx-work-bxs">
+                <div className="d-flex align-items-center">
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                    <p className="mb-0 fs-4 nx-font-we">03</p>
+                  </div>
+                  <div className="ms-4">
+                    <div className="mb-2">
+                      <h4 className="text-light">Developing</h4>
+                    </div>
+                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-5 nx-work-bxs">
+                <div className="d-flex align-items-center">
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                    <p className="mb-0 fs-4 nx-font-we">04</p>
+                  </div>
+                  <div className="ms-4">
+                    <div className="mb-2">
+                      <h4 className="text-light">Testing</h4>
+                    </div>
+                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-5 nx-work-bxs">
+                <div className="d-flex align-items-center">
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                    <p className="mb-0 fs-4 nx-font-we">05</p>
+                  </div>
+                  <div className="ms-4">
+                    <div className="mb-2">
+                      <h4 className="text-light">Launch</h4>
+                    </div>
+                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className="col-lg-6 p-4">
+              <div className="mb-5">
+                <CldImage
+                  src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png"
+                  width="500"
+                  height="260"
+                  alt="Main image"
+                  className="w-100 rounded-4"
+
+                />
+              </div>
+              <div className="mb-5 d-flex justify-content-between align-items-center bg-light text-dark rounded-4">
+                <div className="w-30 p-3">
+                  <p className="fs-5 mb-0 nx-font-we">+Strong <br /> Professional <br />Experience </p>
+                </div>
+                <div className="w-70">
+                  <CldImage
+                    src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731689481/p3daxqy2iubxi4zg5ujl.png"
+                    width={500}
+                    height={220}
+                    alt="Main image"
+                    className="w-100"
+                  />
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

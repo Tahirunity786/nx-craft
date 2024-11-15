@@ -107,7 +107,20 @@ main {
 .h-nx-b {
     height: 400px;
 }
-
+.nx-w-100{
+    width: 100%;
+}
+.nx-work-flow{
+    background-color: var(--nx-color-primary);
+}
+.nx-font-we{
+    font-weight: bold;
+}
+.nx-work-bxs{
+    border: 2px solid rgba(189, 189, 189, 0.53);
+    padding: 20px;
+    border-radius: 15px;
+}
 @media (min-width:992px) {
     .ico-nx {
         top: 70px;
@@ -116,6 +129,9 @@ main {
 }
 
 @media (max-width:992px) {
+    .nx-mt-sm-5{
+        margin-top: 3rem;
+    }
     .s-nx {
         height: 450px;
     }
@@ -157,6 +173,7 @@ main {
 }
 
 @media (max-width:559px) {
+    
     .s-nx {
         height: 300px;
     }
@@ -173,6 +190,11 @@ main {
 }
 
 @media (max-width:487px) {
+    .nx-w-100{
+        width: 100%;
+        height: 250px;
+    }
+    
     .ico-nx {
 
         display: flex;
