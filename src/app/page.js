@@ -173,7 +173,7 @@ export default function Home() {
 
 
       <section className="nx-work-flow mb-100">
-        <div className="container p-5">
+        <div className="container p-lg-5">
 
           <div className="row">
             <div className="col-lg-6 p-4">
