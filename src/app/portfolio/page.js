@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 
-const page = () => {
+const Page = () => {
   useEffect(()=>{
     document.title = "Portfolio - NX Craft";
   }, []);
@@ -14,4 +14,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
