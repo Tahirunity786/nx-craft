@@ -73,7 +73,28 @@ main {
     opacity: 0;
     /* Fully hidden by default */
 }
-
+.w-90{
+    width: 90%;
+}
+.nx-blog{
+    margin: -58px auto auto;
+    z-index: 100;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    transition: .5s;
+    box-shadow: 0 5px 60px 0 rgba(0, 0, 0, .051);
+    border-bottom: 3px solid transparent;
+}
+.nx-blog-fs{
+    font-size: x-small;
+    
+}
+.nx-blog-lnk{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
 .position-relative:hover .hover-overlay {
     top: 0;
     /* Slide down into view */
