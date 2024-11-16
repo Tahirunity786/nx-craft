@@ -442,46 +442,42 @@ export default function Home() {
           <h2 className="mb-3">Behind the Great Success of <br />
             NxCraft They Playing Role</h2>
         </header>
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="me-2 ms-2">
-            <div className=" border rounded-4 bg-light">
+        <div className="d-flex justify-content-between align-items-center flex-wrap">
+          {/* Person Card */}
+          {[
+            {
+              name: "John Doe",
+              role: "Photographer",
+              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
+            },
+            {
+              name: "Jane Smith",
+              role: "Graphic Designer",
+              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png",
+            },
+            {
+              name: "Alex Brown",
+              role: "Artist",
+              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
+            },
+          ].map((person, index) => (
+            <figure key={index} className="person-card me-2 ms-2 border rounded-4 position-relative">
               <CldImage
-                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg"
+                src={person.image}
                 width="500"
                 height="400"
-                alt="Main image"
+                alt={`Portrait of ${person.name}`}
                 style={{ objectFit: "cover" }}
-                className="w-nx-b h-nx-b rounded-4 w-100"
+                className="rounded-4 w-100"
               />
-            </div>
-          </div>
-          <div className="me-2 ms-2">
-
-            <div className=" border rounded-4 bg-light">
-              <CldImage
-                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
-                width="500"
-                height="400"
-                alt="Main image"
-                className="w-nx-b h-nx-b rounded-4"
-              />
-            </div>
-          </div>
-          <div className="me-2 ms-2">
-            <div className=" border rounded-4 bg-light">
-              <CldImage
-                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg"
-                width="500"
-                height="400"
-                alt="Main image"
-                className="w-100 w-nx-b h-nx-b rounded-4"
-                style={{ objectFit: "cover" }}
-
-              />
-            </div>
-          </div>
-
+              <figcaption className="person-info d-flex flex-column justify-content-center align-items-center">
+                <h5 className="mb-1 text-white fw-bold">{person.name}</h5>
+                <p className="mb-0 text-white">{person.role}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
+
       </section>
       <div className="mb-100 container-fluid pe-lg-5 ps-lg-5 ">
         <div className="text-center mb-3">
@@ -591,7 +587,7 @@ export default function Home() {
                   height="230"
                   alt="Main image"
                   className="w-100 rounded-4"
-                  
+
 
                 />
                 <div className="p-3 bg-light w-90 nx-blog">
