@@ -439,15 +439,14 @@ export default function Home() {
       <section className="container-fluid pe-lg-5 ps-lg-5 mb-100 text-center">
         <header className="mb-5">
           <h6 className="nx-top-h">Our Expert Members</h6>
-          <h2 className="mb-3">Behind the Great Success of <br />
-            NxCraft They Playing Role</h2>
+          <h2 className="mb-3">Behind the Great Success of <br /> NxCraft They Playing Role</h2>
         </header>
         <div className="d-flex justify-content-between align-items-center flex-wrap">
           {/* Person Card */}
           {[
             {
               name: "Hassan Asif",
-              role: "Chapre",
+              role: "Project Manager",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
             },
             {
@@ -457,11 +456,11 @@ export default function Home() {
             },
             {
               name: "Mudassar Rafique",
-              role: "Chapre",
+              role: "Technical Officer",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
             },
           ].map((person, index) => (
-            <figure key={index} className="person-card me-2 ms-2 border rounded-4 position-relative">
+            <div key={index} className="person-card me-2 ms-2 border rounded-4 position-relative">
               <CldImage
                 src={person.image}
                 width="500"
@@ -470,15 +469,26 @@ export default function Home() {
                 style={{ objectFit: "cover" }}
                 className="rounded-4 w-100"
               />
-              <figcaption className="person-info d-flex flex-column justify-content-center align-items-center">
-                <h5 className="mb-1 text-white fw-bold">{person.name}</h5>
-                <p className="mb-0 text-white">{person.role}</p>
-              </figcaption>
-            </figure>
+              <div className="person-info d-flex justify-content-between align-items-center">
+                <div className="text-start">
+                  <h5 className="mb-1 text-white fw-bold">{person.name}</h5>
+                  <p className="mb-0 text-white">{person.role}</p>
+                </div>
+                <div className="bg-light rounded-pill">
+                <CldImage
+                  src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731770109/Icons/zlkzdxt0ojahbrblyrbd.png"
+                  width="40"
+                  height="40"
+                  alt="Icon"
+                  className="icon"
+                />
+                </div>
+              </div>
+            </div>
           ))}
         </div>
-
       </section>
+
       <div className="mb-100 container-fluid pe-lg-5 ps-lg-5 ">
         <div className="text-center mb-3">
           <h6 className="nx-top-h">Blog</h6>
