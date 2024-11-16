@@ -446,18 +446,18 @@ export default function Home() {
           {/* Person Card */}
           {[
             {
-              name: "John Doe",
-              role: "Photographer",
+              name: "Hassan Asif",
+              role: "Chapre",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
             },
             {
-              name: "Jane Smith",
-              role: "Graphic Designer",
+              name: "Tahir Zaman",
+              role: "CEO & Founder",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png",
             },
             {
-              name: "Alex Brown",
-              role: "Artist",
+              name: "Mudassar Rafique",
+              role: "Chapre",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
             },
           ].map((person, index) => (
