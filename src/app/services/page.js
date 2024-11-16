@@ -7,6 +7,8 @@ import './service-index.css'
 import Model from '@/component/Model/Model';
 import Clendly from '@/component/Clendly/Clendly';
 
+
+
 const Page = () => {
   const [packages, setPackages] = useState([]);
 
@@ -17,6 +19,7 @@ const Page = () => {
   }
 
   useEffect(() => {
+    document.title = "Services - NX Craft";
     getData();
   }, [])
 
