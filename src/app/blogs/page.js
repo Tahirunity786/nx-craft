@@ -1,9 +1,16 @@
-import React from 'react'
-
+"use client"
+import Image from "next/image"
+import "./blog.css"
+import NX from "../../../public/Assets/Images/nx-craft.png"
 const page = () => {
   return (
-    <div>
-      <h1>Blogs</h1>
+    <div className='container'>
+      <div className="img-box">
+      <Image src={NX} alt="nx-img" height={100} width={100}/>
+      </div>
+      <div>
+        
+      </div>
     </div>
   )
 }
