@@ -13,9 +13,9 @@ export default function Page() {
     const [slug, setSlug] = useState(null);
 
     useEffect(() => {
+        
         // Dynamically import Bootstrap's JS 
         import('bootstrap/dist/js/bootstrap.bundle.min.js');
-
         // Slug extraction
         async function fetchParams() {
             const resolvedParams = await params; // Await the promise
