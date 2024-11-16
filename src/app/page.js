@@ -217,15 +217,13 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="nx-work-flow mb-5">
+      <section className="nx-work-flow mb-100">
         <div className="container p-5">
 
           <div className="row">
             <div className="col-lg-6 p-4">
-              <div className="mb-3 bg-light p-3 rounded-2" style={{ display: 'inline-block' }}>
-                <h6 className="mb-0">
-                  Work Process
-                </h6>
+              <div className="mb-4 ps-1">
+                <h6 className="nx-top-h">Work Process</h6>
               </div>
               <h2 className="fs-1 text-light">
                 Sustainable and Responsible Computing
@@ -332,6 +330,153 @@ export default function Home() {
               </div>
 
 
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="container-fluid ps-lg-5 pe-lg-5 mb-100">
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="testimonial-card mb-4">
+              <div className="overlay">
+                <div>
+                  <span className="badge">Client Testimonial</span>
+                  <h1 className="title">WebTech Solutions <br /> the transform</h1>
+                  <a href="#" className="btn support-btn">Get Support →</a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div className="col-lg-6 d-flex align-items-center">
+            <div className="position-relative nx-pos-testi p-4">
+              <div id="carouselExampleAutoplaying" className="carousel slide h-100" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item active pe-4">
+                    <div className="d-flex align-items-center justify-content-between mb-4">
+                      <div>
+                        <p className="mb-1"><b>Client no 1</b></p>
+                        <p className="mb-0">Web development</p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="mb-2">
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit officia molestias cupiditate, beatae ex quae repudiandae asperiores, repellat, eveniet harum doloribus? Non ex provident consectetur sapiente doloremque minima quis et!</p>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                  <div className="d-flex align-items-center justify-content-between mb-4">
+                      <div>
+                        <p className="mb-1"><b>Client no 1</b></p>
+                        <p className="mb-0">Web development</p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="mb-2">
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit officia molestias cupiditate, beatae ex quae repudiandae asperiores, repellat, eveniet harum doloribus? Non ex provident consectetur sapiente doloremque minima quis et!</p>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                  <div className="d-flex align-items-center justify-content-between mb-4">
+                      <div>
+                        <p className="mb-1"><b>Client no 1</b></p>
+                        <p className="mb-0">Web development</p>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                        <span className="me-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" className="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="mb-2">
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit officia molestias cupiditate, beatae ex quae repudiandae asperiores, repellat, eveniet harum doloribus? Non ex provident consectetur sapiente doloremque minima quis et!</p>
+                    </div>
+                  </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
