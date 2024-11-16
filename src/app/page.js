@@ -170,52 +170,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section className="container-fluid p-5 mb-5 text-center">
-        <header className="mb-5">
-          <h6 className="nx-top-h">Our Expert Members</h6>
-          <h2 className="mb-3">Behind the Great Success of <br />
-            NxCraft They Playing Role</h2>
-        </header>
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="me-2 ms-2">
-            <div className=" border rounded-4 bg-light">
-              <CldImage
-                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg"
-                width="500"
-                height="400"
-                alt="Main image"
-                style={{ objectFit: "cover" }}
-                className="w-nx-b h-nx-b rounded-4 w-100"
-              />
-            </div>
-          </div>
-          <div className="me-2 ms-2">
-
-            <div className=" border rounded-4 bg-light">
-              <CldImage
-                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
-                width="500"
-                height="400"
-                alt="Main image"
-                className="w-nx-b h-nx-b rounded-4"
-              />
-            </div>
-          </div>
-          <div className="me-2 ms-2">
-            <div className=" border rounded-4 bg-light">
-              <CldImage
-                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg"
-                width="500"
-                height="400"
-                alt="Main image"
-                className="w-100 w-nx-b h-nx-b rounded-4"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-          </div>
-
-        </div>
-      </section> */}
+      
 
       <section className="nx-work-flow mb-100">
         <div className="container p-5">
@@ -481,6 +436,72 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="container-fluid p-5 mb-5 text-center">
+        <header className="mb-5">
+          <h6 className="nx-top-h">Our Expert Members</h6>
+          <h2 className="mb-3">Behind the Great Success of <br />
+            NxCraft They Playing Role</h2>
+        </header>
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="me-2 ms-2">
+            <div className=" border rounded-4 bg-light">
+              <CldImage
+                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg"
+                width="500"
+                height="400"
+                alt="Main image"
+                style={{ objectFit: "cover" }}
+                className="w-nx-b h-nx-b rounded-4 w-100"
+              />
+            </div>
+          </div>
+          <div className="me-2 ms-2">
+
+            <div className=" border rounded-4 bg-light">
+              <CldImage
+                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png"
+                width="500"
+                height="400"
+                alt="Main image"
+                className="w-nx-b h-nx-b rounded-4"
+              />
+            </div>
+          </div>
+          <div className="me-2 ms-2">
+            <div className=" border rounded-4 bg-light">
+              <CldImage
+                src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg"
+                width="500"
+                height="400"
+                alt="Main image"
+                className="w-100 w-nx-b h-nx-b rounded-4"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <div className="mb-100 container">
+        <div className="text-center mb-3">
+      <h6 className="nx-top-h">Work Process</h6>
+      </div>
+          <h2 className='mb-50 text-center fs-nx'>Read Our Blogs</h2>
+          <div className="container text-center">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3">
+
+              <div className="col mb-4">
+                
+              </div>
+              <div className="col mb-4">
+                
+              </div>
+              <div className="col mb-4">
+                
+              </div>
+            </div>
+          </div>
+        </div>
     </>
   );
 }
