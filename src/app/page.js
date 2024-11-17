@@ -31,8 +31,7 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
             </p>
-            <Link href="/contact" className="btn-main-nx rounded-pill d-flex align-items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-calendar3" viewBox="0 0 16 16">
+         
             <Link href="/contact" className="btn-main-nx rounded-pill d-flex text-center align-items-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  fill="currentColor" className="bi bi-calendar3 " viewBox="0 0 16 16">
 
