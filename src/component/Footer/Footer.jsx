@@ -16,30 +16,24 @@ const Footer = () => {
             <div className="mb-4">
               <h2 className='text-light'>MENU</h2>
             </div>
-            <ul className="mb-5 d-flex justify-content-between align-items-center flex-wrap ul-footer ps-1 pe-5">
+            <ul className="mb-5 d-flex justify-content-start align-items-center flex-wrap ul-footer ps-1 pe-5">
               <li className='mb-2'>
-                <Link href="/" className="nav-link text-light">
+                <Link href="/" className="nav-link text-light me-4">
                   Home
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href="/services" className="nav-link text-light">
+                <Link href="/services" className="nav-link text-light me-4 ms-4">
                   Services
                 </Link>
               </li>
-
               <li className='mb-2'>
-                <Link href="/products" className="nav-link text-light">
-                  Products
-                </Link>
-              </li>
-              <li className='mb-2'>
-                <Link href="/portfolio" className="nav-link text-light">
+                <Link href="/portfolio" className="nav-link text-light me-4 ms-4">
                   Portfolio
                 </Link>
               </li>
               <li className='mb-2'>
-                <Link href="/blogs" className="nav-link text-light">
+                <Link href="/blogs" className="nav-link text-light me-4 ms-4">
                   Blogs
                 </Link>
               </li>
