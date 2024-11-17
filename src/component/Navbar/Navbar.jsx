@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-nx sticky-top">
             <div className="container-fluid">
-                <Link href="/" className="navbar-brand d-flex align-items-center">
+                <Link href="/" className="navbar-brand d-flex justify-content-start align-items-center">
                     <CldImage
                         src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/tlkoddhhexulduzotyhz"
                         width="60"
