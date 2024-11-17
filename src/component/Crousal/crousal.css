@@ -1,0 +1,34 @@
+.mySwiper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slide-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .overlay-text {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.395);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    border-radius: 10px;
+
+  }
+  .overlay-text a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
