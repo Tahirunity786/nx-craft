@@ -16,10 +16,10 @@ const Navbar = () => {
             <div className="container-fluid">
                 <Link href="/" className="navbar-brand d-flex justify-content-start align-items-center">
                     <CldImage
-                        src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/tlkoddhhexulduzotyhz" 
+                        src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/tlkoddhhexulduzotyhz"
                         width="60"
                         height="45"
-                       
+
                         alt="Logo"
                     />
                     <span className='nx-brand'>NxCraft</span>
@@ -40,7 +40,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item d-flex align-items-center">
-                           
+
                         </li>
 
                         {['/services', '/portfolio', '/blogs'].map((path, index) => (
@@ -61,23 +61,23 @@ const Navbar = () => {
                             +92 (323) 2963784
                         </a> */}
                         <div className="search-input-nx">
-                                <span className="pb-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16" aria-label="Search Icon">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                    </svg>
-                                </span>
-                                <input type="text" placeholder="Search" className="ms-2" aria-label="Search Input" />
-                                <div className="dropdown">
-                                    <Link href="#" className="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Talent
-                                    </Link>
-                                    <ul className="dropdown-menu">
-                                        <li><Link href="#" className="dropdown-item">Talent</Link></li>
-                                        <li><Link href="#" className="dropdown-item">Project</Link></li>
-                                        <li><Link href="#" className="dropdown-item">Services</Link></li>
-                                    </ul>
-                                </div>
+                            <span className="pb-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16" aria-label="Search Icon">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                            </span>
+                            <input type="text" placeholder="Search" className="ms-2" aria-label="Search Input" />
+                            <div className="dropdown">
+                                <Link href="#" className="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Talent
+                                </Link>
+                                <ul className="dropdown-menu">
+                                    <li><Link href="#" className="dropdown-item">Talent</Link></li>
+                                    <li><Link href="#" className="dropdown-item">Project</Link></li>
+                                    <li><Link href="#" className="dropdown-item">Services</Link></li>
+                                </ul>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

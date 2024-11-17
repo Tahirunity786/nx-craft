@@ -156,10 +156,11 @@ const Page = () => {
 
           </div>
         </div>
+        
         <div className="mb-100 container">
           <h2 className='mb-50 text-center fs-nx'>A Scalable Cooperation Model Tailored <br /> for Your Business</h2>
           <div className="container text-center">
-          <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3">
 
               <div className="col mb-4">
                 <div className="nx-models">

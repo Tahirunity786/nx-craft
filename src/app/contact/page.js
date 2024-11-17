@@ -1,10 +1,19 @@
 'use client';
 import Input from '@/component/Input/Input';
-import React from 'react';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './contact.css';
+import Image from 'next/image';
+import Call from "../../../public/Assets/Icons/call.png";
+import Mail from "../../../public/Assets/Icons/mail.png";
+import Cam from "../../../public/Assets/Icons/cam.png";
+
+
 
 // Reusable FAQ Component
 const FAQItem = ({ questionId, questionText, answerText }) => (
+
   <div className="mb-3">
     <a
       className="d-flex align-items-center justify-content-between nav-link mb-2 b-botm pt-2 pb-2"
@@ -30,9 +39,89 @@ const FAQItem = ({ questionId, questionText, answerText }) => (
 );
 
 const Page = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/contact-us`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-CSRFToken': getCsrfToken(), // For CSRF protection, if applicable
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to submit: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Success:', data);
+      // Optionally, reset the form
+      event.target.reset();
+      toast.success('Message received! We’ll contact you within an hour.')
+    } catch (error) {
+      toast.error(error || 'Unexpected error has occured, Please try again!')
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Utility function to get CSRF token if needed (for Django or similar backend)
+  function getCsrfToken() {
+    return document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('csrftoken='))
+      ?.split('=')[1];
+  }
+
   return (
     <>
+      <ToastContainer />
       <section className="container pe-lg-4 ps-lg-4 mt-5 mb-5">
+        {/* cards */}
+        <div className='row cards-box pe-lg-4 ps-lg-4 mt-5'>
+          <div className='col-lg-4'>
+            <div className='cards'>
+
+              <Image src={Call} alt='call-img' />
+              <div className='mt-2'>
+
+                <p className='mb-0'>+923034587678</p>
+                <p className='mb-0'>+923034587678</p>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-4'>
+            <div className='cards'>
+
+              <Image src={Mail} alt='mail-img' />
+              <div className='mt-2'>
+
+                <p className='mb-0'>info@bonsa.com</p>
+                <p className='mb-0'>info@bonsa.com</p>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-4'>
+            <div className='cards'>
+
+              <Image src={Cam} alt='cam-img' />
+              <div className='mt-2'>
+
+                <p className='mb-0'>Live Chat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="row">
           {/* FAQ Section */}
           <div className="col-lg-5 pe-5 ps-5 mb-5">
@@ -64,34 +153,66 @@ const Page = () => {
                 </a>
               </div>
 
-              <form method="post">
+              <form method="post" onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className="row mb-3">
                   <div className="col-lg-6 mb-3">
-                    <Input placeholder="Name*" type="text" className="w-100 input-form" required />
+                    <Input
+                      name="name"
+                      placeholder="Name*"
+                      type="text"
+                      className="w-100 input-form"
+                      required
+                    />
                   </div>
                   <div className="col-lg-6 mb-3">
-                    <Input placeholder="Email*" type="email" className="w-100 input-form" required />
+                    <Input
+                      name="email"
+                      placeholder="Email*"
+                      type="email"
+                      className="w-100 input-form"
+                      required
+                    />
                   </div>
                 </div>
                 <div className="row mb-5">
                   <div className="col-lg-6 mb-3">
-                    <Input placeholder="Contact No" type="tel" className="w-100 input-form" />
+                    <Input
+                      name="contact_no"
+                      placeholder="Contact No"
+                      type="tel"
+                      className="w-100 input-form"
+
+                      title="Please enter a valid contact number"
+                    />
                   </div>
                   <div className="col-lg-6 mb-3">
-                    <Input placeholder="Message..." type="text" className="w-100 input-form" />
+                    <Input
+                      name="message_detail"
+                      placeholder="*Message..."
+                      type="text"
+                      required
+                      className="w-100 input-form"
+                    />
                   </div>
                 </div>
- 
-                  <div className="mb-3 text-start">
-                    <label htmlFor="Uploadfor" className="btn-nx0-form">Upload File</label>
-                    <input type="file" hidden id="Uploadfor" />
-                  </div>
-                  
-               
+                <div className="mb-3 text-start">
+                  <label htmlFor="uploadFile" className="btn-nx0-form">Upload File</label>
+                  <input
+                    type="file"
+                    hidden
+                    id="uploadFile"
+                    name="file_assignment"
+                    accept=".pdf,.doc,.docx,.jpg,.png"
+                  />
+                </div>
                 <div className="mb-3 text-end">
-                    <button type="submit" className="btn-nx-form">Submit</button>
-                  </div>
+                  <button type="submit" className="btn-nx-form" disabled={loading}>
+                    {loading ? 'Submitting...' : 'Submit'}
+                  </button>
+                </div>
+                {error && <p className="error-message">{error}</p>}
               </form>
+
             </div>
           </div>
         </div>
