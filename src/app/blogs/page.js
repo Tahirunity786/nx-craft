@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useEffect} from "react";
 import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import "./blog.css";
@@ -7,6 +7,10 @@ import NX from "../../../public/Assets/Images/nx-craft.png";
 import Carousel from "@/component/Crousal/Crousal";
 
 const Page = () => {
+
+  useEffect(()=>{
+    document.title = "Blogs - NX Craft"
+  },[])
   const posts = [
     {
       id: 1,
