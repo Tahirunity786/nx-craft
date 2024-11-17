@@ -1,6 +1,12 @@
-import React from 'react'
+'use client'
+import { useEffect } from 'react'
 
-const page = () => {
+const Page = () => {
+  useEffect(()=>{
+    document.title = "Portfolio - NX Craft";
+  }, []);
+
+
   return (
     <>
    <h1>Portfolio</h1>
@@ -8,4 +14,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

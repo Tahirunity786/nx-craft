@@ -73,10 +73,12 @@ main {
     opacity: 0;
     /* Fully hidden by default */
 }
-.w-90{
+
+.w-90 {
     width: 90%;
 }
-.nx-blog{
+
+.nx-blog {
     margin: -58px auto auto;
     z-index: 100;
     border-radius: 15px;
@@ -86,15 +88,18 @@ main {
     box-shadow: 0 5px 60px 0 rgba(0, 0, 0, .051);
     border-bottom: 3px solid transparent;
 }
-.nx-blog-fs{
+
+.nx-blog-fs {
     font-size: x-small;
-    
+
 }
-.nx-blog-lnk{
+
+.nx-blog-lnk {
     font-weight: bold;
     text-decoration: none;
     color: black;
 }
+
 .position-relative:hover .hover-overlay {
     top: 0;
     /* Slide down into view */
@@ -217,7 +222,7 @@ main {
     border-radius: 20px;
 }
 
-.carousel-control-prev, 
+.carousel-control-prev,
 .carousel-control-next {
     background-color: #143A52;
     width: 50px;
@@ -228,22 +233,75 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%; /* Optional: make them circular */
+    border-radius: 50%;
+    /* Optional: make them circular */
 }
 
 .carousel-control-prev {
-    left: 10px; /* Adjust to position on the left */
+    left: 10px;
+    /* Adjust to position on the left */
 }
 
 .carousel-control-next {
-    right: 10px; /* Adjust to position on the right */
+    right: 10px;
+    /* Adjust to position on the right */
 }
 
-.carousel-control-prev:hover, 
+.carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: #0f2a3d; /* Darker shade for hover effect */
+    background-color: #0f2a3d;
+    /* Darker shade for hover effect */
 }
 
+/* Container Styling */
+.d-flex {
+    gap: 1rem; /* Consistent spacing between elements */
+  }
+  
+  /* Person Card */
+  .person-card {
+    max-width: 320px; /* Restrict maximum width for better readability */
+    overflow: hidden; /* Prevent content overflow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Professional shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    position: relative;
+  }
+  
+  .person-card:hover {
+    transform: scale(1.05); /* Subtle hover scale effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Person Info Overlay */
+  .person-info {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(15, 42, 61, 0.8); /* Semi-transparent overlay */
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .person-info h5 {
+    font-size: 1.2rem; /* Slightly larger for emphasis */
+    margin: 0;
+  }
+  
+  .person-info p {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 300; /* Light weight for secondary text */
+  }
+  
+  .icon {
+    display: block;
+    width: 40px; /* Adjust size */
+    height: 40px;
+    object-fit: contain;
+  }
+  
 @media (min-width:992px) {
     .ico-nx {
         top: 70px;
@@ -252,9 +310,10 @@ main {
 }
 
 @media (max-width:992px) {
-    .nx-pos-testi{
+    .nx-pos-testi {
         left: 0px;
     }
+
     .nx-mt-sm-5 {
         margin-top: 3rem;
     }

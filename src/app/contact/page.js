@@ -2,6 +2,11 @@
 import Input from '@/component/Input/Input';
 import React from 'react';
 import './contact.css';
+import Image from 'next/image';
+import Call from "../../../public/Assets/Icons/call.png";
+import Mail from "../../../public/Assets/Icons/mail.png";
+import Cam from "../../../public/Assets/Icons/cam.png";
+
 
 // Reusable FAQ Component
 const FAQItem = ({ questionId, questionText, answerText }) => (
@@ -33,6 +38,42 @@ const Page = () => {
   return (
     <>
       <section className="container pe-lg-4 ps-lg-4 mt-5 mb-5">
+        {/* cards */}
+        <div className='row cards-box pe-lg-4 ps-lg-4 mt-5'>
+          <div className='col-lg-4'>
+            <div className='cards'>
+
+              <Image src={Call} alt='call-img' />
+              <div className='mt-2'>
+
+                <p className='mb-0'>+923034587678</p>
+                <p className='mb-0'>+923034587678</p>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-4'>
+            <div className='cards'>
+
+              <Image src={Mail} alt='mail-img' />
+              <div className='mt-2'>
+
+                <p className='mb-0'>info@bonsa.com</p>
+                <p className='mb-0'>info@bonsa.com</p>
+              </div>
+            </div>
+          </div>
+          <div className='col-lg-4'>
+            <div className='cards'>
+
+              <Image src={Cam} alt='cam-img' />
+              <div className='mt-2'>
+
+                <p className='mb-0'>Live Chat</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="row">
           {/* FAQ Section */}
           <div className="col-lg-5 pe-5 ps-5 mb-5">
@@ -81,16 +122,13 @@ const Page = () => {
                     <Input placeholder="Message..." type="text" className="w-100 input-form" />
                   </div>
                 </div>
- 
-                  <div className="mb-3 text-start">
-                    <label htmlFor="Uploadfor" className="btn-nx0-form">Upload File</label>
-                    <input type="file" hidden id="Uploadfor" />
-                  </div>
-                  
-               
+                <div className="mb-3 text-start">
+                  <label htmlFor="Uploadfor" className="btn-nx0-form">Upload File</label>
+                  <input type="file" hidden id="Uploadfor" />
+                </div>
                 <div className="mb-3 text-end">
-                    <button type="submit" className="btn-nx-form">Submit</button>
-                  </div>
+                  <button type="submit" className="btn-nx-form">Submit</button>
+                </div>
               </form>
             </div>
           </div>
