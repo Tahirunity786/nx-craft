@@ -19,9 +19,11 @@
     padding-top: 12px;
     padding-bottom: 12px;
 }
-.input-form:focus{
+
+.input-form:focus {
     border-bottom: 2px solid var(--nx-color-primary);
 }
+
 .btn-nx-form {
     background-color: var(--nx-color-primary);
     color: #fff;
@@ -32,25 +34,44 @@
     border-radius: 10px;
     margin-top: 20px;
 }
-.btn-nx-form:hover{
+
+.btn-nx-form:hover {
     background-color: var(--nx-color-primary);
 }
+
 .btn-nx0-form {
     width: 150px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px dotted var(--nx-color-tertiary); /* or use "solid" if that's what you need */
+    border: 1px dotted var(--nx-color-tertiary);
+    /* or use "solid" if that's what you need */
 }
-.b-botm{
+
+.b-botm {
     border-bottom: 2px solid black;
 }
-@media (min-width:992px){
-    .h-nx-contact{
+
+@media (min-width:992px) {
+    .h-nx-contact {
         height: auto;
     }
-    .pe-lg-4, .ps-lg-4{
+
+    .pe-lg-4,
+    .ps-lg-4 {
         padding-right: 1.5rem !important;
     }
+}
+.cards-box{
+    margin-bottom: 100px;
+}
+.cards {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    border-radius: 10px;
 }
