@@ -1,0 +1,11 @@
+.footer-nx{
+    background-color: var(--nx-color-primary);
+    height: auto;
+   
+}
+.tel-footer{
+    text-decoration: none;
+}
+.ul-footer{
+    list-style: none;
+}

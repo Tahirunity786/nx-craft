@@ -1,0 +1,10 @@
+.meeting-btn{
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+    border: none;
+    outline: none;
+    padding: 20px 0px;
+    border-radius: 50px;
+    font-weight: bold;
+   
+}
