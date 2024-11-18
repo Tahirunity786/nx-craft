@@ -301,7 +301,10 @@ main {
     height: 40px;
     object-fit: contain;
   }
-  
+  .nx-plan-round{
+    width: 9.375rem;
+    height: 3.695rem;
+  }
 @media (min-width:992px) {
     .ico-nx {
         top: 70px;
@@ -377,6 +380,7 @@ main {
     }
 
 }
+
 
 @media (max-width:487px) {
     .nx-w-100 {

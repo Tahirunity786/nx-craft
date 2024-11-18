@@ -91,7 +91,7 @@ export default function Home() {
 
             {
               activeItem.map((item) => (
-                <div key={item._id} className="col p-4 s-nx">
+                <div key={item._id} className="col p-lg-4 p-md-4 s-nx">
                   <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
                     <CldImage
                       src={item.image_pb_id}
@@ -115,7 +115,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container-fluid pe-5 ps-5 mb-5 text-center">
+      <section className="container-fluid pe-lg-5 ps-lg-5 pe-md-5 ps-md-5 mb-5 text-center">
         <div className="row mb-4">
           <div className="col-lg-6 mb-4">
             <CldImage
@@ -139,7 +139,7 @@ export default function Home() {
         </div>
 
       </section>
-      <section className="container-fluid p-5 mb-5 text-center">
+      <section className="container-fluid pe-lg-5 ps-lg-5 pe-md-5 ps-md-5 pt-5 pb-5 mb-5 text-center">
         <div className="row flex-lg-row-reverse align-items-center">
           <div className="col-lg-6 mb-4 mb-lg-0">
             <CldImage
@@ -191,70 +191,70 @@ export default function Home() {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-6 p-4">
+            <div className="col-lg-6 p-lg-4">
 
               <div className="mb-5 nx-work-bxs">
                 <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
                     <p className="mb-0 fs-4 nx-font-we">01</p>
                   </div>
                   <div className="ms-4">
                     <div className="mb-2">
-                      <h4 className="text-light">Planning</h4>
+                      <h4 className="text-light nx-plan-txt-h">Planning</h4>
                     </div>
-                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                    <p className="text-light nx-plan-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
                   </div>
                 </div>
               </div>
               <div className="mb-5 nx-work-bxs">
                 <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
                     <p className="mb-0 fs-4 nx-font-we">02</p>
                   </div>
                   <div className="ms-4">
                     <div className="mb-2">
-                      <h4 className="text-light">Designing</h4>
+                      <h4 className="text-light nx-plan-txt-h">Designing</h4>
                     </div>
-                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                    <p className="text-light nx-plan-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
                   </div>
                 </div>
               </div>
               <div className="mb-5 nx-work-bxs">
                 <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
                     <p className="mb-0 fs-4 nx-font-we">03</p>
                   </div>
                   <div className="ms-4">
                     <div className="mb-2">
-                      <h4 className="text-light">Developing</h4>
+                      <h4 className="text-light nx-plan-txt-h">Developing</h4>
                     </div>
-                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                    <p className="text-light nx-plan-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
                   </div>
                 </div>
               </div>
               <div className="mb-5 nx-work-bxs">
                 <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
                     <p className="mb-0 fs-4 nx-font-we">04</p>
                   </div>
                   <div className="ms-4">
                     <div className="mb-2">
-                      <h4 className="text-light">Testing</h4>
+                      <h4 className="text-light nx-plan-txt-h">Testing</h4>
                     </div>
-                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                    <p className="text-light nx-plan-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
                   </div>
                 </div>
               </div>
               <div className="mb-5 nx-work-bxs">
                 <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center" style={{ width: '150px', height: '60px' }}>
+                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
                     <p className="mb-0 fs-4 nx-font-we">05</p>
                   </div>
                   <div className="ms-4">
                     <div className="mb-2">
-                      <h4 className="text-light">Launch</h4>
+                      <h4 className="text-light nx-plan-txt-h">Launch</h4>
                     </div>
-                    <p className="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
+                    <p className="text-light nx-plan-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptas tenetur accusantium esse dicta quae fuga ipsum.</p>
                   </div>
                 </div>
               </div>
