@@ -63,7 +63,7 @@ const Page = () => {
       }
 
       const data = await response.json();
-      console.log('Success:', data);
+  
       // Optionally, reset the form
       event.target.reset();
       toast.success('Message received! We’ll contact you within an hour.')
