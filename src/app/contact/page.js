@@ -50,7 +50,7 @@ const Page = () => {
     const formData = new FormData(event.currentTarget);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/contact-us`, {
+      const response = await fetch(`https://e22e-2400-adc7-171-6300-453e-2b60-9f97-c33e.ngrok-free.app/control/contact-us`, {
         method: 'POST',
         body: formData,
         headers: {
