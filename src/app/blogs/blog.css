@@ -16,7 +16,24 @@
     text-align: center;
     border-radius: 15px;
 }
-
+.btn-blog-nx{
+    border: none;
+    outline: none;
+    background-color: var(--nx-color-primary);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    height: 50px;
+    width: 200px;
+    transition: .4s ease-in-out;
+    
+}
+.btn-blog-nx:hover{
+    background-color: #1d5477d5;
+}
 .overlay-title h5 {
     font-size: 2rem; /* Increase text size */
     font-weight: bold;
