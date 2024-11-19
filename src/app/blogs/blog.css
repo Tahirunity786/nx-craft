@@ -77,8 +77,13 @@
     right: 10px;
     /* Center corner horizontally on right */
 }
-
+.justify-content-center-nx{
+    justify-content: center;
+}
 @media (max-width: 768px) {
+    .justify-content-center-nx{
+        justify-content: start;
+    }
 
     .carousel-control-prev,
     .carousel-control-next {
@@ -93,6 +98,7 @@
     }
 }
 @media (min-width:568px) and (max-width:769px) {
+
     .blog-res-image {
         height: 300px;
     }

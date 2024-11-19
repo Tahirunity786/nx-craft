@@ -72,7 +72,7 @@ const Page = () => {
           <div className="p-lg-5 mb-4" key={post.id}>
             <div className="p-2">
               <div className="mb-4 text-center"><h2>Web Development</h2></div>
-              <div className="d-flex justify-content-center align-items-center mb-3 flex-wrap">
+              <div className="d-flex justify-content-center-nx align-items-center mb-3 flex-wrap">
                 <div className="me-3">
                   <h6>April 29, 2024</h6>
                 </div>
