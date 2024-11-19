@@ -25,7 +25,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="container-fluid mb-50 p-5">
+      <div className="container-fluid mb-50 p-lg-5 nmt-sm-5">
         <div className="row mb-100 ">
           <div className="col-lg-7 d-flex align-items-center">
             <div>
@@ -157,7 +157,7 @@ const Page = () => {
           </div>
         </div>
         
-        <div className="mb-100 container">
+        <div className="mb-100 container pe-0 ps-0">
           <h2 className='mb-50 text-center fs-nx'>A Scalable Cooperation Model Tailored <br /> for Your Business</h2>
           <div className="container text-center">
             <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3">

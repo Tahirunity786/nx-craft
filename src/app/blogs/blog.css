@@ -1,14 +1,16 @@
-.img-box{
+.img-box {
 
     text-align: center;
 }
+
 .overlay-title {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.411); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.411);
+    /* Dark overlay */
     color: white;
     display: flex;
     justify-content: center;
@@ -16,7 +18,8 @@
     text-align: center;
     border-radius: 15px;
 }
-.btn-blog-nx{
+
+.btn-blog-nx {
     border: none;
     outline: none;
     background-color: var(--nx-color-primary);
@@ -29,44 +32,74 @@
     height: 50px;
     width: 200px;
     transition: .4s ease-in-out;
-    
+
 }
-.btn-blog-nx:hover{
+
+.btn-blog-nx:hover {
     background-color: #1d5477d5;
 }
+
 .overlay-title h5 {
-    font-size: 2rem; /* Increase text size */
+    font-size: 2rem;
+    /* Increase text size */
     font-weight: bold;
     margin: 0;
 }
-.rounded-post{
+
+.rounded-post {
     border-radius: 20px;
 }
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: brightness(200%); /* Makes the icons lighter */
-    width: 3rem; /* Increase size for better visibility */
+    filter: brightness(200%);
+    /* Makes the icons lighter */
+    width: 3rem;
+    /* Increase size for better visibility */
     height: 3rem;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    top: 50%; /* Center vertically */
+    top: 50%;
+    /* Center vertically */
     transform: translateY(-50%);
-    width: 5%; /* Adjust button size for smaller area */
+    width: 5%;
+    /* Adjust button size for smaller area */
 }
 
 .carousel-control-prev {
-    left: 10px; /* Center corner horizontally on left */
+    left: 10px;
+    /* Center corner horizontally on left */
 }
 
 .carousel-control-next {
-    right: 10px; /* Center corner horizontally on right */
+    right: 10px;
+    /* Center corner horizontally on right */
 }
 
 @media (max-width: 768px) {
+
     .carousel-control-prev,
     .carousel-control-next {
-        width: 8%; /* Adjust for smaller screens */
+        width: 8%;
+        /* Adjust for smaller screens */
+    }
+}
+
+@media (min-width:769px) and (max-width:992px) {
+    .blog-res-image {
+        height: 350px;
+    }
+}
+@media (min-width:568px) and (max-width:769px) {
+    .blog-res-image {
+        height: 300px;
+    }
+}
+
+@media (max-width:568px) {
+    .blog-res-image {
+        height:250px;
     }
 }

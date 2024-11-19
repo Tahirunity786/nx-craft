@@ -443,7 +443,7 @@ export default function Home() {
           <h6 className="nx-top-h">Our Expert Members</h6>
           <h2 className="mb-3">Behind the Great Success of <br /> NxCraft They Playing Role</h2>
         </header>
-        <div className="d-flex nx-res0peron align-items-center flex-wrap">
+        <div className="d-flex nx-res0peron justify-content-center align-items-center flex-wrap">
           {/* Person Card */}
           {[
             {

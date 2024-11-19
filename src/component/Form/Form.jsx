@@ -48,7 +48,7 @@ const Form = () => {
     <>
       <ToastContainer />
 
-      <div className="mb-4 p-lg-4 f-nx">
+      <div className="mb-4 p-4 mt-sm-4 f-nx">
         <div className="d-flex justify-content-between mb-4">
           <h4 className='form-h4'>Book a free <br /> <span className='form-top-head'>Consulation</span></h4>
           <a href="tel:+923232963784" className="btn-nx" aria-label="Call Us">
@@ -66,7 +66,8 @@ const Form = () => {
               name="name"
               placeholder='Name*'
               type='text'
-              className='w-100 input-form'
+              className='w-100 input-form pe-2 ps-2'
+              
               required
             />
           </div>
@@ -75,7 +76,7 @@ const Form = () => {
               name="email"
               placeholder='Email*'
               type='email'
-              className='w-100 input-form'
+              className='w-100 input-form pe-2 ps-2'
               required
             />
           </div>
@@ -84,7 +85,7 @@ const Form = () => {
               name="contact_no"
               placeholder='Contact no'
               type='tel'
-              className='w-100 input-form'
+              className='w-100 input-form pe-2 ps-2'
             />
           </div>
           <div className="mb-3">
@@ -92,7 +93,7 @@ const Form = () => {
               name="message_detail"
               placeholder='*message...'
               type='tel'
-              className='w-100 input-form'
+              className='w-100 input-form pe-2 ps-2'
             />
           </div>
           <div className="mb-2 text-center">

@@ -49,6 +49,7 @@
 .mb-50 {
   margin-bottom: 50px;
 }
+
 .mb-100 {
   margin-bottom: 100px;
 }
@@ -115,11 +116,13 @@ p {
 .box:hover p {
   transform: translateY(20px);
 }
-.fs-nx{
+
+.fs-nx {
   font-size: 2.5rem;
   font-weight: bold;
 }
-.nx-hire-rounded{
+
+.nx-hire-rounded {
   height: 80px;
   width: 80px;
   background-color: var(--nx-color-primary);
@@ -129,20 +132,23 @@ p {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  
+
 }
-.nx-models{
+
+.nx-models {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 5px;
 }
-.nx-top-border{
+
+.nx-top-border {
   width: 100%;
   height: 10px;
   background-color: var(--nx-color-primary);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.nx-hire-btn{
+
+.nx-hire-btn {
   border: 2px solid var(--nx-color-primary);
   border-radius: 50px;
   background-color: transparent;
@@ -155,7 +161,8 @@ p {
   font-weight: bold;
   transition: 0.4s ease-in-out;
 }
-.meeting-btn{
+
+.meeting-btn {
   background-color: var(--nx-color-primary);
   color: var(--nx-color-secondary);
   border: none;
@@ -163,12 +170,14 @@ p {
   padding: 20px 0px;
   border-radius: 50px;
   font-weight: bold;
- 
+
 }
-.nx-hire-btn:hover{
+
+.nx-hire-btn:hover {
   background-color: var(--nx-color-primary);
   color: var(--nx-color-secondary);
 }
+
 @media (max-width:992px) {
   .content-box::after {
     display: none;
@@ -179,8 +188,20 @@ p {
     align-items: center;
     gap: 1em;
   }
-  .box{
+
+  .box {
     max-width: 600px;
   }
 
+
+}
+
+
+@media (max-width:559px) {
+  .nmt-sm-5 {
+    margin-top: 3rem;
+  }
+  .mt-sm-4 {
+    margin-top: 2rem;
+  }
 }

@@ -89,29 +89,28 @@ const Page = () => {
       <section className="container pe-lg-4 ps-lg-4 mt-5 mb-5">
         {/* cards */}
         <div className='row cards-box pe-lg-4 ps-lg-4 mt-5'>
-          <div className='col-lg-4'>
+          <div className='col-lg-4 mb-3'>
             <div className='cards'>
 
               <Image src={Call} alt='call-img' />
               <div className='mt-2'>
 
-                <p className='mb-0'>+923034587678</p>
-                <p className='mb-0'>+923034587678</p>
+                <p className='mb-0'>+92(323)2963784</p>
+                <p className='mb-0'>+92(316)2210787</p>
+               
               </div>
             </div>
           </div>
-          <div className='col-lg-4'>
+          <div className='col-lg-4 mb-3'>
             <div className='cards'>
 
               <Image src={Mail} alt='mail-img' />
               <div className='mt-2'>
-
-                <p className='mb-0'>info@bonsa.com</p>
-                <p className='mb-0'>info@bonsa.com</p>
+                <p className='mb-0'>tahirunity786@gmail.com</p>
               </div>
             </div>
           </div>
-          <div className='col-lg-4'>
+          <div className='col-lg-4 mb-3'>
             <div className='cards'>
 
               <Image src={Cam} alt='cam-img' />
@@ -125,7 +124,7 @@ const Page = () => {
 
         <div className="row">
           {/* FAQ Section */}
-          <div className="col-lg-5 pe-5 ps-5 mb-5">
+          <div className="col-lg-5 pe-lg-5 ps-lg-5 pe-md-3 ps-md-3 mb-5">
             <div className="mb-4">
               <h1>Frequently Asked Questions</h1>
             </div>
@@ -140,7 +139,7 @@ const Page = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="col-lg-7 pe-5 ps-5">
+          <div className="col-lg-7 pe-lg-5 ps-lg-5 pe-md-3 ps-md-3">
             <div className="mb-4 p-4 h-nx-contact f-nx">
               <div className="d-flex justify-content-between mb-4">
                 <h2 className="form-h4 form-top-head fs-3">Contact Us</h2>
