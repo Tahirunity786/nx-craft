@@ -1,13 +1,20 @@
-import React from 'react';
+'use client'
+import { useState } from 'react';
 import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
 import './offcanvas.css';
 
 const Offcanvas = () => {
+    const [closeMe, setCloseMe] = useState('hide');
+    const canvasClose = (event) => {
+        console.log('Clicked Me');
+        // Set to hide on link click
+        setCloseMe('hide');
+    };
     return (
         <>
             <div
-                className="offcanvas offcanvas-start  offcanvas-nx"
+                className={`offcanvas offcanvas-start  offcanvas-nx ${closeMe}`}
                 tabIndex="-1"
                 id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel"
@@ -43,7 +50,7 @@ const Offcanvas = () => {
                                         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                     </svg>
                                 </span>
-                                <Link href={path} className="nav-link text-dark nav-link-nx p-0 ">
+                                <Link href={path} className="nav-link text-dark nav-link-nx p-0 " onClick={canvasClose}>
                                     {path === '/' ? 'HOME' : path.replace('/', '').toUpperCase()}
                                 </Link>
                             </li>

@@ -443,7 +443,7 @@ export default function Home() {
           <h6 className="nx-top-h">Our Expert Members</h6>
           <h2 className="mb-3">Behind the Great Success of <br /> NxCraft They Playing Role</h2>
         </header>
-        <div className="d-flex justify-content-between align-items-center flex-wrap">
+        <div className="d-flex nx-res0peron align-items-center flex-wrap">
           {/* Person Card */}
           {[
             {
@@ -462,7 +462,7 @@ export default function Home() {
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
             },
           ].map((person, index) => (
-            <div key={index} className="person-card me-2 ms-2 border rounded-4 position-relative">
+            <div key={index} className="person-card me-2 ms-2 border rounded-4 position-relative nx-res0peron">
               <CldImage
                 src={person.image}
                 width="500"

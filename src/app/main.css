@@ -364,7 +364,14 @@ main {
 }
 
 @media (max-width:559px) {
-
+    .testimonial-card{
+        height: 350px;
+        font-size: small;
+    }
+    .nx-res0peron{
+        width: 100%;
+        justify-content: center;
+    }
     .s-nx {
         height: 300px;
     }
