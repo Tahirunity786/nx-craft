@@ -25,7 +25,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="container-fluid mb-50 p-lg-5 nmt-sm-5">
+      <div className="container-fluid mb-50 p-lg-5 nmt-sm-5 nmt-md-5 ">
         <div className="row mb-100 ">
           <div className="col-lg-7 d-flex align-items-center">
             <div>

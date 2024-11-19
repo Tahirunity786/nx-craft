@@ -197,7 +197,13 @@ p {
 }
 
 
+@media (min-width:560px) and (max-width:992px) {
+  .nmt-md-5 {
+    margin-top: 3rem;
+  }
+}
 @media (max-width:559px) {
+
   .nmt-sm-5 {
     margin-top: 3rem;
   }
