@@ -31,9 +31,9 @@ export default function Home() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
             </p>
-         
+
             <Link href="/contact" className="btn-main-nx rounded-pill d-flex text-center align-items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  fill="currentColor" className="bi bi-calendar3 " viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-calendar3 " viewBox="0 0 16 16">
 
                 <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
                 <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
@@ -71,6 +71,28 @@ export default function Home() {
         </div>
       </main>
 
+      <section className="container-fluid mb-5 p-5 ">
+
+        <div className="bg-secondary-nx">
+          <div className="d-flex justify-content-evenly h-100">
+            <div className="d-flex justify-content-evenly  flex-column">
+              <h3 className="fs-1 text-light">Your FYP Partner</h3>
+
+            </div>
+            <div>
+              <CldImage
+                src={'https://res.cloudinary.com/dx9xdlbae/image/upload/v1732093309/fma3zlxovywqsxsbibrb.png'}
+                width="300"
+                height="200"
+                priority
+                alt="Main image"
+                className="rounded-4"
+
+              />
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="container-fluid mb-5 p-5">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Patners</h6>
@@ -446,19 +468,20 @@ export default function Home() {
         <div className="d-flex nx-res0peron justify-content-center align-items-center flex-wrap">
           {/* Person Card */}
           {[
-            {
-              name: "Hassan Asif",
-              role: "Project Manager",
-              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
-            },
+
             {
               name: "Tahir Zaman",
-              role: "CEO & Founder",
+              role: "Founder",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png",
             },
             {
+              name: "Hassan Asif",
+              role: "Co-Founder",
+              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
+            },
+            {
               name: "Mudassar Rafique",
-              role: "Technical Officer",
+              role: "CEO",
               image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
             },
           ].map((person, index) => (
@@ -477,13 +500,13 @@ export default function Home() {
                   <p className="mb-0 text-white">{person.role}</p>
                 </div>
                 <div className="bg-light rounded-pill">
-                <CldImage
-                  src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731770109/Icons/zlkzdxt0ojahbrblyrbd.png"
-                  width="40"
-                  height="40"
-                  alt="Icon"
-                  className="icon"
-                />
+                  <CldImage
+                    src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731770109/Icons/zlkzdxt0ojahbrblyrbd.png"
+                    width="40"
+                    height="40"
+                    alt="Icon"
+                    className="icon"
+                  />
                 </div>
               </div>
             </div>

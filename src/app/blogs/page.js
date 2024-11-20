@@ -51,12 +51,15 @@ const Page = () => {
       <div className="container text-center mt-5 mb-5">
         <div className="img-box">
           <Image
-            src={NX}
+            src={'https://res.cloudinary.com/dx9xdlbae/image/upload/v1732096856/p0rxgm33ztmzhe1kvlhe.svg'}
             alt="nx-craft logo"
             height={100}
             width={100}
             className="mx-auto"
           />
+        </div>
+        <div className="mb-2 text-center">
+          <h2 className="fs-1">Read Our Latest Blogs</h2>
         </div>
       </div>
 

@@ -95,9 +95,7 @@ const Page = () => {
               <Image src={Call} alt='call-img' />
               <div className='mt-2'>
 
-                <p className='mb-0'>+92(323)2963784</p>
-                <p className='mb-0'>+92(316)2210787</p>
-               
+                <p className='mb-0'>+92(323)2963784</p>               
               </div>
             </div>
           </div>

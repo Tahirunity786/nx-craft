@@ -80,6 +80,18 @@
 .justify-content-center-nx{
     justify-content: center;
 }
+.h-px-100{
+    height: 100;
+}
+.nx-top-head{
+    display: inline-flex;
+    align-items: center;
+    
+}
+.nth{
+    position: absolute;
+    left: 50%;
+}
 @media (max-width: 768px) {
     .justify-content-center-nx{
         justify-content: start;
