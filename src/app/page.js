@@ -71,9 +71,9 @@ export default function Home() {
         </div>
       </main>
 
-      <section className="container-fluid mb-5 p-5 ">
+      {/* <section className="container-fluid mb-5 p-5 ">
 
-        {/* <div className="bg-secondary-nx">
+        <div className="bg-secondary-nx">
           <div className="d-flex justify-content-evenly h-100">
             <div className="d-flex justify-content-evenly  flex-column">
               <h3 className="fs-1 text-light">Your FYP Partner</h3>
@@ -91,8 +91,8 @@ export default function Home() {
               />
             </div>
           </div>
-        </div> */}
-      </section>
+        </div> 
+      </section> */}
       <section className="container-fluid mb-5 p-5">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Patners</h6>
