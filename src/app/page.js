@@ -10,10 +10,15 @@ import "./main.css";
 export default function Home() {
   const [activeItem, setActiveItem] = useState([]);
   const getData = async () => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/all-services`);
-    data = await data.json();
+    try {
+      let data = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/all-services`);
+      data = await data.json();
 
-    setActiveItem(data)
+      setActiveItem(data)
+    } catch (error) {
+      console.log(error)
+    }
+
   }
   useEffect(() => {
     getData()
@@ -71,28 +76,22 @@ export default function Home() {
         </div>
       </main>
 
-      {/* <section className="container-fluid mb-5 p-5 ">
+      <section className="container-fluid mb-5 p-5 ">
 
         <div className="bg-secondary-nx">
-          <div className="d-flex justify-content-evenly h-100">
-            <div className="d-flex justify-content-evenly  flex-column">
-              <h3 className="fs-1 text-light">Your FYP Partner</h3>
-
-            </div>
-            <div>
+         
               <CldImage
-                src={'https://res.cloudinary.com/dx9xdlbae/image/upload/v1732093309/fma3zlxovywqsxsbibrb.png'}
+                src={'https://res.cloudinary.com/dx9xdlbae/image/upload/v1732114198/Images/nvv9aidsed6qfw7tkown.jpg'}
                 width="300"
                 height="200"
                 priority
                 alt="Main image"
-                className="rounded-4"
+                className="w-100 rounded-4"
 
               />
             </div>
-          </div>
-        </div> 
-      </section> */}
+          
+      </section>
       <section className="container-fluid mb-5 p-5">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Patners</h6>
