@@ -6,7 +6,6 @@ import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react'
 import "./main.css";
 
-
 export default function Home() {
   const [activeItem, setActiveItem] = useState([]);
   const getData = async () => {
@@ -79,18 +78,18 @@ export default function Home() {
       <section className="container-fluid mb-5 p-5 ">
 
         <div className="bg-secondary-nx">
-         
-              <CldImage
-                src={'https://res.cloudinary.com/dx9xdlbae/image/upload/v1732114198/Images/nvv9aidsed6qfw7tkown.jpg'}
-                width="300"
-                height="200"
-                priority
-                alt="Main image"
-                className="w-100 rounded-4"
+          <Link href={"/hire"}>
+            <CldImage
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732114198/Images/nvv9aidsed6qfw7tkown.jpg"
+              width="600" // Transform the image: auto-crop to square aspect_ratio
+              height="200"
 
-              />
-            </div>
-          
+              alt="banner"
+              className="w-100 h-100 rounded-4"
+            />
+          </Link>
+        </div>
+
       </section>
       <section className="container-fluid mb-5 p-5">
         <header className="mb-5">
