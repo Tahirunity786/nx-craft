@@ -1,0 +1,101 @@
+.arrow-box {
+    background-color: #D9D9D9;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.input-box {
+    /* position: relative; */
+    width: 15rem;
+    border-radius: 10px;
+    gap: 10px;
+    align-items: center;
+    display: flex;
+    border: 1px solid #D9D9D9;
+
+}
+
+.search-wrapper {
+    margin-top: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-img {
+    margin-left: 12px;
+}
+
+.search-input {
+    border: 1px solid red;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+
+}
+
+.search-input::placeholder {
+    color: gray;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.add-box {
+    background-color: #1456A3;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.button-box {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.all-btn {
+    background-color: #1456A3;
+    color: white;
+    border-radius: 30px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+
+.arc-btn {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 90px;
+    height: 30px;
+}
+
+.contact-box {
+    width: 24rem;
+
+}
+
+.chat-box {
+    padding: 8px 20px;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.chat-box:active {
+    background-color: skyblue;
+}
+
+.chat-head{
+    background-color: #FFFFFF;
+    padding: 10px 15px;
+}
