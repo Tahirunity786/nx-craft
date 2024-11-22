@@ -81,8 +81,8 @@ export default function Home() {
           <Link href={"/hire"}>
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732114198/Images/nvv9aidsed6qfw7tkown.jpg"
-              width="600" // Transform the image: auto-crop to square aspect_ratio
-              height="200"
+              width="900" // Transform the image: auto-crop to square aspect_ratio
+              height="800"
               alt="banner"
               className="w-100 h-100 rounded-4"
             />
