@@ -36,10 +36,10 @@ const Footer = () => {
                 <Link href="/blogs" className="nav-link text-light me-4">
                   Blogs
                 </Link>
-                
+
               </li>
               <li className='mb-2'>
-              <Link href="/contact" className="nav-link text-light">
+                <Link href="/contact" className="nav-link text-light">
                   Contact
                 </Link>
               </li>
@@ -60,7 +60,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="mb-4">
-             <p className='text-light'>435c People colony no 2 Faisalabad</p>
+              <p className='text-light'>435c People colony no 2 Faisalabad</p>
 
             </div>
             <div className="mb-4">
@@ -92,9 +92,11 @@ const Footer = () => {
               <h2 className='text-light'>Be In know</h2>
             </div>
             <div className="mb-4">
-              <p className='text-light'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam odio cumque officiis quae doloribus dicta et deserunt impedit! Enim, quo laboriosam veniam similique nostrum odio voluptas perferendis rerum dolore dolorum.</p>
+              <p className='text-light'>Stay informed with the latest in digital innovation and technology trends.
+                At NxCraft, we share insights, updates, and tips to help
+                your business stay ahead in a rapidly evolving digital world.</p>
             </div>
-            
+
           </div>
 
         </div>
