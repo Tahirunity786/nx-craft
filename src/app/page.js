@@ -32,8 +32,7 @@ export default function Home() {
               <h1 className="nx-heading">We Grow Your Business Reach to Next Level</h1>
             </header>
             <p className="mb-4">
-              <b>Elevate Your Digital Presence with Tailored Strategies and Innovative Solutions
-              </b><br />
+             
               At NxCraft, we specialize in driving your business forward with custom digital strategies designed to help you thrive in today's competitive marketplace. Unlock growth, enhance visibility, and leave a lasting impact with our expert-driven approach
             </p>
 
