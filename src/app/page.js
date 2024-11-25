@@ -33,7 +33,7 @@ export default function Home() {
             </header>
             <p className="mb-4">
              
-              At NxCraft, we specialize in driving your business forward with custom digital strategies designed to help you thrive in today's competitive marketplace. Unlock growth, enhance visibility, and leave a lasting impact with our expert-driven approach
+              At NxCraft, we specialize in driving your business forward with custom digital strategies designed to help you thrive in today's competitive marketplace. Unlock growth, enhance visibility, and leave a lasting impact with our expert-driven approach.
             </p>
 
             <Link href="/contact" className="btn-main-nx rounded-pill d-flex text-center align-items-center">
@@ -81,7 +81,7 @@ export default function Home() {
           <Link href={"/hire"}>
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732114198/Images/nvv9aidsed6qfw7tkown.jpg"
-              width="900" // Transform the image: auto-crop to square aspect_ratio
+              width="900" 
               height="800"
               alt="banner"
               className="w-100 h-100 rounded-4"
@@ -158,156 +158,7 @@ export default function Home() {
         </div>
 
       </section>
-      <section className="container-fluid pe-lg-5 ps-lg-5 pe-md-5 ps-md-5 pt-5 pb-5 mb-5 text-center">
-        <div className="row flex-lg-row-reverse align-items-center">
-          <div className="col-lg-6 mb-4 mb-lg-0">
-            <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1730459475/Images/na7ncnynhgzloog0o6zw.svg"
-              width="500"
-              height="300"
-
-              alt="Main image"
-              className="img-fluid h-100"
-            />
-          </div>
-          <div className="col-lg-6 text-start">
-            <header className="mb-3">
-              <h6 className="nx-top-h">About</h6>
-              <h2 className="mb-3">We Are Helping People to Reach Their Customer Since 2024</h2>
-            </header>
-            <p>
-            Founded in 2024, NX Craft is dedicated to helping businesses build meaningful connections with their customers in an increasingly dynamic digital landscape. Guided by a commitment to excellence, we focus on understanding each client’s unique needs and delivering tailored solutions that drive engagement and sustainable growth. At NX Craft, we prioritize innovation, precision, and professionalism, ensuring every project not only meets expectations but sets new benchmarks for success. Our mission is to empower businesses to thrive by creating enduring relationships and impactful digital experiences.
-            </p>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="nx-work-flow mb-100">
-        <div className="container p-lg-5">
-
-          <div className="row">
-            <div className="col-lg-6 p-4">
-              <div className="mb-4 ps-1">
-                <h6 className="nx-top-h">Work Process</h6>
-              </div>
-              <h2 className="fs-1 text-light">
-                Sustainable and Responsible Computing
-              </h2>
-            </div>
-            <div className="col-lg-6 p-4 d-flex align-items-end">
-              <p className="text-light"><b>Our creative and customized solutions are designed to help your
-                business grow faster and stand out
-                in today's competitive market.</b></p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-6 p-lg-4">
-
-              <div className="mb-5 nx-work-bxs">
-                <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
-                    <p className="mb-0 fs-4 nx-font-we">01</p>
-                  </div>
-                  <div className="ms-4">
-                    <div className="mb-2">
-                      <h4 className="text-light nx-plan-txt-h">Planning</h4>
-                    </div>
-                    <p className="text-light nx-plan-txt">We begin by in detail analyzing your business needs and
-                      objectives. Our planning phase ensures a customized approach to creating creative
-                      IT solutions that meet your goal.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-5 nx-work-bxs">
-                <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
-                    <p className="mb-0 fs-4 nx-font-we">02</p>
-                  </div>
-                  <div className="ms-4">
-                    <div className="mb-2">
-                      <h4 className="text-light nx-plan-txt-h">Designing</h4>
-                    </div>
-                    <p className="text-light nx-plan-txt">Our design process focuses on creating impulsive and customer-focused
-                      interfaces that provide a seamless experience, mixed functionality with aesthetic.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-5 nx-work-bxs">
-                <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
-                    <p className="mb-0 fs-4 nx-font-we">03</p>
-                  </div>
-                  <div className="ms-4">
-                    <div className="mb-2">
-                      <h4 className="text-light nx-plan-txt-h">Developing</h4>
-                    </div>
-                    <p className="text-light nx-plan-txt">We hold the latest technologies to develop scalable,
-                      efficient, and secure solution that attain growth and effeciency for your business.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-5 nx-work-bxs">
-                <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
-                    <p className="mb-0 fs-4 nx-font-we">04</p>
-                  </div>
-                  <div className="ms-4">
-                    <div className="mb-2">
-                      <h4 className="text-light nx-plan-txt-h">Testing</h4>
-                    </div>
-                    <p className="text-light nx-plan-txt">Our accurate testing process ensures reliability,
-                      functionality, and performance, minimizing risks before launch.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mb-5 nx-work-bxs">
-                <div className="d-flex align-items-center">
-                  <div className="ms-2 rounded-pill bg-light d-flex justify-content-center align-items-center nx-plan-round">
-                    <p className="mb-0 fs-4 nx-font-we">05</p>
-                  </div>
-                  <div className="ms-4">
-                    <div className="mb-2">
-                      <h4 className="text-light nx-plan-txt-h">Launch</h4>
-                    </div>
-                    <p className="text-light nx-plan-txt">We make sure a smooth and successful deployment,
-                      followed by continuous support to maintain peak perfoormance.</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div className="col-lg-6 p-4">
-              <div className="mb-5">
-                <CldImage
-                  src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png"
-                  width="500"
-                  height="260"
-                  alt="Main image"
-                  className="w-100 rounded-4"
-
-                />
-              </div>
-              <div className="mb-5 d-flex justify-content-between align-items-center bg-light text-dark rounded-4">
-                <div className="w-30 p-3">
-                  <p className="fs-5 mb-0 nx-font-we">+Strong <br /> Professional <br />Experience </p>
-                </div>
-                <div className="w-70">
-                  <CldImage
-                    src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731689481/p3daxqy2iubxi4zg5ujl.png"
-                    width={500}
-                    height={220}
-                    alt="Main image"
-                    className="w-100"
-                  />
-                </div>
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </section>
+      
       <section className="container-fluid ps-lg-5 pe-lg-5 mb-100">
         <div className="row">
           <div className="col-lg-6">
