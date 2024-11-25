@@ -1,11 +1,10 @@
-import Navbar from "@/component/Navbar/Navbar";
-import Footer from "@/component/Footer/Footer";
 import './global.css';
 import Script from 'next/script';
 import Head from "next/head";
+import ConditionalWrapper from "@/component/ConditionalWrapper/ConditionalWrapper"; // Import the new client component
 
 export const metadata = {
-  title: "Welcome to NX Craft", 
+  title: "Welcome to NX Craft",
   description: `NXCraft provides cutting-edge IT solutions, specializing in web and mobile app development, cloud services, and digital transformation.`,
   keywords: `NX craft, nx craft, Nx craft, IT solutions, IT agency, web development, mobile app development, cloud services.`,
   author: "Tahir Zaman",
@@ -41,9 +40,8 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {/* Use the ConditionalWrapper */}
+        <ConditionalWrapper>{children}</ConditionalWrapper>
       </body>
     </html>
   );

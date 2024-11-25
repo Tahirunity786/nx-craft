@@ -308,7 +308,7 @@ main {
 
 .bg-secondary-nx{
     background-color: var(--nx-color-tertiary);
-    height: 250px;
+    height: 280px;
     width: 100%;
     border-radius: 30px;
 }

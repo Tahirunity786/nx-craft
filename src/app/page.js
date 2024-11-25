@@ -32,7 +32,7 @@ export default function Home() {
               <h1 className="nx-heading">We Grow Your Business Reach to Next Level</h1>
             </header>
             <p className="mb-4">
-             
+
               At NxCraft, we specialize in driving your business forward with custom digital strategies designed to help you thrive in today's competitive marketplace. Unlock growth, enhance visibility, and leave a lasting impact with our expert-driven approach.
             </p>
 
@@ -81,7 +81,7 @@ export default function Home() {
           <Link href={"/hire"}>
             <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732114198/Images/nvv9aidsed6qfw7tkown.jpg"
-              width="900" 
+              width="900"
               height="800"
               alt="banner"
               className="w-100 h-100 rounded-4"
@@ -152,13 +152,15 @@ export default function Home() {
                 Their Customer Since 2024</h2>
             </header>
             <p>
-            Since 2024, NxCraft has been helping businesses connect with their customers through innovative and impactful digital solutions. We are committed to empowering brands by leveraging technology to build meaningful relationships and achieve sustainable growth. At NxCraft, we strive to deliver excellence and drive success in an ever-evolving digital world.
+              Since 2024, NxCraft has been helping businesses connect with their customers through innovative and impactful digital solutions. We are committed to empowering brands by leveraging technology to build meaningful relationships and achieve sustainable growth. At NxCraft, we strive to deliver excellence and drive success in an ever-evolving digital world.
             </p>
           </div>
         </div>
 
       </section>
-      
+      <section className="container-fluid pe-lg-4 ps-lg-4 mb-100 text-center">
+        
+      </section>
       <section className="container-fluid ps-lg-5 pe-lg-5 mb-100">
         <div className="row">
           <div className="col-lg-6">
@@ -306,6 +308,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="container-fluid pe-lg-5 ps-lg-5 mb-100 text-center">
         <header className="mb-5">
           <h6 className="nx-top-h">Our Expert Members</h6>
