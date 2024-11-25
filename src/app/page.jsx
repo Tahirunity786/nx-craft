@@ -159,7 +159,46 @@ export default function Home() {
 
       </section>
       <section className="container-fluid pe-lg-4 ps-lg-4 mb-100 text-center">
-        
+        <div className="mb-4">
+          <h4>Our Workflow</h4>
+        </div>
+        <div className="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 ">
+          <div className="col postion-relative">
+            <div className="card">
+              <div className="card-body">
+                This is some text within a card body.
+              </div>
+            </div>
+          </div>
+          <div className="col postion-relative">
+            <div className="card"  style={{top:"50px"}}>
+              <div className="card-body">
+                This is some text within a card body.
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                This is some text within a card body.
+              </div>
+            </div>
+          </div>
+          <div className="col postion-relative">
+            <div className="card"  style={{top:"50px"}}>
+              <div className="card-body">
+                This is some text within a card body.
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card">
+              <div className="card-body">
+                This is some text within a card body.
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section className="container-fluid ps-lg-5 pe-lg-5 mb-100">
         <div className="row">
