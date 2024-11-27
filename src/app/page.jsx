@@ -71,7 +71,7 @@ export default function Home() {
     </main>
 
 
-      <section className="container-fluid mb-5 p-5 ">
+      {/* <section className="container-fluid mb-5 p-5 ">
 
         <div className="bg-secondary-nx">
           <Link href={"/hire"}>
@@ -85,7 +85,7 @@ export default function Home() {
           </Link>
         </div>
 
-      </section>
+      </section> */}
       <section className="container-fluid mb-5 p-5">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Patners</h6>
