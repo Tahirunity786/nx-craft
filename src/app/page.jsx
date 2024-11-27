@@ -1,9 +1,9 @@
 'use client'
 
-import Image from "next/image";
 import Link from 'next/link';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react'
+import AnimatedCircles from '@/component/AnimatedCircles/AnimatedCircles';
 import "./main.css";
 
 export default function Home() {
@@ -24,56 +24,52 @@ export default function Home() {
   }, [])
   return (
     <>
-      <main className="container-fluid mb-5 position-relative">
-        <div className="row p-lg-5 p-md-5 nx-mt-sm-5 p-sm-2 align-items-center">
-          <div className="col-lg-6 mb-5">
-            <header className="mb-2">
-              <h6 className="nx-top-h ms-2">Priority</h6>
-              <h1 className="nx-heading">We Grow Your Business Reach to Next Level</h1>
-            </header>
-            <p className="mb-4">
-
-              At NxCraft, we specialize in driving your business forward with custom digital strategies designed to help you thrive in today's competitive marketplace. Unlock growth, enhance visibility, and leave a lasting impact with our expert-driven approach.
-            </p>
-
-            <Link href="/contact" className="btn-main-nx rounded-pill d-flex text-center align-items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-calendar3 " viewBox="0 0 16 16">
-
-                <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
-                <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-              </svg>
-              Connect with Us
-            </Link>
-          </div>
-          <div className="col-lg-6 mt-4 position-relative text-center">
-            <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/f_auto,q_auto/v1/Images/dw0nebh6t3v7utj5wshm"
-              width="500" // Transform the image: auto-crop to square aspect_ratio
-              height="500"
-              crop={{
-                type: 'auto',
-                source: true
-              }}
-              alt="Main image"
-              className="nx-img-m"
-            />
-
-            <div className="social-icons position-absolute ico-nx" >
-              {['instagram', 'pinterest', 'twitter', 'youtube'].map((icon, index) => (
-                <div key={index} className="icon-wrapper mb-5 bg-light rounded-pill d-flex align-items-center justify-content-center" style={{ width: '50px', height: '50px' }}>
-                  <Image
-                    src={`/Assets/Icons/${icon}.svg`}
-                    alt={`${icon} icon`}
-                    width={35}
-                    height={35}
-                    priority
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+      <main className={` container-fluid mb-5 position-relative`}>
+      <AnimatedCircles />
+      <div className="row p-lg-5 p-md-5 nx-mt-sm-5 p-sm-2 align-items-center">
+        <div className="col-lg-6 mb-5">
+          <header className="mb-2">
+            <h6 className="nx-top-h ms-2">Priority</h6>
+            <h1 className="nx-heading">
+              We Grow Your Business Reach to Next Level
+            </h1>
+          </header>
+          <p className="mb-4">
+            At NxCraft, we specialize in driving your business forward with
+            custom digital strategies designed to help you thrive in today's
+            competitive marketplace. Unlock growth, enhance visibility, and
+            leave a lasting impact with our expert-driven approach.
+          </p>
+          <a
+            href="/contact"
+            className="btn-main-nx rounded-pill d-flex text-center align-items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-calendar3"
+              viewBox="0 0 16 16"
+            >
+              <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+              <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+            </svg>
+            Connect with Us
+          </a>
         </div>
-      </main>
+        <div className="col-lg-6 mt-4 position-relative text-center">
+          <img
+            src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732720454/zbsknet4wab8kvjjbsr0.png"
+            width="600"
+            height="500"
+            alt="Main image"
+            className="nx-img-m"
+          />
+        </div>
+      </div>
+    </main>
+
 
       <section className="container-fluid mb-5 p-5 ">
 
@@ -171,7 +167,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col postion-relative">
-            <div className="card"  style={{top:"50px"}}>
+            <div className="card" style={{ top: "50px" }}>
               <div className="card-body">
                 This is some text within a card body.
               </div>
@@ -185,7 +181,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col postion-relative">
-            <div className="card"  style={{top:"50px"}}>
+            <div className="card" style={{ top: "50px" }}>
               <div className="card-body">
                 This is some text within a card body.
               </div>

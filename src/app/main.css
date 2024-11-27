@@ -18,7 +18,7 @@ main {
 }
 
 .nx-heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 .btn-main-nx {
@@ -123,7 +123,7 @@ main {
 
 .nx-img-m {
     width: 100%;
-    height: 100%;
+    height: 420px;
 }
 
 .w-nx-b {
@@ -312,6 +312,53 @@ main {
     width: 100%;
     border-radius: 30px;
 }
+
+
+/* Animation */
+/* Animation keyframes */
+@keyframes float {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(50px, -50px) scale(1.2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50px, 50px) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Circle styling */
+  .circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: float 10s infinite ease-in-out;
+    z-index: -1; /* Ensure it is behind the text and image */
+    opacity: 0.7;
+  }
+  
+  /* Randomize animation durations and positions */
+  .circle:nth-child(1) {
+    animation-duration: 12s;
+    top: 10%;
+    left: 20%;
+  }
+  .circle:nth-child(2) {
+    animation-duration: 14s;
+    top: 40%;
+    left: 50%;
+  }
+  .circle:nth-child(3) {
+    animation-duration: 16s;
+    top: 70%;
+    left: 80%;
+  }
+
+  
 @media (min-width:992px) {
     .ico-nx {
         top: 70px;
