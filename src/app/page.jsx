@@ -134,14 +134,14 @@ export default function Home() {
         <div className="row mb-4">
           <div className="col-lg-6 mb-4">
             <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732800154/yyhb9l0doj9sqno3uicz.png"
-              width="00" // Transform the image: auto-crop to square aspect_ratio
-              height="500"
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732803019/Images/i0arrxydanceqzryt1tx.png"
+              width="500" // Transform the image: auto-crop to square aspect_ratio
+              height="450"
               alt="Main image"
               className="nx-w-100 rounded-4"
             />
           </div>
-          <div className="col-lg-6 text-start">
+          <div className="col-lg-6 text-start pt-5">
             <header className="mb-4 mt-3">
               <h6 className="nx-top-h mb-2">About</h6>
               <h2 className="mb-2">We Are Helping People to Reach
