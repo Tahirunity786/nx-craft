@@ -1,4 +1,39 @@
-.fs-portfolio{
+.fs-portfolio {
     font-size: 3.6rem;
     font-weight: bold;
+}
+
+.btn-nx-recent-all {
+    outline: none;
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    transition: .3s all ease-in-out;
+    color: white;
+}
+
+
+.btn-nx-recent {
+    outline: none;
+    border: 3px solid var(--nx-color-primary);
+    background-color: white;
+    border-radius: 50px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    height: 45px;
+    transition: .3s all ease-in-out;
+}
+.btn-nx-recent:hover {
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
+    color: white;
+}
+.btn-nx-recent:focus {
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
+    color: white;
+
 }
