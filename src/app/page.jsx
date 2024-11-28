@@ -62,7 +62,7 @@ export default function Home() {
           <img
             src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732720454/zbsknet4wab8kvjjbsr0.png"
             width="600"
-            height="500"
+            height="450"
             alt="Main image"
             className="nx-img-m"
           />
