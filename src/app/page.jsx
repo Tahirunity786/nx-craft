@@ -29,7 +29,7 @@ export default function Home() {
       <div className="row p-lg-5 p-md-5 nx-mt-sm-5 p-sm-2 align-items-center">
         <div className="col-lg-6 mb-5">
           <header className="mb-2">
-            <h6 className="nx-top-h ms-2">Priority</h6>
+            <h6 className="nx-top-h ">Priority</h6>
             <h1 className="nx-heading">
               We Grow Your Business Reach to Next Level
             </h1>
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
         <div className="col-lg-6 mt-4 position-relative text-center">
           <img
-            src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732720454/zbsknet4wab8kvjjbsr0.png"
+            src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732801006/Images/ijpgorwkk43frig4ugyh.png"
             width="600"
             height="450"
             alt="Main image"
@@ -134,9 +134,9 @@ export default function Home() {
         <div className="row mb-4">
           <div className="col-lg-6 mb-4">
             <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1730459148/Images/n01yrhbyogaddmazskbf.svg"
-              width="300" // Transform the image: auto-crop to square aspect_ratio
-              height="400"
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732800154/yyhb9l0doj9sqno3uicz.png"
+              width="00" // Transform the image: auto-crop to square aspect_ratio
+              height="500"
               alt="Main image"
               className="nx-w-100 rounded-4"
             />
