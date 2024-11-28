@@ -86,7 +86,7 @@ export default function Home() {
         </div>
 
       </section> */}
-      <section className="container-fluid mb-5 p-5">
+      <section className="container-fluid mb-5 p-5 text-center">
         <header className="mb-5">
           <h6 className="nx-top-h mb-2">Our Patners</h6>
           <h2 className="mb-2">People Who Worked With Us</h2>
