@@ -123,7 +123,7 @@ main {
 
 .nx-img-m {
     width: 100%;
-    height: 420px;
+    height: 380px;
 }
 
 .w-nx-b {
@@ -444,6 +444,10 @@ main {
 
 
 @media (max-width:487px) {
+    .nx-img-m {
+        width: 100%;
+        height: 75%;
+    }
     .nx-w-100 {
         width: 100%;
         height: 250px;
