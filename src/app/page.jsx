@@ -60,12 +60,13 @@ export default function Home() {
             </a>
           </div>
           <div className="col-lg-6 mt-4 position-relative text-center">
-            <img
+          <CldImage
               src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732801006/Images/ijpgorwkk43frig4ugyh.png"
               width="600"
               height="450"
               alt="Main image"
               className="nx-img-m"
+              priority
             />
           </div>
         </div>
@@ -133,15 +134,7 @@ export default function Home() {
 
       <section className="container-fluid pe-lg-5 ps-lg-5 pe-md-5 ps-md-5 mb-5 text-center">
         <div className="row mb-4">
-          <div className="col-lg-6 mb-4">
-            <CldImage
-              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732803019/Images/i0arrxydanceqzryt1tx.png"
-              width="500" // Transform the image: auto-crop to square aspect_ratio
-              height="450"
-              alt="Main image"
-              className="nx-w-100 rounded-4"
-            />
-          </div>
+          
           <div className="col-lg-6 text-start pt-5">
             <header className="mb-4 mt-3">
               <h6 className="nx-top-h mb-2">About</h6>
@@ -151,6 +144,15 @@ export default function Home() {
             <p>
               Since 2024, NxCraft has been helping businesses connect with their customers through innovative and impactful digital solutions. We are committed to empowering brands by leveraging technology to build meaningful relationships and achieve sustainable growth. At NxCraft, we strive to deliver excellence and drive success in an ever-evolving digital world.
             </p>
+          </div>
+          <div className="col-lg-6 mb-4">
+            <CldImage
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732803019/Images/i0arrxydanceqzryt1tx.png"
+              width="600" // Transform the image: auto-crop to square aspect_ratio
+              height="450"
+              alt="Main image"
+              className="nx-w-100 rounded-4"
+            />
           </div>
         </div>
 
