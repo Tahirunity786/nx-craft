@@ -24,7 +24,7 @@ const AnimatedCircles = () => {
 
         // Assign random size and position
         const size = Math.random() * (50 - 20) + 20; // Random size between 20px and 50px
-        const top = Math.random() * 100; // Random top position
+        const top = Math.random() * 80; // Random top position limited to 80% to prevent touching the bottom
         const left = Math.random() * 100; // Random left position
         const duration = Math.random() * (16 - 8) + 8; // Random animation duration between 8s and 16s
 
@@ -34,7 +34,6 @@ const AnimatedCircles = () => {
         circle.style.setProperty("--randomX2", Math.random().toFixed(2));
         circle.style.setProperty("--randomY2", Math.random().toFixed(2));
         circle.style.setProperty("--randomX3", Math.random().toFixed(2));
-      
 
         circle.style.width = `${size}px`;
         circle.style.height = `${size}px`;
@@ -45,6 +44,7 @@ const AnimatedCircles = () => {
 
         container.appendChild(circle);
       };
+
 
       // Append circles to container
       icons.forEach((icon, index) => {

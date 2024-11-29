@@ -13,6 +13,18 @@ main {
     height: auto;
     width: 100%;
 }
+.mySwiper {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slide-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
 
 .nx-top-h {
     color: var(--nx-color-alerming);

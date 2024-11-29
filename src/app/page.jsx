@@ -1,5 +1,6 @@
 'use client'
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import Link from 'next/link';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react'
@@ -25,50 +26,50 @@ export default function Home() {
   return (
     <>
       <main className={` container-fluid mb-5 position-relative`}>
-      <AnimatedCircles />
-      <div className="row p-lg-5 p-md-5 nx-mt-sm-5 p-sm-2 align-items-center">
-        <div className="col-lg-6 mb-5">
-          <header className="mb-2">
-            <h6 className="nx-top-h ">Priority</h6>
-            <h1 className="nx-heading">
-              We Grow Your Business Reach to Next Level
-            </h1>
-          </header>
-          <p className="mb-4">
-            At NxCraft, we specialize in driving your business forward with
-            custom digital strategies designed to help you thrive in today's
-            competitive marketplace. Unlock growth, enhance visibility, and
-            leave a lasting impact with our expert-driven approach.
-          </p>
-          <a
-            href="/contact"
-            className="btn-main-nx rounded-pill d-flex text-center align-items-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-calendar3"
-              viewBox="0 0 16 16"
+        <AnimatedCircles />
+        <div className="row p-lg-5 p-md-5 nx-mt-sm-5 p-sm-2 align-items-center">
+          <div className="col-lg-6 mb-5">
+            <header className="mb-2">
+              <h6 className="nx-top-h ">Priority</h6>
+              <h1 className="nx-heading">
+                We Grow Your Business Reach to Next Level
+              </h1>
+            </header>
+            <p className="mb-4">
+              At NxCraft, we specialize in driving your business forward with
+              custom digital strategies designed to help you thrive in today's
+              competitive marketplace. Unlock growth, enhance visibility, and
+              leave a lasting impact with our expert-driven approach.
+            </p>
+            <a
+              href="/contact"
+              className="btn-main-nx rounded-pill d-flex text-center align-items-center"
             >
-              <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
-              <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-            </svg>
-            Connect with Us
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-calendar3"
+                viewBox="0 0 16 16"
+              >
+                <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+              </svg>
+              Connect with Us
+            </a>
+          </div>
+          <div className="col-lg-6 mt-4 position-relative text-center">
+            <img
+              src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732801006/Images/ijpgorwkk43frig4ugyh.png"
+              width="600"
+              height="450"
+              alt="Main image"
+              className="nx-img-m"
+            />
+          </div>
         </div>
-        <div className="col-lg-6 mt-4 position-relative text-center">
-          <img
-            src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1732801006/Images/ijpgorwkk43frig4ugyh.png"
-            width="600"
-            height="450"
-            alt="Main image"
-            className="nx-img-m"
-          />
-        </div>
-      </div>
-    </main>
+      </main>
 
 
       {/* <section className="container-fluid mb-5 p-5 ">
@@ -347,56 +348,76 @@ export default function Home() {
       <section className="container-fluid pe-lg-5 ps-lg-5 mb-100 text-center">
         <header className="mb-5">
           <h6 className="nx-top-h">Our Expert Members</h6>
-          <h2 className="mb-3">Behind the Great Success of <br /> NxCraft They Playing Role</h2>
+          <h2 className="mb-3">
+            Behind the Great Success of <br /> NxCraft They Playing Role
+          </h2>
         </header>
         <div className="d-flex nx-res0peron justify-content-center align-items-center flex-wrap">
-          {/* Person Card */}
-          {[
-
-            {
-              name: "Tahir Zaman",
-              role: "Founder",
-              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png",
-            },
-            {
-              name: "Hassan Asif",
-              role: "Co-Founder",
-              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
-            },
-            {
-              name: "Mudassar Rafique",
-              role: "CEO",
-              image: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
-            },
-          ].map((person, index) => (
-            <div key={index} className="person-card me-2 ms-2 border rounded-4 position-relative nx-res0peron">
-              <CldImage
-                src={person.image}
-                width="500"
-                height="400"
-                alt={`Portrait of ${person.name}`}
-                style={{ objectFit: "cover" }}
-                className="rounded-4 w-100"
-              />
-              <div className="person-info d-flex justify-content-between align-items-center">
-                <div className="text-start">
-                  <h5 className="mb-1 text-white fw-bold">{person.name}</h5>
-                  <p className="mb-0 text-white">{person.role}</p>
-                </div>
-                <div className="bg-light rounded-pill">
+          {/* Swiper Slider */}
+          <Swiper
+            watchSlidesProgress={true}
+            slidesPerView={3}
+            spaceBetween={20}
+            breakpoints={{
+              350: { slidesPerView: 1, spaceBetween: 10 },
+              640: { slidesPerView: 1, spaceBetween: 10 },
+              768: { slidesPerView: 2, spaceBetween: 15 },
+              1024: { slidesPerView: 3, spaceBetween: 20 },
+            }}
+            className="mySwiper"
+          >
+            {[
+              {
+                name: "Tahir Zaman",
+                role: "Founder",
+                image:
+                  "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png",
+              },
+              {
+                name: "Hassan Asif",
+                role: "Co-Founder",
+                image:
+                  "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491953/xea4rvmxi7pp3hpo6o1m.jpg",
+              },
+              {
+                name: "Mudassar Rafique",
+                role: "CEO",
+                image:
+                  "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731491384/w5rpha72aylc6maxkdqn.jpg",
+              },
+            ].map((person, index) => (
+              <SwiperSlide key={index}>
+                <div className="slide-container">
                   <CldImage
-                    src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731770109/Icons/zlkzdxt0ojahbrblyrbd.png"
-                    width="40"
-                    height="40"
-                    alt="Icon"
-                    className="icon"
+                    src={person.image}
+                    width="500"
+                    height="400"
+                    alt={`Portrait of ${person.name}`}
+                    style={{ objectFit: "cover" }}
+                    className="rounded-4 w-100"
                   />
+                  <div className="person-info d-flex justify-content-between align-items-center mt-3">
+                    <div className="text-start">
+                      <h5 className="mb-1 text-white fw-bold">{person.name}</h5>
+                      <p className="mb-0 text-white">{person.role}</p>
+                    </div>
+                    <div className="bg-light rounded-pill p-2">
+                      <CldImage
+                        src="https://res.cloudinary.com/dx9xdlbae/image/upload/v1731770109/Icons/zlkzdxt0ojahbrblyrbd.png"
+                        width="40"
+                        height="40"
+                        alt="Icon"
+                        className="icon"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
+
 
       <div className="mb-100 container-fluid pe-lg-5 ps-lg-5 ">
         <div className="text-center mb-3">
