@@ -8,19 +8,20 @@
     background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
     border: none;
     border-radius: 50%;
-    width: 45px;
+    width: 45px;  /* Specific width */
     height: 45px;
     transition: .3s all ease-in-out;
     color: white;
+    margin: auto auto;
 }
 
-
 .btn-nx-recent {
+    text-wrap: nowrap;
     outline: none;
     border: 3px solid var(--nx-color-primary);
     background-color: white;
     border-radius: 50px;
-    width: auto;
+    width: 100%;  /* This can be adjusted in the media query */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +29,7 @@
     height: 45px;
     transition: .3s all ease-in-out;
 }
+
 .btn-nx-recent:hover {
     background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
     color: white;
@@ -36,4 +38,10 @@
     background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
     color: white;
 
+}
+
+@media (max-width:1200px){
+    .mb-nx-2{
+        margin-bottom: 20px;
+    }
 }

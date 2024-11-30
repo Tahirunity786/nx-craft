@@ -9,3 +9,12 @@
 .ul-footer{
     list-style: none;
 }
+.ico-footer{
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
