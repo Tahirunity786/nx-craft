@@ -1,15 +1,26 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { CldImage } from 'next-cloudinary';
 import './portflio.css'
 
 const Page = () => {
+  const [isEnd, setIsEnd] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0); // State to track the active button
+
+  const handleButtonClick = (index) => {
+    setActiveIndex(index); // Update the active button index
+  };
+
+  // Client render
   useEffect(() => {
     document.title = "Portfolio - NX Craft";
+
   }, []);
 
+
+  const buttonLabels = ["All", "Web Design", "Web Development", "Mobile App", "Graphic Design", "SEO"];
 
   return (
     <>
@@ -18,8 +29,8 @@ const Page = () => {
         <p>Discover our recent work, where innovation meets excellence.</p>
       </div>
       <div className="mb-5">
-        <div className="container bg-light rounded-pill p-3 ps-5 pe-5">
-          <div className="d-flex align-items-center justify-content-center">
+        <div className="container bg-light rounded-pill-nx p-3 ps-5 pe-5">
+          <div className="d-flex align-items-center justify-content-center position-relative">
             <Swiper
               watchSlidesProgress={true}
               slidesPerView={6}
@@ -31,106 +42,71 @@ const Page = () => {
                 1024: { slidesPerView: 6, spaceBetween: 25 },
               }}
               className="mySwiper"
+              onSlideChange={(swiper) => setIsEnd(swiper.isEnd)}
             >
-              {/* "All" Button */}
-              <SwiperSlide>
-                <button className="btn-nx-recent active-btn">All</button>
-              </SwiperSlide>
-
-              {/* Dynamic Buttons */}
-              {['Web Design', 'Web Development', 'Mobile App', 'Graphic Design', 'SEO'].map((name, index) => (
+              {buttonLabels.map((label, index) => (
                 <SwiperSlide key={index}>
-                  <button className="btn-nx-recent">{name}</button>
+                  <button
+                    className={`btn-nx-recent ${activeIndex === index ? "active-btn" : ""}`}
+                    onClick={() => handleButtonClick(index)}
+                  >
+                    {label}
+                  </button>
                 </SwiperSlide>
               ))}
             </Swiper>
+            {!isEnd && <div className="to-side"></div>}
           </div>
         </div>
       </div>
 
       <div className="container text-center">
-        <div className="row row-sm-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3 g-md-2 g-lg-4 mb-5">
-          <div className="col">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
+          <div className="col position-relative">
+            <div className='nx-tag'><span>Web Development</span></div>
             <div className="card">
               <div className="card-body p-0">
                 <CldImage
-                  src='fy7of11kfqhgguq5qsej'
-                  alt='portfolio'
+                  src="fy7of11kfqhgguq5qsej"
+                  alt="portfolio"
                   height={300}
                   width={400}
-                  className='w-100'
+                  className="w-100"
                 />
               </div>
             </div>
           </div>
-          <div className="col">
+          <div className="col position-relative">
+            <div className='nx-tag'><span>Web Design</span></div>
             <div className="card">
               <div className="card-body p-0">
                 <CldImage
-                  src='fy7of11kfqhgguq5qsej'
-                  alt='portfolio'
+                  src="fy7of11kfqhgguq5qsej"
+                  alt="portfolio"
                   height={300}
                   width={400}
-                  className='w-100'
+                  className="w-100"
                 />
               </div>
             </div>
           </div>
-          <div className="col">
+          <div className="col position-relative">
+            <div className='nx-tag'><span>Mobile App</span></div>
             <div className="card">
               <div className="card-body p-0">
                 <CldImage
-                  src='fy7of11kfqhgguq5qsej'
-                  alt='portfolio'
+                  src="fy7of11kfqhgguq5qsej"
+                  alt="portfolio"
                   height={300}
                   width={400}
-                  className='w-100'
+                  className="w-100"
                 />
               </div>
             </div>
           </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body p-0">
-                <CldImage
-                  src='fy7of11kfqhgguq5qsej'
-                  alt='portfolio'
-                  height={300}
-                  width={400}
-                  className='w-100'
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body p-0">
-                <CldImage
-                  src='fy7of11kfqhgguq5qsej'
-                  alt='portfolio'
-                  height={300}
-                  width={400}
-                  className='w-100'
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body p-0">
-                <CldImage
-                  src='fy7of11kfqhgguq5qsej'
-                  alt='portfolio'
-                  height={300}
-                  width={400}
-                  className='w-100'
-                />
-              </div>
-            </div>
-          </div>
-
-
+          
         </div>
+
       </div>
 
     </>
