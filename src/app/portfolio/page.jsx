@@ -1,5 +1,7 @@
 'use client'
 import { useEffect } from 'react'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { CldImage } from 'next-cloudinary';
 import './portflio.css'
 
@@ -17,20 +19,32 @@ const Page = () => {
       </div>
       <div className="mb-5">
         <div className="container bg-light rounded-pill p-3 ps-5 pe-5">
-          <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-2 g-lg-3 justify-content-center">
-            <div class="col">
-              <button class="btn-nx-recent">All</button>
-            </div>
-            {
-              ['Web Design', 'Web Dev', 'Mobile App', 'Graphic Design', 'SEO'].map((names, index) => (
-                <div class="col" key={index}>
-                  <button class="btn-nx-recent">{names}</button>
-                </div>
-              ))
-            }
+          <div className="d-flex align-items-center justify-content-center">
+            <Swiper
+              watchSlidesProgress={true}
+              slidesPerView={6}
+              spaceBetween={15} /* Adjusted spacing between slides */
+              breakpoints={{
+                350: { slidesPerView: 2, spaceBetween: 10 },
+                640: { slidesPerView: 3, spaceBetween: 15 },
+                768: { slidesPerView: 4, spaceBetween: 20 },
+                1024: { slidesPerView: 6, spaceBetween: 25 },
+              }}
+              className="mySwiper"
+            >
+              {/* "All" Button */}
+              <SwiperSlide>
+                <button className="btn-nx-recent active-btn">All</button>
+              </SwiperSlide>
+
+              {/* Dynamic Buttons */}
+              {['Web Design', 'Web Development', 'Mobile App', 'Graphic Design', 'SEO'].map((name, index) => (
+                <SwiperSlide key={index}>
+                  <button className="btn-nx-recent">{name}</button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-
-
         </div>
       </div>
 

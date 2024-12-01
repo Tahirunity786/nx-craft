@@ -3,25 +3,13 @@
     font-weight: bold;
 }
 
-.btn-nx-recent-all {
-    outline: none;
-    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
-    border: none;
-    border-radius: 50%;
-    width: 45px;  /* Specific width */
-    height: 45px;
-    transition: .3s all ease-in-out;
-    color: white;
-    margin: auto auto;
-}
-
 .btn-nx-recent {
     text-wrap: nowrap;
     outline: none;
     border: 3px solid var(--nx-color-primary);
     background-color: white;
     border-radius: 50px;
-    width: 100%;  /* This can be adjusted in the media query */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,14 +22,57 @@
     background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
     color: white;
 }
-.btn-nx-recent:focus {
-    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
-    color: white;
 
+.active-btn {
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
+    color: white !important;
 }
 
-@media (max-width:1200px){
-    .mb-nx-2{
+.mySwiper {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    /* Center the buttons in each slide */
+}
+
+.btn-nx-recent,
+.btn-nx-recent-all {
+    font-size: 14px;
+    padding: 10px 25px;
+    border: 2px solid #264653;
+    border-radius: 50px;
+    background-color: #f8f9fa;
+    color: #264653;
+    transition: all 0.3s ease;
+    text-align: center;
+    /* Ensures text alignment inside the button */
+}
+
+.btn-nx-recent-all {
+    background-color: #264653;
+    color: #ffffff;
+}
+
+.btn-nx-recent:hover {
+    background-color: #264653;
+    color: #ffffff;
+}
+
+.btn-nx-recent-all:hover {
+    background-color: #2a9d8f;
+    border-color: #2a9d8f;
+}
+
+
+@media (max-width:1200px) {
+    .mb-nx-2 {
         margin-bottom: 20px;
     }
 }
