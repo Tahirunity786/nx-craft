@@ -1,49 +1,45 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from 'next/link';
 import { CldImage } from "next-cloudinary";
 import "./blog.css";
-import NX from "../../../public/Assets/Images/nx-craft.png";
 import Carousel from "@/component/Crousal/Crousal";
+import PostContent from "@/component/PostContent/PostContent";
 
 const Page = () => {
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    try {
+      // Await the fetch call to ensure the response is resolved
+      let response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/all-blogs`);
+
+      // Check if the response is okay
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Await the JSON data
+      const data = await response.json();
+      console.log(data.results)
+      // Log or process the data
+      setData(data.results);
+
+    } catch (error) {
+      // Log the error
+      console.error("Error fetching blogs:", error);
+    }
+  };
 
   useEffect(() => {
-    document.title = "Blogs - NX Craft"
-  }, [])
-  const posts = [
-    {
-      id: 1,
-      src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png",
-      overlayText: "Web Development",
-    },
-    {
-      id: 2,
-      src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png",
-      overlayText: "Web Development",
-    },
-    {
-      id: 3,
-      src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png",
-      overlayText: "Web Development",
-    },
-    {
-      id: 4,
-      src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png",
-      overlayText: "Web Development",
-    },
-    {
-      id: 5,
-      src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png",
-      overlayText: "Web Development",
-    },
-    {
-      id: 6,
-      src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png",
-      overlayText: "Web Development",
-    },
-  ];
+    // Set the document title
+    document.title = "Blogs - NX Craft";
+
+    // Fetch the data
+    getData();
+  }, []);
+
+
 
   return (
     <>
@@ -65,19 +61,22 @@ const Page = () => {
 
       {/* Carousel Section */}
       <div className="mb-5 container-fluid">
-        <Carousel />
+        <Carousel content={data || []} />
       </div>
+
 
       {/* Posts Section */}
       <section className="container mb-5">
 
-        {posts.map((post) => (
+        {data.map((post) => (
           <div className="p-lg-5 mb-4" key={post.id}>
             <div className="p-2">
-              <div className="mb-4 text-center"><h2>Web Development</h2></div>
+              <div className="mb-4 text-center">
+                <h2>{post.title}</h2>
+              </div>
               <div className="d-flex justify-content-center-nx align-items-center mb-3 flex-wrap">
                 <div className="me-3">
-                  <h6>April 29, 2024</h6>
+                  <h6>{post.date_posted || 'No date available'}</h6>
                 </div>
                 <div className="me-3">
                   <h6>7 Comments</h6>
@@ -86,28 +85,29 @@ const Page = () => {
                   <h6>3 min Read</h6>
                 </div>
                 <div className="me-3 bg-light pe-4 ps-4 pt-2 pb-2 rounded-2">
-                  <h6 className="mb-0">Traval</h6>
+                  <h6 className="mb-0">{post.tag}</h6>
                 </div>
               </div>
               <div className="mb-3">
                 <CldImage
-                  src={post.src}
+                  src={post.cover_image.image_pb_id}
                   width="500"
                   height="600"
                   priority
-                  alt={post.overlayText}
+                  alt={post.title || 'Post image'}
                   className="w-100 rounded-0 blog-res-image"
                 />
               </div>
-              <div className="mb-4 p-2">
-                <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, adipisci. Velit aspernatur dolor corporis quas ratione rem nam, non tempora! Incidunt delectus nostrum eveniet vero minima harum dolorum in laboriosam!</p>
-              </div>
+              <PostContent content={post.content} />
               <div className="mb-2 p-2">
-                <Link href={`/blogs/${post.id}`} className="btn-blog-nx">Continue Reading ...</Link>
+                <Link href={`/blogs/${post.id}`} className="btn-blog-nx">
+                  Continue Reading ...
+                </Link>
               </div>
             </div>
           </div>
         ))}
+
 
       </section>
     </>

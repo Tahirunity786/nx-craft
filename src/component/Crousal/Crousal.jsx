@@ -1,21 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CldImage } from "next-cloudinary";
-// Import Swiper styles
 import "swiper/css";
 import "./crousal.css";
 import Link from "next/link";
 
-const slides = [
-  { id: 1, src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png", overlayText: "Web Development" },
-  { id: 2, src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png", overlayText: "Web Development" },
-  { id: 3, src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png", overlayText: "Web Development" },
-  { id: 4, src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png", overlayText: "Web Development" },
-  { id: 5, src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png", overlayText: "Web Development" },
-  { id: 6, src: "https://res.cloudinary.com/dx9xdlbae/image/upload/v1731685195/hoo0rug22tfkrlmm2fee.png", overlayText: "Web Development" },
-];
-
-const Carousel = () => {
+const Carousel = ({ content }) => {
   return (
     <Swiper
       watchSlidesProgress={true}
@@ -29,19 +19,20 @@ const Carousel = () => {
       }}
       className="myblogSwiper"
     >
-      {slides.map((slider) => (
+      {content.map((slider) => (
         <SwiperSlide key={slider.id}>
           <div className="slide-container">
             <CldImage
-              src={slider.src}
+              src={slider.cover_image.image_pb_id}
               width="500"
-              height="600"
+              height="280"
               priority
-              alt={slider.overlayText}
-              className="w-100 h-100"
-
+              alt={slider.title || 'Post image'}
+              className="w-100 rounded-0 blog-res-image"
             />
-            <div className="overlay-text"><Link href={`/blogs/${slider.id}`}>{slider.overlayText}</Link></div>
+            <div className="overlay-text">
+              <Link href={`/blogs/${slider.id}`}>{slider.title}</Link>
+            </div>
           </div>
         </SwiperSlide>
       ))}
