@@ -20,14 +20,14 @@ const Carousel = () => {
     <Swiper
       watchSlidesProgress={true}
       slidesPerView={3}
-      spaceBetween={20}
+      spaceBetween={10}
       breakpoints={{
         350: { slidesPerView: 1, spaceBetween: 10 },
         640: { slidesPerView: 1, spaceBetween: 10 },
         768: { slidesPerView: 2, spaceBetween: 15 },
         1024: { slidesPerView: 3, spaceBetween: 20 },
       }}
-      className="mySwiper"
+      className="myblogSwiper"
     >
       {slides.map((slider) => (
         <SwiperSlide key={slider.id}>
@@ -41,7 +41,7 @@ const Carousel = () => {
               className="w-100 h-100"
 
             />
-            <div className="overlay-text"><Link href={'#'}>{slider.overlayText}</Link></div>
+            <div className="overlay-text"><Link href={`/blogs/${slider.id}`}>{slider.overlayText}</Link></div>
           </div>
         </SwiperSlide>
       ))}

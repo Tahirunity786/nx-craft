@@ -103,7 +103,7 @@ const Page = () => {
                 <p className="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, adipisci. Velit aspernatur dolor corporis quas ratione rem nam, non tempora! Incidunt delectus nostrum eveniet vero minima harum dolorum in laboriosam!</p>
               </div>
               <div className="mb-2 p-2">
-                <Link href={'#'} className="btn-blog-nx">Continue Reading ...</Link>
+                <Link href={`/blogs/${post.id}`} className="btn-blog-nx">Continue Reading ...</Link>
               </div>
             </div>
           </div>
