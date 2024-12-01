@@ -91,14 +91,14 @@ p {
   transition: 0.5s ease-in-out;
 }
 
-.circle {
+.circle-nx {
   padding: 1em;
   background-color: var(--nx-color-secondary);
   border-radius: 50%;
   transition: 0.5 ease-in-out;
 }
 
-.box:hover .circle {
+.box:hover .circle-nx {
   background-color: var(--nx-color-primary);
   color: var(--nx-color-secondary);
   transform: scale(1.2px);
