@@ -56,6 +56,9 @@ background-color: var(--nx-color-primary-hover);
 .nav-link{
     font-size: 0.88rem;
 }
+.active-link{
+    border-bottom: 2px solid white;
+}
 @media (min-width:992px){
     .search-input-nx{
         width: 250px;
