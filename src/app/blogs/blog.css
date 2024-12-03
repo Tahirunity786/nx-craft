@@ -5,6 +5,7 @@
 
 .overlay-title {
     position: absolute;
+    padding: 10px;
     top: 0;
     left: 0;
     width: 100%;

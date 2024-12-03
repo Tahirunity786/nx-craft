@@ -94,6 +94,48 @@ export default function Home() {
           <h2 className="mb-2">People Who Worked With Us</h2>
         </header>
 
+        <div className="marquee">
+          <ul className="marquee__content">
+            <div className=" marquee__item">
+              <div className="d-flex justify-content-center align-items-center">
+                <div className="me-1">
+                  <CldImage
+                    src="efffbblyoqcsqwu7xeqq"
+                    width="50"
+                    height="50"
+                    alt="banner"
+                    
+                    style={{ height: '50px', width: '100%' }}
+                  />
+                </div>
+                <span style={{fontSize:"18px", fontWeight:"bold"}}>Backupdoc</span>
+              </div>
+
+            </div>
+            <div className=" marquee__item">
+              <CldImage
+                src="soclllrezul6fj9e1ixl"
+                width="300"
+                height="50"
+                alt="banner"
+                className="rounded-4"
+                style={{ height: '100px', width: '180px' }}
+              />
+            </div>
+            <div className=" marquee__item">
+              <CldImage
+                src="x9nkfgn8ktao3on0b6mh"
+                width="150"
+                height="50"
+                alt="banner"
+                className="rounded-4"
+                style={{ height: '50px', width: '100px' }}
+              />
+            </div>
+
+          </ul>
+        </div>
+
       </section>
 
       <section className="container-fluid  text-center pe-lg-5 ps-lg-5 mb-5">
@@ -161,8 +203,8 @@ export default function Home() {
         <div className="mb-4">
           <h4>Our Workflow</h4>
         </div>
-        
-        
+
+
       </section>
       <section className="container-fluid ps-lg-5 pe-lg-5 mb-100">
         <div className="row">
