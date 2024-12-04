@@ -212,7 +212,7 @@ export default function Home() {
       </section>
       <section className="container-fluid pe-lg-4 ps-lg-4 mb-100 text-center">
         <div className="mb-5">
-          <h4>Our Workflow</h4>
+          <h2>Our Workflow</h2>
         </div>
         <Timeline/>
 
