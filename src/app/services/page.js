@@ -88,7 +88,7 @@ const Page = () => {
         </div>
         <div className="mb-100 container">
           <div className="row">
-            <div className="col-lg-6 position-relative">
+            <div className="col-lg-6 position-relative d-flex justify-content-center align-items-center">
               <Image
                 src='/Assets/Images/blob (1).svg'
                 width={500}

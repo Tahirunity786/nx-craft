@@ -33,6 +33,8 @@ const Timeline = () => {
 
   return (
     <div className={styles.timelineContainer}>
+      <div className={styles.topCircle}></div>
+      <div className={styles.bottomCircle}></div>
       {timelineData.map((item, index) => (
         <div
           key={index}
