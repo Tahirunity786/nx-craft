@@ -60,54 +60,81 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="container text-center">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
-          <div className="col position-relative">
-            <div className='nx-tag'><span>Web Development</span></div>
-            <div className="card">
-              <div className="card-body p-0">
-                <CldImage
-                  src="fy7of11kfqhgguq5qsej"
-                  alt="portfolio"
-                  height={300}
-                  width={400}
-                  className="w-100"
-                />
-              </div>
-            </div>
+      <div className="container mb-5">
+        <div className="portfolio-grid">
+          {/* Card 1 */}
+          <div className="portfolio-card" style={{ gridRow: "span 2" }}>
+            <div className="portfolio-tag">Web Design</div>
+            <CldImage
+              src="fy7of11kfqhgguq5qsej"
+              alt="portfolio"
+              width={500}
+              height={500}
+              className="portfolio-image"
+            />
           </div>
-          <div className="col position-relative">
-            <div className='nx-tag'><span>Web Design</span></div>
-            <div className="card">
-              <div className="card-body p-0">
-                <CldImage
-                  src="fy7of11kfqhgguq5qsej"
-                  alt="portfolio"
-                  height={300}
-                  width={400}
-                  className="w-100"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="col position-relative">
-            <div className='nx-tag'><span>Mobile App</span></div>
-            <div className="card">
-              <div className="card-body p-0">
-                <CldImage
-                  src="fy7of11kfqhgguq5qsej"
-                  alt="portfolio"
-                  height={300}
-                  width={400}
-                  className="w-100"
-                />
-              </div>
-            </div>
-          </div>
-          
-        </div>
 
+          {/* Card 2 */}
+          <div className="portfolio-card">
+            <div className="portfolio-tag">Web Development</div>
+            <CldImage
+              src="fy7of11kfqhgguq5qsej"
+              alt="portfolio"
+              width={500}
+              height={500}
+              className="portfolio-image"
+            />
+          </div>
+
+          {/* Card 3 */}
+          <div className="portfolio-card" style={{ gridRow: "span 2" }}>
+            <div className="portfolio-tag">Mobile App</div>
+            <CldImage
+              src="fy7of11kfqhgguq5qsej"
+              alt="portfolio"
+              width={500}
+              height={500}
+              className="portfolio-image"
+            />
+          </div>
+
+          {/* Card 4 */}
+          <div className="portfolio-card" style={{ gridRow: "span 2" }}>
+            <div className="portfolio-tag">Web Development</div>
+            <CldImage
+              src="fy7of11kfqhgguq5qsej"
+              alt="portfolio"
+              width={500}
+              height={500}
+              className="portfolio-image"
+            />
+          </div>
+          <div className="portfolio-card">
+            <div className="portfolio-tag">Web Development</div>
+            <CldImage
+              src="fy7of11kfqhgguq5qsej"
+              alt="portfolio"
+              width={500}
+              height={500}
+              className="portfolio-image"
+            />
+          </div>
+          <div className="portfolio-card">
+            <div className="portfolio-tag">Web Development</div>
+            <CldImage
+              src="fy7of11kfqhgguq5qsej"
+              alt="portfolio"
+              width={500}
+              height={500}
+              className="portfolio-image"
+            />
+          </div>
+
+
+        </div>
+        <div/>
       </div>
+
 
     </>
   )

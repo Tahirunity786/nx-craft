@@ -108,3 +108,78 @@
     justify-content: center;
     align-items: center;
 }
+/* Portfolio Grid Container */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    grid-auto-rows: 200px; /* Default row height */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Add padding around the grid */
+    
+  }
+  
+  /* Individual Portfolio Card */
+  .portfolio-card {
+    position: relative;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  /* Image Styling */
+  .portfolio-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Cover the card */
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-card:hover img {
+    transform: scale(1.05); /* Zoom in on hover */
+  }
+  
+  /* Tag Styling */
+  .portfolio-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+    color: #fff; /* White text for contrast */
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns for tablets */
+      gap: 15px;
+    }
+  
+    .portfolio-tag {
+      font-size: 12px; /* Smaller tag text for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr; /* Single-column layout for mobile */
+    }
+  
+    .portfolio-tag {
+      font-size: 11px; /* Smaller tag size for mobile */
+      padding: 6px 12px;
+    }
+  }
+  
