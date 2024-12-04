@@ -6,6 +6,7 @@ import { CldImage } from 'next-cloudinary';
 import './service-index.css'
 import Model from '@/component/Model/Model';
 import Clendly from '@/component/Clendly/Clendly';
+import Image from 'next/image';
 
 
 
@@ -86,6 +87,66 @@ const Page = () => {
           </div>
         </div>
         <div className="mb-100 container">
+          <div className="row">
+            <div className="col-lg-6 position-relative">
+              <Image
+                src='/Assets/Images/blob (1).svg'
+                width={500}
+                height={500}
+                alt='bg why'
+              />
+              <CldImage
+                src='u732hbmuxo9jbyvnvnv2'
+                width="350"
+                height="400"
+                priority
+                alt="Main image"
+                className='bg-why-img'
+              />
+            </div>
+            <div className="col-lg-6 pt-4">
+              <h2 className='mb-4 text-start fs-1'>Why choose us!</h2>
+              <ul style={{ listStyle: 'none' }} className='ms-0 ps-0 mb-3'>
+                <li className='mb-3 d-flex justify-content-start align-items-center'>
+                  <div className="circle-nx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                    </svg>
+                  </div>
+                  Excellent Customer Support
+                </li>
+                <li className='mb-3 d-flex justify-content-start align-items-center'>
+                  <div className="circle-nx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                    </svg>
+                  </div>
+                  Unmatched Expertise
+                </li>
+                <li className='mb-3 d-flex justify-content-start align-items-center'>
+                  <div className="circle-nx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                    </svg>
+                  </div>
+                  Customized Solutions
+                </li>
+                <li className='mb-3 d-flex justify-content-start align-items-center'>
+                  <div className="circle-nx-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-check-lg" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+                    </svg>
+                  </div>
+                  Commitment to Quality
+                </li>
+
+              </ul>
+              <p>We use modern methods to manage projects with efficiency and precision. Our IT agency follows the Agile approach, keeping clients involved and updated at every step. This ensures transparency, smooth workflows, and timely delivery. By using the latest tools, we consistently meet client expectations and strive for continuous improvement.</p>
+
+            </div>
+          </div>
+        </div>
+        <div className="mb-100 container">
           <h2 className=' mb-50 text-center fs-nx'>Our Workflow</h2>
           <div className="content-box">
             <div className="box">
@@ -156,7 +217,7 @@ const Page = () => {
 
           </div>
         </div>
-        
+
         <div className="mb-100 container pe-0 ps-0">
           <h2 className='mb-50 text-center fs-nx'>A Scalable Cooperation Model Tailored <br /> for Your Business</h2>
           <div className="container text-center">
