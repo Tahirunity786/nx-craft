@@ -6,6 +6,7 @@ import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react'
 import AnimatedCircles from '@/component/AnimatedCircles/AnimatedCircles';
 import "./main.css";
+import Timeline from "@/component/Timeline/Timeline";
 
 export default function Home() {
   const [activeItem, setActiveItem] = useState([]);
@@ -104,11 +105,11 @@ export default function Home() {
                     width="50"
                     height="50"
                     alt="banner"
-                    
+
                     style={{ height: '50px', width: '100%' }}
                   />
                 </div>
-                <span style={{fontSize:"18px", fontWeight:"bold"}}>Backupdoc</span>
+                <span style={{ fontSize: "18px", fontWeight: "bold" }}>Backupdoc</span>
               </div>
 
             </div>
@@ -130,6 +131,16 @@ export default function Home() {
                 alt="banner"
                 className="rounded-4"
                 style={{ height: '50px', width: '100px' }}
+              />
+            </div>
+            <div className=" marquee__item">
+              <CldImage
+                src="dgkwdt2axf0vrsguxp1o"
+                width="150"
+                height="100"
+                alt="banner"
+                className="rounded-4"
+                style={{ height: '100px', width: '100px' }}
               />
             </div>
 
@@ -200,9 +211,10 @@ export default function Home() {
 
       </section>
       <section className="container-fluid pe-lg-4 ps-lg-4 mb-100 text-center">
-        <div className="mb-4">
+        <div className="mb-5">
           <h4>Our Workflow</h4>
         </div>
+        <Timeline/>
 
 
       </section>

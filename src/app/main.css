@@ -5,6 +5,7 @@
     --nx-color-fourth: #CDE3EB;
     --nx-color-fifth: #1a5172;
     --nx-color-alerming: #FF4A35;
+    --nx-color-success: rgb(0, 205, 0);
 
 }
 
@@ -13,6 +14,41 @@ main {
     height: auto;
     width: 100%;
 }
+.bg-even-flow {
+    background-color: var(--nx-color-tertiary);
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .bg-odd-flow {
+    background-color: var(--nx-color-fourth);
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .bg-success-flow {
+    background-color: var(--nx-color-success);
+    color: white;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .connector {
+    width: 4px;
+    height: 80px;
+    background: var(--nx-color-tertiary);
+    position: relative;
+  }
+  
+  .step-number {
+    font-size: 24px;
+    font-weight: bold;
+  }
 .mySwiper {
     width: 100%;
     height: auto;
