@@ -42,6 +42,7 @@ const Timeline = () => {
             index % 2 === 0 ? styles.left : styles.right
           }`}
         >
+          
           <div className={styles.content}>
 
             <h4 className={styles.title}>{item.title}</h4>

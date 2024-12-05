@@ -82,6 +82,20 @@
   color: #555;
   line-height: 1.5;
 }
+.timelineItem.left .content:hover,
+.timelineItem.right .content:hover {
+  background: linear-gradient(to right, var(--nx-color-primary), #1a5172); /* Use background for gradients */
+  color: white;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out; /* Transition updated for background */
+  cursor: pointer;
+}
+
+.timelineItem.left .content:hover .title,
+.timelineItem.left .content:hover .description,
+.timelineItem.right .content:hover .title,
+.timelineItem.right .content:hover .description {
+  color: white; /* Ensure child elements also change color */
+}
 
 .timelineItem .icon {
   position: absolute;
@@ -124,21 +138,21 @@
 
 .topCircle {
   position: absolute;
-  top: 0px;
+  top: -10px;
   background-color: var(--nx-color-primary);
-  width: 50px;
-  height: 50px;
-  left: 44%;
+  width: 30px;
+  height: 30px;
+  left: 48.9% !important;
   border-radius: 50%;
 }
 
 .bottomCircle {
   position: absolute;
-  bottom: 0px;
-  left: 44%;
+  bottom: -10px;
   background-color: var(--nx-color-primary);
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
+  left: 48.5% !important;
   border-radius: 50%;
 }
 
