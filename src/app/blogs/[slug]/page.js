@@ -17,7 +17,6 @@ const Page = () => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/sp-blog/${params.slug}/`);
       if (response.ok) {
         const data = await response.json();
-        console.log(data)
         setPostDetail(data);
       }
     }
