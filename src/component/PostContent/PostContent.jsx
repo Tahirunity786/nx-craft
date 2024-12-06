@@ -1,38 +1,58 @@
+'use client';
+
 import DOMPurify from 'dompurify';
 import PropTypes from 'prop-types';
 
-const PostContent = ({ content, wordLimit = 50 }) => {
-  // Sanitize the HTML content
-  const sanitizedContent = DOMPurify.sanitize(content);
+const PostContent = ({ content, wordLimit }) => {
+  /**
+   * Extract and truncate the first <p> tag content from HTML.
+   * @param {string} htmlContent - The raw HTML content.
+   * @param {number} limit - Number of words to truncate or 'full' to show all.
+   * @returns {string} - Truncated content within the first <p> tag.
+   */
+  const processContent = (htmlContent, limit) => {
+    if (limit === 'full' || !htmlContent) {
+      return htmlContent; // Return full content if no limit is specified
+    }
 
-  // Extract the first n words while preserving HTML structure
-  const extractFirstWords = (htmlContent, limit) => {
     const parser = new DOMParser();
     const parsedDoc = parser.parseFromString(htmlContent, 'text/html');
+    const firstPTag = parsedDoc.querySelector('p'); // Select the first <p> tag
 
-    // Extract text content
-    const textContent = parsedDoc.body.textContent || '';
+    if (!firstPTag) return ''; // If no <p> tag is found, return an empty string
 
-    // Limit to the specified number of words
-    const limitedText = textContent.split(/\s+/).slice(0, limit).join(' ');
+    let words = firstPTag.textContent.trim().split(/\s+/);
 
-    return limitedText;
+    if (words.length > limit) {
+      words = words.slice(0, limit).join(' ') + '...';
+    } else {
+      words = words.join(' ');
+    }
+
+    // Return sanitized content with truncated text inside <p>
+    return `<p>${DOMPurify.sanitize(words)}</p>`;
   };
 
-  const limitedContent = extractFirstWords(sanitizedContent, wordLimit);
+  const processedContent = processContent(content, wordLimit);
 
-  // Display sanitized and limited content
   return (
     <div
-      className="mb-4 p-2"
-      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(limitedContent) }}
+      className="post-content mb-4 p-2"
+      dangerouslySetInnerHTML={{ __html: processedContent }}
     />
   );
 };
 
 PostContent.propTypes = {
-  content: PropTypes.string.isRequired,
-  wordLimit: PropTypes.number,
+  content: PropTypes.string.isRequired, // The raw HTML content
+  wordLimit: PropTypes.oneOfType([
+    PropTypes.string, // 'full'
+    PropTypes.number, // Specific word limit
+  ]),
+};
+
+PostContent.defaultProps = {
+  wordLimit: 'full', // Default to showing full content
 };
 
 export default PostContent;

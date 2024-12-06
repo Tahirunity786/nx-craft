@@ -1,42 +1,67 @@
 'use client'
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
+
 import './blog-slug.css'
 import Link from 'next/link';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation';
+import PostContent from '@/component/PostContent/PostContent';
+
 
 const Page = () => {
+  const params = useParams();
+  const [detailPost, setPostDetail] = useState([]);
+  useEffect(() => {
+
+    const postDetail = async () => {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/sp-blog/${params.slug}/`);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data)
+        setPostDetail(data);
+      }
+    }
+    postDetail();
+  }, [params?.slug]);
+
+
   return (
     <>
       <div className="container pt-5 pb-5 ps-0 pe-0">
 
         <div className="row w-100">
+
           <div className="col-lg-8">
             <div className="mb-2">
-              <h1>NX Craft as an It agency</h1>
+              <h1>{detailPost.title}</h1>
               <div className="d-flex align-items-center justify-content-start">
-                <p>posted by <b>admin</b> </p>
-                <p>posted on <b>date</b> </p>
-                <p>comments <b>(3)</b> </p>
+                <p className='me-4'>posted by <b>admin</b> </p>
+                <p className='me-4'>posted on <b>date</b> </p>
+                <p className='me-4'>comments <b>(3)</b> </p>
               </div>
             </div>
             <div className="mb-4">
-              <CldImage
-                src='lxb5yakgem4zuusjat5b'
-                height="400"
-                width={500}
-                alt='blog-image'
-                className='w-100 rounded-4'
-              />
+              {detailPost.cover_image?.image_pb_id ? (
+                <CldImage
+                  src={detailPost.cover_image.image_pb_id}
+                  height="400"
+                  width={500}
+                  alt="blog-image"
+                  className="w-100 rounded-4"
+                />
+              ) : (
+                <p>No image available</p> // Fallback content or design
+              )}
             </div>
+            <PostContent content={detailPost.content} wordLimit="full" />
+
+
             <div className="mb-5">
-              <p>Here is content</p>
               <hr />
               <div className="d-flex align-items-center justify-content-between">
                 <div className='d-flex align-items-center justify-content-between'>
-                  <span class="badge rounded-pill text-bg-primary">Primary</span>
-                  <span class="badge rounded-pill text-bg-primary">Primary</span>
+                  <span className="badge rounded-pill text-bg-primary">Primary</span>
+                  <span className="badge rounded-pill text-bg-primary">Primary</span>
                 </div>
 
                 <div className='d-flex align-items-center justify-content-between'>
@@ -57,13 +82,13 @@ const Page = () => {
                   <textarea name="" id="" className="form-control border mb-4" style={{ resize: 'none' }} rows={5}></textarea>
                   <div className="row mb-4">
                     <div className="col-lg-6">
-                      <input type="text" class="form-control" />
+                      <input type="text" className="form-control" />
                     </div>
                     <div className="col-lg-6">
-                      <input type="text" class="form-control" />
+                      <input type="text" className="form-control" />
                     </div>
                     <div className="col-lg-12 mt-4">
-                      <input type="text" class="form-control" />
+                      <input type="text" className="form-control" />
                     </div>
                   </div>
                   <button className='btn btn-primary'>Submit</button>
@@ -97,7 +122,7 @@ const Page = () => {
                 <div className=" mb-4">
                   <h3>Recent Posts</h3>
                 </div>
-                
+
               </div>
             </div>
           </div>

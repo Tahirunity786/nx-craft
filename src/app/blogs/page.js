@@ -21,7 +21,7 @@ const Page = () => {
 
       // Await the JSON data
       const data = await response.json();
-      console.log(data.results)
+
       // Log or process the data
       setData(data.results);
 
@@ -98,7 +98,7 @@ const Page = () => {
                   className="w-100 rounded-0 blog-res-image"
                 />
               </div>
-              <PostContent content={post.content} />
+              <PostContent content={post.content} wordLimit={40} />
               <div className="mb-2 p-2">
                 <Link href={`/blogs/${post.id}`} className="btn-blog-nx">
                   Continue Reading ...

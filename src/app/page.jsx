@@ -240,8 +240,7 @@ export default function Home() {
                 <div className="carousel-inner">
                   {reviewData.map((data, index) => (
                     <div className={`carousel-item ${index === 0 ? 'active' : ''} pe-4`} key={data.key}>
-                      
-                      
+
                       <div className="d-flex align-items-center justify-content-between mb-4">
                         <div>
                           <p className="mb-1"><b>{data.name}</b></p>
