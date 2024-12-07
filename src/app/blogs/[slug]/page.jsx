@@ -11,6 +11,7 @@ import PostContent from '@/component/PostContent/PostContent';
 const Page = () => {
   const params = useParams();
   const [detailPost, setPostDetail] = useState([]);
+
   useEffect(() => {
 
     const postDetail = async () => {
@@ -21,6 +22,7 @@ const Page = () => {
       }
     }
     postDetail();
+    document.title = detailPost.title;
   }, [params?.slug]);
 
 
@@ -59,18 +61,16 @@ const Page = () => {
               <hr />
               <div className="d-flex align-items-center justify-content-between">
                 <div className='d-flex align-items-center justify-content-between'>
-                  <span className="badge rounded-pill text-bg-primary">Primary</span>
-                  <span className="badge rounded-pill text-bg-primary">Primary</span>
+                  <span className='fs-4 mb-2'>Tag: </span>
+                <button className='btn-blog ms-2'>{detailPost.tag}</button>
+                  
                 </div>
 
                 <div className='d-flex align-items-center justify-content-between'>
-                  <button className='btn-blog ms-2 me-2'><span className='me-2'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-share-fill" viewBox="0 0 16 16">
+                  <button className='btn-blog ms-2'><span className='me-2'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-share-fill" viewBox="0 0 16 16">
                     <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5" />
                   </svg></span>share</button>
-                  <button className='btn-blog'><span className='me-2'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-link-45deg" viewBox="0 0 16 16">
-                    <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z" />
-                    <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z" />
-                  </svg></span>copy link</button>
+                 
                 </div>
               </div>
             </div>
