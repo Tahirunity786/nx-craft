@@ -22,8 +22,8 @@ const Page = () => {
       }
     }
     postDetail();
-    document.title = detailPost.title;
   }, [params?.slug]);
+  document.title = `Blog - ${detailPost.title}`;
 
 
   return (
