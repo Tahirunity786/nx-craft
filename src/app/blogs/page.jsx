@@ -71,8 +71,8 @@ const Page = () => {
         <h2 className="mb-4">Our Recent Blogs</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-4">
             {data.map((post) => (
-          <div className="col mb-4">
-              <Card key={post.id} content={post.content} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`}/>
+          <div className="col mb-4" key={post.id}>
+              <Card  content={post.content} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`}/>
           </div>
             ))}
         </div>
