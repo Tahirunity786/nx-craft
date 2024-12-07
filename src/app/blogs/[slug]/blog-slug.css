@@ -7,3 +7,12 @@
     position: relative;
 
 }
+.btn-blog{
+    background-color: var(--nx-color-primary);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+
+}
