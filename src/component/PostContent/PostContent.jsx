@@ -37,7 +37,7 @@ const PostContent = ({ content, wordLimit }) => {
 
   return (
     <div
-      className="post-content mb-4 p-2"
+      className="post-content "
       dangerouslySetInnerHTML={{ __html: processedContent }}
     />
   );
