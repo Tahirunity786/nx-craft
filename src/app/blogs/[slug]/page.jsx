@@ -40,6 +40,18 @@ const Page = () => {
     }));
   };
 
+  const fetchComments = async () => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/show-post-comment/${params.slug}/`);
+      if (response.ok) {
+        const data = await response.json();
+        setCommentDetail(data); // Update the state with the latest comments
+      }
+    } catch (error) {
+      console.error("Error fetching comments:", error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -54,46 +66,53 @@ const Page = () => {
       });
 
       if (response.ok) {
-        let data = await response.json()
+        const data = await response.json();
         setFormData({
           user_message: '',
           user_name: '',
           user_email: '',
           user_subject: '',
         });
-        toast.success(data.message)
+        toast.success(data.message);
+
+        // Fetch updated comments
+        await fetchComments();
       } else {
         toast.error("Error! Please try again!");
       }
     } catch (error) {
-      console.error(error)
+      console.error(error);
       toast.error(`Error while submitting form ${error}`);
-
-    }
-    finally {
+    } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    const postDetail = async () => {
+    const fetchPostDetails = async () => {
+      try {
+        const [postResponse, commentResponse] = await Promise.all([
+          fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/sp-blog/${params.slug}/`),
+          fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/show-post-comment/${params.slug}/`),
+        ]);
 
-      const [postResponse, commentResponse] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/sp-blog/${params.slug}/`),
-        fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/show-post-comment/${params.slug}/`),
-      ])
+        if (postResponse.ok) {
+          const postDetail = await postResponse.json();
+          setPostDetail(postDetail);
+        }
 
-      if (postResponse.ok) {
-        const dataA = await postResponse.json();
-        setPostDetail(dataA);
-      }
-      if (commentResponse.ok) {
-        const dataB = await commentResponse.json();
-        setCommentDetail(dataB);
+        if (commentResponse.ok) {
+          const commentDetail = await commentResponse.json();
+          setCommentDetail(commentDetail);
+        }
+      } catch (error) {
+        console.error("Error fetching post or comments:", error);
       }
     };
-    postDetail();
+
+    fetchPostDetails();
   }, [params?.slug]);
+
 
   // Update document.title on client-side
   useEffect(() => {
@@ -113,9 +132,9 @@ const Page = () => {
               <div className="d-flex align-items-center justify-content-start">
                 <p className="me-4">posted by <b>admin</b></p>
                 <p className="me-4">posted on
-                
+
                   <b>
-                    
+
                   </b>
                 </p>
                 <p className="me-4">comments <b>({detailComment.length})</b></p>
@@ -137,30 +156,30 @@ const Page = () => {
             </div>
             <div className="bg-light-nx p-3 mb-5 rounded-3">
 
-            
 
-            <PostContent content={detailPost.content} wordLimit="full" />
 
-            <div className="mb-5">
-              <hr />
-              <div className="d-flex align-items-center justify-content-between">
+              <PostContent content={detailPost.content} wordLimit="full" />
+
+              <div className="mb-5">
+                <hr />
                 <div className="d-flex align-items-center justify-content-between">
-                  <span className="fs-4 mb-2">Tag: </span>
-                  <button className="btn-blog ms-2">{detailPost.tag}</button>
-                </div>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <span className="fs-4 mb-2">Tag: </span>
+                    <button className="btn-blog ms-2">{detailPost.tag}</button>
+                  </div>
 
-                <div className="d-flex align-items-center justify-content-between">
-                  <button className="btn-blog ms-2">
-                    <span className="me-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-share-fill" viewBox="0 0 16 16">
-                        <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5" />
-                      </svg>
-                    </span>
-                    share
-                  </button>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <button className="btn-blog ms-2">
+                      <span className="me-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-share-fill" viewBox="0 0 16 16">
+                          <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5" />
+                        </svg>
+                      </span>
+                      share
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
 
             <div className="mb-5 ">
