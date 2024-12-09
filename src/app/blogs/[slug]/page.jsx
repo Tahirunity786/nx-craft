@@ -8,6 +8,7 @@ import { useParams } from 'next/navigation';
 import PostContent from '@/component/PostContent/PostContent';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { formatDistanceToNow } from 'date-fns';
 
 
 const Page = () => {
@@ -155,28 +156,40 @@ const Page = () => {
 
             <div className="mb-5 ">
               <h3 className="mb-4">Comments({detailComment.length})</h3>
-              <div className="border p-5 bg-light-nx rounded-2">
+              <div className="p-3  bg-light-nx rounded-4">
                 {
                   detailComment.map((data) => {
+                    const relativeTime = formatDistanceToNow(new Date(data.date_posted), { addSuffix: true });
+
                     return (
                       <div key={data.id} className='commentCard row'>
-
                         <div className="col-lg-2">
-                        <div className="profile"></div>
+                          <div className="profile position-relative">
+                            <div className="profile-image">
+                              <CldImage
+                                src='https://res.cloudinary.com/dx9xdlbae/image/upload/v1733738336/uyomip7ctv0eqk3tjltw.png'
+                                width={55}
+                                height={55}
+                                alt='profile'
+                              />
+                            </div>
+                          </div>
                         </div>
                         <div className="col-lg-10">
-                        <div className="comment-content">
-                          <p className='mb-1'>Name</p>
-                          <p className='mb-2'>Date posted</p>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis facere, repellendus aspernatur odio nisi adipisci, modi repellat libero ut veritatis consectetur deserunt, ea vitae incidunt enim cupiditate quia laborum ipsa?</p>
+                          <div className="comment-content">
+                            <p className='mb-1'>{data.user_name}</p>
+                            <p className='mb-2'>{relativeTime}</p>
+                            <p>{data.user_message}</p>
 
-                        </div>
+                            <button className="btn-blog p-2 ps-4 pe-4" data-id={data.id}>
+                              Reply
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    )
+                    );
                   })
                 }
-
               </div>
             </div>
 
