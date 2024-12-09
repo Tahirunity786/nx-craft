@@ -4,7 +4,7 @@ import { CldImage } from "next-cloudinary";
 import PropTypes from 'prop-types'
 import './card.css'
 import PostContent from '../PostContent/PostContent';
-
+import { formatDistanceToNow } from 'date-fns';
 
 const Card = ({ image, title, link = "#", content }) => {
   return (
@@ -20,7 +20,7 @@ const Card = ({ image, title, link = "#", content }) => {
         />
       </Link>
       <div className="p-3 bg-light w-90 nx-blog">
-        <div className="d-flex justify-content-start align-items-center mb-3">
+        <div className="d-flex justify-content-start align-items-center mb-1">
           <div className="me-5 d-flex align-items-center">
             <span className="mb-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person" viewBox="0 0 16 16">
@@ -29,6 +29,7 @@ const Card = ({ image, title, link = "#", content }) => {
             </span>
             <p className="mb-0 nx-blog-fs ms-2">posted by <b>admin</b></p>
           </div>
+          
           <div className="me-2 d-flex align-items-center">
             <span className="mb-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chat-dots" viewBox="0 0 16 16">
@@ -38,10 +39,10 @@ const Card = ({ image, title, link = "#", content }) => {
             </span>
             <p className="mb-0 nx-blog-fs ms-2">Comments (<b>0</b>)</p>
           </div>
-
         </div>
+          <p className="mb-3 nx-blog-fs ">posted on <b>{content.date_posted ? formatDistanceToNow(new Date(content.date_posted), { addSuffix: true } ):'unknown date'}</b></p>
         <div className="mb-1">
-          <h5><PostContent content={content} wordLimit={4} /></h5>
+          <h5><PostContent content={content.content} wordLimit={4} /></h5>
         </div>
         <div className="mb-3">
           <Link href={link} className="nx-blog-lnk">Read more

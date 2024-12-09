@@ -132,9 +132,10 @@ const Page = () => {
               <div className="d-flex align-items-center justify-content-start">
                 <p className="me-4">posted by <b>admin</b></p>
                 <p className="me-4">posted on
-
-                  <b>
-
+                  <b className="ms-2">
+                    {detailPost.date_posted
+                      ? formatDistanceToNow(new Date(detailPost.date_posted), { addSuffix: true })
+                      : "Unknown date"}
                   </b>
                 </p>
                 <p className="me-4">comments <b>({detailComment.length})</b></p>
