@@ -54,7 +54,7 @@ const Page = () => {
       });
 
       if (response.ok) {
-        const data = await response.json();
+        let data = await response.json()
         setFormData({
           user_message: '',
           user_name: '',
@@ -63,10 +63,10 @@ const Page = () => {
         });
         toast.success(data.message)
       } else {
-        const errorText = await response.text();
         toast.error("Error! Please try again!");
       }
     } catch (error) {
+      console.error(error)
       toast.error(`Error while submitting form ${error}`);
 
     }
@@ -112,8 +112,13 @@ const Page = () => {
               <h1>{detailPost.title}</h1>
               <div className="d-flex align-items-center justify-content-start">
                 <p className="me-4">posted by <b>admin</b></p>
-                <p className="me-4">posted on <b>date</b></p>
-                <p className="me-4">comments <b>(3)</b></p>
+                <p className="me-4">posted on
+                
+                  <b>
+                    
+                  </b>
+                </p>
+                <p className="me-4">comments <b>({detailComment.length})</b></p>
               </div>
             </div>
 
@@ -130,6 +135,9 @@ const Page = () => {
                 <p>No image available</p> // Fallback content or design
               )}
             </div>
+            <div className="bg-light-nx p-3 mb-5 rounded-3">
+
+            
 
             <PostContent content={detailPost.content} wordLimit="full" />
 
@@ -152,6 +160,7 @@ const Page = () => {
                   </button>
                 </div>
               </div>
+            </div>
             </div>
 
             <div className="mb-5 ">
@@ -277,8 +286,23 @@ const Page = () => {
 
             <div className="ps-3 pe-3 pt-3">
               <div className="w-100 bg-light-nx text-center p-2 rounded-2">
-                <div className="mb-4">
-                  <h3>Recent Posts</h3>
+                <div className="mb-4 ">
+                  <h3 className='mb-3'>Recent Posts</h3>
+                  <div className="row p-3 w-100">
+                    <div className="col-lg-4 col-md-4 col-sm-4">
+                      <CldImage
+                        src='https://res.cloudinary.com/dx9xdlbae/image/upload/v1732096856/p0rxgm33ztmzhe1kvlhe.svg'
+                        width={100}
+                        height={50}
+                        className='w-100'
+                        alt='post-image'
+                      />
+                    </div>
+                    <div className="col-lg-8 col-md-8 col-sm-8 text-start">
+                      <h6>Hello</h6>
+                      <p style={{ fontSize: "12px" }}>posted on 1 month ago</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
