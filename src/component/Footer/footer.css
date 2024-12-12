@@ -1,0 +1,20 @@
+.footer-nx{
+    background-color: var(--nx-color-primary);
+    height: auto;
+   
+}
+.tel-footer{
+    text-decoration: none;
+}
+.ul-footer{
+    list-style: none;
+}
+.ico-footer{
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
