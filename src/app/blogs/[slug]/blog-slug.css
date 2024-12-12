@@ -7,3 +7,40 @@
     position: relative;
 
 }
+.btn-blog{
+    background-color: var(--nx-color-primary);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+
+}
+.btn-blog:hover{
+    background-color: #1a5172;
+}
+.bg-light-nx{
+    background-color: var(--nx-color-fourth);
+}
+.commentCard{
+    color: black;
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+.commentCard .profile{
+
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.commentCard .profile .profile-image{
+position: absolute;
+left: 8px;
+top: 5px;
+    }

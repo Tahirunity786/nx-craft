@@ -77,6 +77,7 @@ const Page = () => {
                     priority
                     alt="Main image"
                     className="w-100 h-100 rounded-4"
+                    style={{ objectFit: "fill" }}
                   />
                   <div className="hover-overlay d-flex align-items-center justify-content-center p-3">
                     <Link className="nx-hover-link" href={`services/${item.services_slug}`}>{item.title}</Link>
