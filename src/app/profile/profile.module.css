@@ -1,0 +1,24 @@
+.upperProfile{
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172); 
+    height: 200px;
+    width: 100%;
+    margin-bottom:100px;
+}
+.profile{
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:120px;
+    left: 150px;
+    
+}
+
+.nxImage{
+    position: absolute;
+    top:120px;
+    left: 50%;
+    background: url('https://res.cloudinary.com/dx9xdlbae/image/upload/v1732096856/p0rxgm33ztmzhe1kvlhe.svg');
+    background-position: center;
+}
