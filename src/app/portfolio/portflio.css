@@ -1,0 +1,185 @@
+.fs-portfolio {
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+
+.btn-nx-recent {
+    text-wrap: nowrap;
+    outline: none;
+    border: 3px solid var(--nx-color-primary);
+    background-color: white;
+    border-radius: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    height: 45px;
+    transition: .3s all ease-in-out;
+}
+
+.btn-nx-recent:hover {
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
+    color: white;
+}
+
+.active-btn {
+    background: linear-gradient(to right, var(--nx-color-primary), #1a5172);
+    color: white !important;
+}
+
+.mySwiper {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    /* Center the buttons in each slide */
+}
+
+.btn-nx-recent{
+    font-size: 14px;
+    padding: 10px 25px;
+    border: 2px solid #264653;
+    border-radius: 50px;
+    background-color: #f8f9fa;
+    color: #264653;
+    transition: all 0.3s ease;
+    text-align: center;
+    /* Ensures text alignment inside the button */
+}
+
+
+
+.btn-nx-recent:hover {
+    background-color: #264653;
+    color: #ffffff;
+}
+
+.rounded-pill-nx{
+    border-radius: 50px;
+}
+
+
+@media (max-width:1200px) {
+    .rounded-pill-nx{
+        border-radius: 0px;
+    }
+    .mb-nx-2 {
+        margin-bottom: 20px;
+    }
+    .to-side{
+        position: absolute;
+        background-color: white;
+        height: 100%;
+        width: 30px;
+        right: 0px;
+        z-index: 100;
+        border-radius: 20%;
+        box-shadow: rgb(255, 255, 255) 0px 7px 50px 8px;
+        opacity: .9;
+    }
+    .to-side.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+}
+.card, .card-body{
+    background-color: transparent !important;
+    border: none;
+}
+.nx-tag{
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: auto;
+    height: 40px;
+    background-color: #1a5172;
+    z-index: 100;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Portfolio Grid Container */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    grid-auto-rows: 200px; /* Default row height */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Add padding around the grid */
+    
+  }
+  
+  /* Individual Portfolio Card */
+  .portfolio-card {
+    position: relative;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  /* Image Styling */
+  .portfolio-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Cover the card */
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-card:hover img {
+    transform: scale(1.05); /* Zoom in on hover */
+  }
+  
+  /* Tag Styling */
+  .portfolio-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
+    color: #fff; /* White text for contrast */
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns for tablets */
+      gap: 15px;
+    }
+  
+    .portfolio-tag {
+      font-size: 12px; /* Smaller tag text for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr; /* Single-column layout for mobile */
+    }
+  
+    .portfolio-tag {
+      font-size: 11px; /* Smaller tag size for mobile */
+      padding: 6px 12px;
+    }
+  }
+  

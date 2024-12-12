@@ -1,0 +1,35 @@
+.offcanvas-nx{
+    background-color: var(--nx-color-fourth);
+    
+}
+.offcanvas{
+    border-right: 5px solid var(--nx-color-primary) !important;
+}
+.offcanvas-header{
+    background-color: var(--nx-color-primary);
+}
+.fs-4-nx{
+    font-size: 1.6rem;
+    font-weight: bold;
+    
+}
+
+.nav-link-nx-outer{
+    border-bottom: 1px solid rgb(161, 161, 161);
+    margin-bottom: 10px;
+}
+.nav-link-nx{
+    
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    
+}
+.nav-link-nx-outer {
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link-nx-outer:hover {
+    transform: translateX(5px); /* Moves the link 5px to the right */
+}

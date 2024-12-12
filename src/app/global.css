@@ -1,0 +1,47 @@
+:root{
+    --nx-color-primary:#143A52;
+    --nx-color-primary-hover:#1e597e;
+    --nx-color-secondary:white;
+    --nx-color-tertiary:#6E828A;
+    --nx-color-fourth:#CDE3EB;
+    --nx-color-alerming:#FF4A35;
+    --nx-color-bg:#E3EFF3;
+
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color:  var(--nx-color-bg) !important;
+}
+/* Thin, beautiful scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Adjust width as desired */
+}
+
+::-webkit-scrollbar-track {
+    background-color: white; /* Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--nx-color-primary); /* Scrollbar thumb color */
+    /* border-radius: 4px; */
+}
+
+/* Optional styling for scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--nx-color-primary);
+}
+
+
+/* Universal Margin */
+.mb-50{
+    margin-bottom: 50px;
+}
