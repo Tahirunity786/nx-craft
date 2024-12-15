@@ -25,11 +25,10 @@ export default function Home() {
 
 
       const servicesData = await serviceResponse.json();
-      const blogDataresponse = await blogResponse.json();
+      const blogData = await blogResponse.json();
 
       setActiveItem(servicesData);
-      setBlogData(blogDataresponse);
-      console.log(blogData)
+      setBlogData(blogData);
     } catch (error) {
       console.log(error);
     }
@@ -371,10 +370,7 @@ export default function Home() {
         <h2 className='mb-50 text-center fs-nx'>Read Our Blogs</h2>
         <div className="pe-lg-5 ps-lg-5">
         <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-4">
-          
-          {
-          
-          blogData.map((post) => (
+          {blogData.map((post) => (
             <div className="col mb-4" key={post.id}>
               
               <Card content={post.content} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`} />
