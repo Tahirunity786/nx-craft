@@ -22,3 +22,14 @@
     background: url('https://res.cloudinary.com/dx9xdlbae/image/upload/v1732096856/p0rxgm33ztmzhe1kvlhe.svg');
     background-position: center;
 }
+.circleGradient{
+    background: linear-gradient(to bottom, #CDE3EB, #E3EFF3);
+
+}
+.cards{
+    height: auto;
+    width:22rem ;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px 0px 10px 20px;
+}
