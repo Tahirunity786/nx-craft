@@ -1,0 +1,14 @@
+.bg-hire-nx{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.bg-hire-nx:hover{
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+    transition: all .3s ease-in-out;
+}
+.active-hire{
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+}
