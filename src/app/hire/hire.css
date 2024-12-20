@@ -1,0 +1,36 @@
+.nx-hire-btn {
+    border-radius: 50px;
+    background-color: var(--nx-color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    color: white;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+  }
+  .meeting-btn {
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+    border: none;
+    outline: none;
+    padding: 20px 0px;
+    border-radius: 50px;
+    font-weight: bold;
+  
+  }
+.bg-hire-nx{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.bg-hire-nx:hover{
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+    transition: all .3s ease-in-out;
+}
+.active{
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+}

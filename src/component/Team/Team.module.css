@@ -1,26 +1,85 @@
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller minmax */
-    gap: 5px; /* Reduced spacing */
-    padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 15px;
+  position: relative;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  border-radius: 50%; /* Circular card */
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent; /* Placeholder border */
+}
+
+.cover {
+  background-color: rgba(0, 0, 0, 0.333); /* Dark overlay */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .cover {
+  opacity: 1;
+}
+
+/* Button styling */
+.cover a {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover a:hover {
+  background-color: var(--nx-color-primary);
+  color: #fff;
+}
+
+/* Image styling */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Responsive behavior */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    gap: 10px;
   }
-  
+
   .card {
-    border-radius: 8px; /* Slightly smaller rounding */
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    max-width: 150px; /* Restrict the max width of cards */
-    height: 120px; /* Shorter height for a compact design */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 80px;
+    height: 80px;
   }
-  
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
+}

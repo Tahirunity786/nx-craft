@@ -29,7 +29,7 @@ export default function Home() {
 
       setActiveItem(servicesData);
       setBlogData(blogDataresponse);
-      console.log(blogData)
+   
     } catch (error) {
       console.log(error);
     }

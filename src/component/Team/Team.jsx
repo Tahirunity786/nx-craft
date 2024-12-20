@@ -1,3 +1,5 @@
+'use client'
+import Link from 'next/link';
 import styles from './Team.module.css';
 
 const people = [
@@ -15,12 +17,18 @@ const people = [
 const Team = () => {
   return (
     <div className={styles.grid}>
-      {people.map((person) => (
-        <div key={person.id} className={styles.card}>
-          <img src={person.image} alt={person.name} className={styles.image}  />
+    {people.map((person) => (
+      <div key={person.id} className={styles.card}>
+        <div className={styles.cover}>
+          <Link href={`/profile'/${'#'}`}>
+            Profile
+          </Link>
         </div>
-      ))}
-    </div>
+        <img src={person.image} alt={person.name} className={styles.image} />
+      </div>
+    ))}
+  </div>
+  
   );
 };
 
