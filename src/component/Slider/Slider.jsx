@@ -39,6 +39,7 @@ export default function UserSlider() {
                 onClick={() => {
                   handleActive(index);
                   setSelectedService(item.name);
+                  nextStep();
                 }}
               >
                 <div className="mb-3 text-center" dangerouslySetInnerHTML={{ __html: item.svg }}></div>
@@ -60,19 +61,19 @@ export default function UserSlider() {
           <div className="options">
             <button
               className={`option ${selectedTechnology === "React" ? "selected" : ""}`}
-              onClick={() => setSelectedTechnology("React")}
+              onClick={() => {setSelectedTechnology("React"); nextStep()}}
             >
               React
             </button>
             <button
               className={`option ${selectedTechnology === "Flutter" ? "selected" : ""}`}
-              onClick={() => setSelectedTechnology("Flutter")}
+              onClick={() => {setSelectedTechnology("Flutter"); nextStep()}}
             >
               Flutter
             </button>
             <button
               className={`option ${selectedTechnology === "Figma" ? "selected" : ""}`}
-              onClick={() => setSelectedTechnology("Figma")}
+              onClick={() => {setSelectedTechnology("Figma"); nextStep()}}
             >
               Figma
             </button>
@@ -133,27 +134,7 @@ export default function UserSlider() {
 
       <div className="slider-controls text-end">
         {currentStep > 0 && <button onClick={prevStep} className="prev-button">Previous</button>}
-        {currentStep < steps.length - 1 ? (
-          <button
-            onClick={nextStep}
-            className={`next-button ${(currentStep === 0 && !selectedService) || (currentStep === 1 && !selectedTechnology)
-                ? "disabled"
-                : ""
-              }`}
-            disabled={
-              (currentStep === 0 && !selectedService) || (currentStep === 1 && !selectedTechnology)
-            }
-          >
-            Next
-          </button>
-        ) : (
-          <button
-            onClick={() => alert("Form submitted successfully!")}
-            className="submit-button"
-          >
-            Submit
-          </button>
-        )}
+        
       </div>
     </div>
   );
