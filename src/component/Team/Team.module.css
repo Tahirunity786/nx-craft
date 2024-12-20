@@ -1,12 +1,13 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 15px;
+  gap: 5px;
   position: relative;
   padding: 20px;
 }
 
 .card {
+
   position: relative;
   border-radius: 50%; /* Circular card */
   overflow: hidden;
@@ -18,6 +19,7 @@
   align-items: center;
   justify-content: center;
   border: 2px solid transparent; /* Placeholder border */
+  margin: auto;
 }
 
 .cover {

@@ -30,7 +30,7 @@
     color: var(--nx-color-secondary);
     transition: all .3s ease-in-out;
 }
-.active{
+.active-hire{
     background-color: var(--nx-color-primary);
     color: var(--nx-color-secondary);
 }

@@ -20,7 +20,7 @@ const Team = () => {
     {people.map((person) => (
       <div key={person.id} className={styles.card}>
         <div className={styles.cover}>
-          <Link href={`/profile'/${'#'}`}>
+          <Link href={`/profile/${'#'}`}>
             Profile
           </Link>
         </div>
