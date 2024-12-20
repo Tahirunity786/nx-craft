@@ -34,7 +34,7 @@ const Page = () => {
               <h4 className='mb-3'>Let's make some magic and let the world see your brand in a more real way!
               </h4>
               <p className='mb-5'>We’re here to turn your vision into reality . Together, we’ll craft compelling experiences that showcase your brand’s authenticity and leave a lasting impression. Let’s collaborate to bring your story to life and make it truly unforgettable!</p>
-              <Link href="/hire/process" className='nx-hire-btn' style={{ display: "inline-block" }}>Hire Top Experts</Link>
+              <Link href="/hire/process" className='nx-hire-btn' style={{ display: "inline-block" }}>Hire Top Expert</Link>
             </div>
           </div>
           <div className="col-lg-6 pe-4 ps-4" >
@@ -132,7 +132,7 @@ const Page = () => {
           <div className="row">
             {
               Hire.map((item, index) => (
-                <div className={`col-lg-4 bg-hire-nx p-3 pt-5 pb-5 ${activeIndex === index ? "active-hire" : ""}`} key={item.id} onClick={() => handleActive(index)}>
+                <div className={`col-lg-4 bg-hire-nx border p-3 pt-5 pb-5 ${activeIndex === index ? "active-hire" : ""}`} key={item.id} onClick={() => handleActive(index)}>
                   <div className="mb-3" dangerouslySetInnerHTML={{ __html: item.svg }}></div>
                   <div className="mb-3">
                     <h4>{item.name}</h4>
