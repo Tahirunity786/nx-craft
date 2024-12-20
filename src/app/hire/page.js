@@ -25,7 +25,7 @@ const Page = () => {
   ]
   return (
     <>
-      <div className="container pt-5">
+      <div className="container pt-3">
         <div className="row mb-5" >
           <div className="col-lg-6 d-flex align-items-center">
             <div>
@@ -55,7 +55,7 @@ const Page = () => {
                       width="50"
                       height="50"
                       alt="banner"
-
+                      className='rounded-pill'
                       style={{ height: '45px', width: '100%' }}
                     />
                   </div>
