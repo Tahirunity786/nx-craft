@@ -125,7 +125,7 @@ export default function UserSlider() {
           animate="center"
           exit="exit"
           variants={slideVariants}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
         >
           {steps[currentStep].content}
         </motion.div>
