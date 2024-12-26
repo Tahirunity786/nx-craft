@@ -240,7 +240,7 @@ export default function Home() {
                 <div>
                   <span className="badge">Client Testimonial</span>
                   <h1 className="title">WebTech Solutions <br /> the transform</h1>
-                  <a href="#" className="btn support-btn">Get Support →</a>
+                  <a href="/contact" className="btn support-btn">Get Support →</a>
                 </div>
               </div>
             </div>

@@ -161,7 +161,7 @@ const Page = () => {
                 </div>
 
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+              <p>The Planning phase defines objectives, scope, timelines, resources, and risks to ensure successful project execution.</p>
             </div>
             <div className="box">
               <h6>Designing</h6>
@@ -174,7 +174,7 @@ const Page = () => {
                 </div>
 
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+              <p>The Designing phase involves creating detailed layouts and prototypes. It ensures alignment with project goals and user needs.</p>
             </div>
             <div className="box">
               <h6>Developing</h6>
@@ -187,7 +187,7 @@ const Page = () => {
                 </div>
 
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+              <p>The Developing phase focuses on coding and building the project based on the design specifications. It involves testing, debugging, and ensuring functionality.</p>
             </div>
             <div className="box">
               <h6>Testing</h6>
@@ -200,7 +200,7 @@ const Page = () => {
                 </div>
 
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+              <p>The Testing phase involves verifying the project's functionality, performance, and security. It includes identifying bugs and ensuring quality standards are met.</p>
             </div>
             <div className="box">
               <h6>Launch</h6>
@@ -213,7 +213,7 @@ const Page = () => {
                 </div>
 
               </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, eligendi nulla nesciunt nisi voluptate quia nostrum, quasi culpa dolor velit reprehenderit quos mollitia ducimus voluptatibus veniam quidem sequi possimus perspiciatis.</p>
+              <p>The Launch phase involves deploying the project to production. It ensures that everything is live and accessible to users, with final checks and monitoring.</p>
             </div>
 
           </div>
