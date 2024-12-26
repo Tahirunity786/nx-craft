@@ -21,6 +21,8 @@
   
   .options {
     display: flex;
+    align-items: start;
+    flex-wrap: wrap;
     gap: 10px;
   }
   
@@ -54,7 +56,19 @@
   .slider-controls {
     margin-top: 20px;
   }
-  
+  .checkbox{
+    background-color: white;
+    color: black;
+    padding: 13px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .checkbox:hover{
+    background-color: var(--nx-color-primary);
+    color: var(--nx-color-secondary);
+    transition: all .3s ease-in-out;
+  }
   .prev-button,
   .next-button,
   .submit-button {

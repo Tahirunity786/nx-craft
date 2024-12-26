@@ -2,7 +2,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import "./slide.css";
-
+import { useSearchParams } from "next/navigation";
+import { technologies } from "../../static-data";
 export default function UserSlider() {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedService, setSelectedService] = useState("");
@@ -10,7 +11,13 @@ export default function UserSlider() {
   const [optionalMessage, setOptionalMessage] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
 
-
+  const searchParams = useSearchParams();
+  const source = searchParams.get("source"); // Get the 'source' query parameter
+  console.log(source)
+  // Handle case when source is not yet available (if query param is missing)
+  if (!source) {
+    return <p>Loading...</p>; // Or some fallback content
+  }
   const Hire = [
     { id: 1, name: "Web Developement", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" /><path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" /></svg>` },
     { id: 2, name: "Graphic Designing", svg: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-brush" viewBox="0 0 16 16"><path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z" /></svg>` },
@@ -25,58 +32,27 @@ export default function UserSlider() {
   }
 
   const steps = [
+
     {
       id: 1,
       content: (
         <>
-          <h2 className="mb-5 mt-2">Select a Service</h2>
-          <div className="row">
-          {
-            Hire.map((item, index) => (
-              <div
-                className={`col-lg-4 bg-hire-nx border p-3 pt-5 pb-5 ${activeIndex === index ? "active-hire" : ""}`}
-                key={item.id}
-                onClick={() => {
-                  handleActive(index);
-                  setSelectedService(item.name);
-                  nextStep();
-                }}
-              >
-                <div className="mb-3 text-center" dangerouslySetInnerHTML={{ __html: item.svg }}></div>
-                <div className="mb-3 text-center">
-                  <h4>{item.name}</h4>
-                </div>
-              </div>
-            ))
-          }
-          </div>
-        </>
-      ),
-    },
-    {
-      id: 2,
-      content: (
-        <>
-          <h2>Select a Technology</h2>
+          <h2 className="mb-4">Select What You Like</h2>
           <div className="options">
-            <button
-              className={`option ${selectedTechnology === "React" ? "selected" : ""}`}
-              onClick={() => {setSelectedTechnology("React"); nextStep()}}
-            >
-              React
-            </button>
-            <button
-              className={`option ${selectedTechnology === "Flutter" ? "selected" : ""}`}
-              onClick={() => {setSelectedTechnology("Flutter"); nextStep()}}
-            >
-              Flutter
-            </button>
-            <button
-              className={`option ${selectedTechnology === "Figma" ? "selected" : ""}`}
-              onClick={() => {setSelectedTechnology("Figma"); nextStep()}}
-            >
-              Figma
-            </button>
+            {source === "webdevelopment" ? (
+              technologies.webDevelopment.map((service, index) => (
+                <div className="checkbox" key={service.id}>
+                  <span className="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                  </span>
+                  {service.name}
+                </div>
+              ))
+            ) : source === "designer"?(
+              <p>Hello Designer</p> // Fallback content if source is not "webdevelopment"
+            ):(<p></p>)}
           </div>
         </>
       ),
@@ -116,7 +92,7 @@ export default function UserSlider() {
   };
 
   return (
-    
+
     <div className="container  p-5">
       <AnimatePresence mode="wait">
         <motion.div
@@ -134,7 +110,7 @@ export default function UserSlider() {
 
       <div className="slider-controls text-end">
         {currentStep > 0 && <button onClick={prevStep} className="prev-button">Previous</button>}
-        
+
       </div>
     </div>
   );
