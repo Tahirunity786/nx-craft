@@ -144,7 +144,7 @@ const Page = () => {
                     <p>{item.desc}</p>
                   </div>
                   <div className="mb-3">
-                    <Link className='nav-link' href={item.link} style={{ fontWeight: 'bold' }}>View {item.slogan}</Link>
+                    <Link className='nav-link' href={item.link} style={{ fontWeight: 'bold' }}>Hire me</Link>
                   </div>
                 </div>
               ))
