@@ -55,6 +55,9 @@
   
   .slider-controls {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .checkbox{
     background-color: white;
@@ -69,6 +72,7 @@
     color: var(--nx-color-secondary);
     transition: all .3s ease-in-out;
   }
+  
   .prev-button,
   .next-button,
   .submit-button {
@@ -79,7 +83,7 @@
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-left: 20px;
+    /* margin-left: 20px; */
    
   }
   

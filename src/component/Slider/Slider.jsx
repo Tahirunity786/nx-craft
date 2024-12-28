@@ -12,9 +12,7 @@ export default function UserSlider() {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const searchParams = useSearchParams();
-  const source = searchParams.get("source"); // Get the 'source' query parameter
-  console.log(source)
-  // Handle case when source is not yet available (if query param is missing)
+  const source = searchParams.get("source");
   if (!source) {
     return <p>Loading...</p>; // Or some fallback content
   }
@@ -50,9 +48,57 @@ export default function UserSlider() {
                   {service.name}
                 </div>
               ))
-            ) : source === "designer"?(
-              <p>Hello Designer</p> // Fallback content if source is not "webdevelopment"
-            ):(<p></p>)}
+            ) : source === "designer" ? (
+              technologies.graphicDesignTechnologies.map((service, index) => (
+                <div className="checkbox" key={service.id}>
+                  <span className="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                  </span>
+                  {service.name}
+                </div>))
+            ) : source === "mobiledevelopment" ? (
+              technologies.mobileDevelopment.map((service, index) => (
+                <div className="checkbox" key={service.id}>
+                  <span className="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                  </span>
+                  {service.name}
+                </div>))
+            ) : source === "seo" ? (
+              technologies.seoTechnologies.map((service, index) => (
+                <div className="checkbox" key={service.id}>
+                  <span className="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                  </span>
+                  {service.name}
+                </div>))
+            ) : source === "dme" ? (
+              technologies.digitalMarketingTechnologies.map((service, index) => (
+                <div className="checkbox" key={service.id}>
+                  <span className="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                  </span>
+                  {service.name}
+                </div>))
+            ) : source === "uiux" ? (
+              technologies.uiUxTechnologies.map((service, index) => (
+                <div className="checkbox" key={service.id}>
+                  <span className="me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-plus-lg" viewBox="0 0 16 16">
+                      <path fillRule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2" />
+                    </svg>
+                  </span>
+                  {service.name}
+                </div>))
+            ) : (<p>Not found</p>)}
           </div>
         </>
       ),
@@ -109,7 +155,32 @@ export default function UserSlider() {
       </AnimatePresence>
 
       <div className="slider-controls text-end">
-        {currentStep > 0 && <button onClick={prevStep} className="prev-button">Previous</button>}
+        {currentStep >= 0 && (
+          <button
+            onClick={prevStep}
+            style={{
+              cursor: currentStep > 0 ? 'pointer' : 'not-allowed', // Set the cursor style dynamically
+              opacity: currentStep > 0 ? 1 : 0.5, // Optional: visually indicate disabled state
+            }}
+            disabled={currentStep === 0} // Properly disable the button when currentStep is 0
+            className="prev-button"
+          >
+            Previous
+          </button>
+        )}
+        {currentStep >= 0 && (
+          <button
+            onClick={nextStep}
+            style={{
+              cursor: currentStep > 0 ? 'pointer' : 'not-allowed', // Set the cursor style dynamically
+              opacity: currentStep > 0 ? 1 : 0.5, // Optional: visually indicate disabled state
+            }}
+            disabled={currentStep === 0} // Properly disable the button when currentStep is 0
+            className="next-button"
+          >
+            Next
+          </button>
+        )}
 
       </div>
     </div>
