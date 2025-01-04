@@ -14,6 +14,7 @@ import { formatDistanceToNow } from 'date-fns';
 const Page = () => {
   const params = useParams();
   const [detailPost, setPostDetail] = useState([]);
+  const [detailLmPost, setLmPostDetail] = useState([]);
   const [detailComment, setCommentDetail] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -91,9 +92,10 @@ const Page = () => {
   useEffect(() => {
     const fetchPostDetails = async () => {
       try {
-        const [postResponse, commentResponse] = await Promise.all([
+        const [postResponse, commentResponse, lmPosts] = await Promise.all([
           fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/sp-blog/${params.slug}/`),
           fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/show-post-comment/${params.slug}/`),
+          fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/content/lm-blogs`),
         ]);
 
         if (postResponse.ok) {
@@ -104,6 +106,11 @@ const Page = () => {
         if (commentResponse.ok) {
           const commentDetail = await commentResponse.json();
           setCommentDetail(commentDetail);
+        }
+        if (lmPosts.ok) {
+          const lmPostsdata = await lmPosts.json();
+          
+          setLmPostDetail(lmPostsdata);
         }
       } catch (error) {
         console.error("Error fetching post or comments:", error);
@@ -309,19 +316,30 @@ const Page = () => {
                 <div className="mb-4 ">
                   <h3 className='mb-3'>Recent Posts</h3>
                   <div className="row p-3 w-100">
-                    <div className="col-lg-4 col-md-4 col-sm-4">
-                      <CldImage
-                        src='https://res.cloudinary.com/dx9xdlbae/image/upload/v1732096856/p0rxgm33ztmzhe1kvlhe.svg'
-                        width={100}
-                        height={50}
-                        className='w-100'
-                        alt='post-image'
-                      />
-                    </div>
-                    <div className="col-lg-8 col-md-8 col-sm-8 text-start">
-                      <h6>Hello</h6>
-                      <p style={{ fontSize: "12px" }}>posted on 1 month ago</p>
-                    </div>
+                    {
+                      detailLmPost.map((data) => {
+                        return (
+                          <div key={data.id} className="col-lg-12 mb-3">
+                            <div className="row">
+                              <div className="col-lg-4 col-md-4 col-sm-4">
+                                <CldImage
+                                  src={data.cover_image.image_pb_id}
+                                  width={100}
+                                  height={50}
+                                  className='w-100'
+                                  alt='post-image'
+                                />
+                              </div>
+                              <div className="col-lg-8 col-md-8 col-sm-8 text-start">
+                                <h6>{data.title}</h6>
+                                <p style={{ fontSize: "12px" }}>posted on {formatDistanceToNow(new Date(data.date_posted), { addSuffix: true })}</p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })
+                    }
+                    
                   </div>
                 </div>
               </div>
