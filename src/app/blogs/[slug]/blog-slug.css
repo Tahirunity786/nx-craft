@@ -1,4 +1,4 @@
-.blog-circle{
+.blog-circle {
     width: 40px;
     height: 40px;
     background-color: rgb(93, 91, 91);
@@ -7,7 +7,8 @@
     position: relative;
 
 }
-.btn-blog{
+
+.btn-blog {
     background-color: var(--nx-color-primary);
     color: white;
     outline: none;
@@ -16,13 +17,16 @@
     padding: 10px 30px;
 
 }
-.btn-blog:hover{
+
+.btn-blog:hover {
     background-color: #1a5172;
 }
-.bg-light-nx{
+
+.bg-light-nx {
     background-color: var(--nx-color-fourth);
 }
-.commentCard{
+
+.commentCard {
     color: black;
     height: auto;
     width: 100%;
@@ -30,7 +34,8 @@
     padding: 20px;
 
 }
-.commentCard .profile{
+
+.commentCard .profile {
 
     width: 70px;
     height: 70px;
@@ -39,8 +44,18 @@
     margin-right: 20px;
 }
 
-.commentCard .profile .profile-image{
-position: absolute;
-left: 8px;
-top: 5px;
-    }
+.commentCard .profile .profile-image {
+    position: absolute;
+    left: 8px;
+    top: 5px;
+}
+
+.ico-footer {
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
