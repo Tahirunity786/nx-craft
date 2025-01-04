@@ -4,19 +4,44 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { CldImage } from 'next-cloudinary';
 import './portflio.css'
+import Link from 'next/link';
 
 const Page = () => {
   const [isEnd, setIsEnd] = useState(false);
+  const [portfolioDetails, setPortfolioDetails] = useState([]); // State to track the active button
   const [activeIndex, setActiveIndex] = useState(0); // State to track the active button
 
   const handleButtonClick = (index) => {
     setActiveIndex(index); // Update the active button index
   };
+  const getData = async () => {
+    try {
+      // Await the fetch call to ensure the response is resolved
+      let response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/all-porfolio`);
+
+      // Check if the response is okay
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // Await the JSON data
+      const data = await response.json();
+
+      // Log or process the data
+      setPortfolioDetails(data.results);
+
+    } catch (error) {
+      // Log the error
+      console.error("Error fetching blogs:", error);
+    }
+  }
 
   // Client render
   useEffect(() => {
-    document.title = "Portfolio - NX Craft";
 
+
+    document.title = "Portfolio - NX Craft";
+    getData();
   }, []);
 
 
@@ -62,77 +87,26 @@ const Page = () => {
 
       <div className="container mb-5">
         <div className="portfolio-grid">
-          {/* Card 1 */}
-          <div className="portfolio-card" style={{ gridRow: "span 2" }}>
-            <div className="portfolio-tag">Web Design</div>
-            <CldImage
-              src="fy7of11kfqhgguq5qsej"
-              alt="portfolio"
-              width={500}
-              height={500}
-              className="portfolio-image"
-            />
-          </div>
-
-          {/* Card 2 */}
-          <div className="portfolio-card">
-            <div className="portfolio-tag">Web Development</div>
-            <CldImage
-              src="fy7of11kfqhgguq5qsej"
-              alt="portfolio"
-              width={500}
-              height={500}
-              className="portfolio-image"
-            />
-          </div>
-
-          {/* Card 3 */}
-          <div className="portfolio-card" style={{ gridRow: "span 2" }}>
-            <div className="portfolio-tag">Mobile App</div>
-            <CldImage
-              src="fy7of11kfqhgguq5qsej"
-              alt="portfolio"
-              width={500}
-              height={500}
-              className="portfolio-image"
-            />
-          </div>
-
-          {/* Card 4 */}
-          <div className="portfolio-card" style={{ gridRow: "span 2" }}>
-            <div className="portfolio-tag">Web Development</div>
-            <CldImage
-              src="fy7of11kfqhgguq5qsej"
-              alt="portfolio"
-              width={500}
-              height={500}
-              className="portfolio-image"
-            />
-          </div>
-          <div className="portfolio-card">
-            <div className="portfolio-tag">Web Development</div>
-            <CldImage
-              src="fy7of11kfqhgguq5qsej"
-              alt="portfolio"
-              width={500}
-              height={500}
-              className="portfolio-image"
-            />
-          </div>
-          <div className="portfolio-card">
-            <div className="portfolio-tag">Web Development</div>
-            <CldImage
-              src="fy7of11kfqhgguq5qsej"
-              alt="portfolio"
-              width={500}
-              height={500}
-              className="portfolio-image"
-            />
-          </div>
-
-
+          {
+            portfolioDetails === undefined ? <div>Portfolio Data not Given</div> : 
+            portfolioDetails.map((portfolio, index) => (
+              <div className="portfolio-card" key={index} style={{gridRow: `span ${portfolio.image.tag === 'Website Development' ? 2 : 1}`}}>
+                <div className="portfolio-tag">{portfolio.category}</div>
+                <Link href={`/portfolio/${portfolio.id}`}>
+                <CldImage
+                  src={portfolio.image}
+                  alt="portfolio"
+                  width={500}
+                  height={500}
+                  className="portfolio-image"
+                />
+                </Link>
+              </div>
+            ))
+          }
+          
         </div>
-        <div/>
+        <div />
       </div>
 
 
