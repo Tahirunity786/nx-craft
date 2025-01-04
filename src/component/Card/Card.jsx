@@ -7,6 +7,7 @@ import PostContent from '../PostContent/PostContent';
 import { formatDistanceToNow } from 'date-fns';
 
 const Card = ({ image, title, link = "#", content }) => {
+console.log(content)
   return (
     <div className="position-relative">
       <Link href={link}>

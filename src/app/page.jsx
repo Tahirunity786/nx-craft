@@ -26,7 +26,6 @@ export default function Home() {
 
       const servicesData = await serviceResponse.json();
       const blogDataresponse = await blogResponse.json();
-
       setActiveItem(servicesData);
       setBlogData(blogDataresponse);
    
@@ -377,7 +376,7 @@ export default function Home() {
           blogData.map((post) => (
             <div className="col mb-4" key={post.id}>
               
-              <Card content={post.content} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`} />
+              <Card content={post} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`} />
             </div>
           ))}
         </div>
