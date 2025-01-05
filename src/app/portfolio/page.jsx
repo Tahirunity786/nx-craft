@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 import './portflio.css'
 import Link from 'next/link';
 
@@ -26,9 +26,11 @@ const Page = () => {
 
       // Await the JSON data
       const data = await response.json();
+      console.log(data)
+
 
       // Log or process the data
-      setPortfolioDetails(data.results);
+      setPortfolioDetails(data);
 
     } catch (error) {
       // Log the error
@@ -88,23 +90,33 @@ const Page = () => {
       <div className="container mb-5">
         <div className="portfolio-grid">
           {
-            portfolioDetails === undefined ? <div>Portfolio Data not Given</div> : 
-            portfolioDetails.map((portfolio, index) => (
-              <div className="portfolio-card" key={index} style={{gridRow: `span ${portfolio.image.tag === 'Website Development' ? 2 : 1}`}}>
-                <div className="portfolio-tag">{portfolio.category}</div>
-                <Link href={`/portfolio/${portfolio.id}`}>
-                <CldImage
-                  src={portfolio.image}
-                  alt="portfolio"
-                  width={500}
-                  height={500}
-                  className="portfolio-image"
-                />
-                </Link>
-              </div>
-            ))
+            portfolioDetails === undefined ? (
+              <div>Portfolio Data not Given</div>
+            ) : (
+              portfolioDetails.map((portfolio, index) => (
+                <div
+                  className="portfolio-card"
+                  key={index}
+                  style={{
+                    gridRow: `span ${portfolio.image[0]?.tag === 'Website Development' ? 2 : 1}`,
+                  }}
+                >
+                  <div className="portfolio-tag">{portfolio.image[0]?.tag}</div>
+                  <Link href={`/portfolio/${portfolio.id}`}>
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_SERVER_END_POINT}${portfolio.image?.[0]?.media}`}
+                      alt="portfolio"
+                      width={500}
+                      height={500}
+                      className="portfolio-image"
+                    />
+                  </Link>
+                </div>
+              ))
+            )
           }
-          
+
+
         </div>
         <div />
       </div>
