@@ -89,33 +89,35 @@ const Page = () => {
 
       <div className="container mb-5">
         <div className="portfolio-grid">
-          {
-            portfolioDetails === undefined ? (
-              <div>Portfolio Data not Given</div>
-            ) : (
-              portfolioDetails.map((portfolio, index) => (
-                <div
-                  className="portfolio-card"
-                  key={index}
-                  style={{
-                    gridRow: `span ${portfolio.image[0]?.tag === 'Website Development' ? 2 : 1}`,
-                  }}
-                >
-                  <div className="portfolio-tag">{portfolio.image[0]?.tag}</div>
-                  <Link href={`/portfolio/${portfolio.id}`}>
-                    <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_END_POINT}${portfolio.image?.[0]?.media}`}
-                      alt="portfolio"
-                      width={500}
-                      height={500}
-                      className="portfolio-image"
-                    />
-                  </Link>
-                </div>
-              ))
-            )
-          }
+        {portfolioDetails.length === 0 ? (
+        <div>Portfolio Data not Given</div>
+      ) : (
+        portfolioDetails.map((portfolio, index) => {
+          const firstImage = portfolio.image?.[0]; // Access the first image
+          const gridSpan = firstImage?.tag === 'Website Development' ? 2 : 1; // Determine grid span
 
+          return (
+            <div
+              className="portfolio-card"
+              key={index}
+              style={{ gridRow: `span ${gridSpan}` }}
+            >
+              <div className="portfolio-tag">{firstImage?.tag || 'No Tag'}</div>
+              <Link href={`/portfolio/${portfolio.id}`}>
+                
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_SERVER_END_POINT}${firstImage?.media}`}
+                    alt={portfolio.description || 'Portfolio Image'}
+                    width={500}
+                    height={500}
+                    className="portfolio-image"
+                  />
+
+              </Link>
+            </div>
+          );
+        })
+      )}
 
         </div>
         <div />
