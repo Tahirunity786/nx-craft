@@ -2,9 +2,9 @@
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Image from 'next/image';
 import './portflio.css'
 import Link from 'next/link';
+import { CldImage } from 'next-cloudinary';
 
 const Page = () => {
   const [isEnd, setIsEnd] = useState(false);
@@ -103,10 +103,10 @@ const Page = () => {
                   style={{ gridRow: `span ${gridSpan}` }}
                 >
                   <div className="portfolio-tag">{firstImage?.tag || 'No Tag'}</div>
-                  <Link href={`/portfolio/${portfolio.id}`}>
+                  <Link href={`/portfolio/${portfolio.slug}`}>
 
-                    <Image
-                      src={`https://sitif62914q.pythonanywhere.com${firstImage?.media}`}
+                    <CldImage
+                      src={firstImage.image_pb_id}
                       alt={portfolio.description || 'Portfolio Image'}
                       width={500}
                       height={500}

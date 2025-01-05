@@ -28,7 +28,7 @@ export default function Home() {
       const blogDataresponse = await blogResponse.json();
       setActiveItem(servicesData);
       setBlogData(blogDataresponse);
-   
+
     } catch (error) {
       console.log(error);
     }
@@ -172,7 +172,7 @@ export default function Home() {
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
 
-            {
+            {activeItem.length === 0 ? <h4>Data Not Uploaded</h4> :
               activeItem.map((item) => (
                 <div key={item._id} className="col p-lg-4 p-md-4 s-nx">
                   <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
@@ -369,17 +369,17 @@ export default function Home() {
         </div>
         <h2 className='mb-50 text-center fs-nx'>Read Our Blogs</h2>
         <div className="pe-lg-5 ps-lg-5">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-4">
-          
-          {
-          
-          blogData.map((post) => (
-            <div className="col mb-4" key={post.id}>
-              
-              <Card content={post} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`} />
-            </div>
-          ))}
-        </div>
+          <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-4">
+
+            {
+              blogData.length === 0 ? <h4>Data not upload</h4> :
+                blogData.map((post) => (
+                  <div className="col mb-4" key={post.id}>
+
+                    <Card content={post} image={post.cover_image.image_pb_id} link={`/blogs/${post.id}`} />
+                  </div>
+                ))}
+          </div>
         </div>
       </div>
     </>

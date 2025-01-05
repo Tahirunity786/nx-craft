@@ -67,7 +67,8 @@ const Page = () => {
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-sm-1 row-cols-lg-3 g-2 g-lg-3" id="service__spread">
 
-            {packages.map((item) => (
+            {packages.length === 0 ? <h4 className='text-center'>Data Not Updated</h4>:
+            packages.map((item) => (
               <div key={item._id} className="col p-4 text-center s-nx">
                 <div className="border-nx w-100 h-100 p-2 position-relative rounded-3">
                   <CldImage
