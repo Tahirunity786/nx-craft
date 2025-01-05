@@ -106,7 +106,7 @@ const Page = () => {
                   <Link href={`/portfolio/${portfolio.id}`}>
 
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_SERVER_END_POINT}${firstImage?.media}`}
+                      src={`https://sitif62914q.pythonanywhere.com${firstImage?.media}`}
                       alt={portfolio.description || 'Portfolio Image'}
                       width={500}
                       height={500}
