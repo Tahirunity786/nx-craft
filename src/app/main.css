@@ -9,6 +9,9 @@
 
 }
 
+body{
+    position: relative;
+}
 
 main {
     height: auto;

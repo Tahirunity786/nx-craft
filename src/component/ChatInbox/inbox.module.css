@@ -1,0 +1,176 @@
+/* Button styling */
+.live_btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background-color: var(--nx-color-primary);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+  cursor: pointer;
+
+  /* Keyframe animation for box-shadow */
+  animation: shadowPulse 1.5s ease-in-out infinite;
+}
+
+/* Modal container */
+.modal {
+  position: fixed;
+  bottom: 100px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  padding-right: 50px;
+  z-index: 500;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Modal content */
+.modalContent {
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  z-index: 500;
+  border-radius: 10px;
+  animation: slideIn 0.5s ease-out;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.inboxAll, .chatSend, .chatHeader{
+  padding: 10px;
+}
+
+/* Chat Header */
+.chatHeader {
+  background: linear-gradient(100deg, var(--nx-color-primary), #4a90e2); /* Blue gradient */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  z-index: 500;
+  
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Inbox Area */
+.inboxAll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f9f9f9;
+  height: 300px;
+}
+
+.message {
+  background-color: #e6e6e6;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.userMessage {
+  background-color: var(--nx-color-primary);
+  color: #fff;
+  margin-left: auto;
+}
+
+/* Chat Send Area */
+.chatSend {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  gap: 10px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+
+.iconButton svg {
+  width: 20px;
+  height: 20px;
+  fill: #666;
+}
+
+.messageInput {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.sendButton {
+  background-color: var(--nx-color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Keyframe animation */
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* initial shadow */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 1); /* increased shadow */
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* back to initial shadow */
+  }
+}

@@ -2,6 +2,8 @@ import './global.css';
 import Script from 'next/script';
 import Head from "next/head";
 import ConditionalWrapper from "@/component/ConditionalWrapper/ConditionalWrapper"; // Import the new client component
+import Notification from "@/component/Notification/Notification"; // Import the new client component
+import ChatInbox from "@/component/ChatInbox/ChatInbox"; // Import the new client component
 
 export const metadata = {
   title: "Welcome to NX Craft",
@@ -12,6 +14,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <Head>
@@ -27,6 +30,8 @@ export default function RootLayout({ children }) {
       </Head>
       <body>
         {/* Google Analytics */}
+        <Notification/>
+        <ChatInbox/>
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-VCLVSETEK7"
