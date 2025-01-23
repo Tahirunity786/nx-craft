@@ -48,9 +48,6 @@ const Page = () => {
         </form>
         <div className="login-footer">
           <p>
-            Don't have an account? <a href="/dashboard/signup">Sign up</a>
-          </p>
-          <p>
             Forgot your password? <a href="/reset-password">Reset it</a>
           </p>
         </div>
