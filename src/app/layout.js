@@ -5,6 +5,8 @@ import ConditionalWrapper from "@/component/ConditionalWrapper/ConditionalWrappe
 import Notification from "@/component/Notification/Notification"; // Import the new client component
 import ChatInbox from "@/component/ChatInbox/ChatInbox"; // Import the new client component
 
+
+
 export const metadata = {
   title: "Welcome to NX Craft",
   description: `NXCraft provides cutting-edge IT solutions, specializing in web and mobile app development, cloud services, and digital transformation.`,

@@ -1,10 +1,24 @@
 'use client';
-import React, { useState, useEffect, useCallback } from "react";
+
+import { initializeApp } from 'firebase/app';
+import { useEffect } from 'react';
+import { getMessaging, getToken } from 'firebase/messaging';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyDs9xZG1wemU8K-FiRG8sZBjEGgBjL6XT0',
+  authDomain: 'nxcraft-96cb0.firebaseapp.com',
+  projectId: 'nxcraft-96cb0',
+  storageBucket: 'nxcraft-96cb0.appspot.com',
+  messagingSenderId: '651506459966',
+  appId: '1:651506459966:web:76642de2a82d79351d386f',
+  measurementId: 'G-6XRBTY308K',
+};
+
+// Initialize Firebase app
+const firebaseApp = initializeApp(firebaseConfig);
 
 const Notification = () => {
-  const [notifications, setNotifications] = useState([]); // State for notifications
-
-  const getToken = () => {
+  const getUserToken = () => {
     try {
       return localStorage.getItem("secure") || null;
     } catch (error) {
@@ -12,129 +26,76 @@ const Notification = () => {
       return null;
     }
   };
+  // const setToken = (token) => {
+  //   try {
+  //     localStorage.setItem("secure", token);
+  //   } catch (error) {
+  //     console.error("Error saving token:", error);
+  //   }
+  // };
 
-  const setToken = (token) => {
-    try {
-      localStorage.setItem("secure", token);
-    } catch (error) {
-      console.error("Error saving token:", error);
-    }
-  };
 
-  const fetchToken = async () => {
-    const token = getToken();
-    if (!token) {
+  useEffect(() => {
+    const registerServiceWorker = async () => {
+      if (!('serviceWorker' in navigator)) {
+        console.warn('Service Worker is not supported in this browser.');
+        return;
+      }
+
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/secure`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
-        if (response.ok) {
-          const data = await response.json();
-          if (data.cookie) setToken(data.cookie);
+        const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+
+        const messaging = getMessaging(firebaseApp);
+
+        // Request Firebase Cloud Messaging token
+        const token = await getToken(messaging, {
+          vapidKey: 'BNDFzWbLS0xdYIiX_XqD4xbw0JqSPTejZovRLMCzOi4HFNMQm2r1TwggMeFf446bVLbP07npWSHXjOI-M_KNGWw',
+          serviceWorkerRegistration: registration,
+        });
+
+        if (token) {
+          await sendTokenToServer(token);
         } else {
-          console.error("Failed to fetch token:", response.status);
+          console.warn('No token available. Requesting permission.');
         }
       } catch (error) {
-        console.error("Error fetching token:", error);
+        console.error('Error during Service Worker registration or FCM setup:', error);
       }
-    }
-  };
-
-  const initializeWebSocket = useCallback(() => {
-    const token = getToken();
-    if (!token) return;
-
-    const ws = new WebSocket(
-      `ws://127.0.0.1:8000/ws/notification/${encodeURIComponent(token)}`
-    );
-
-    ws.onopen = () => {
-      console.log("WebSocket connected.");
     };
 
-    ws.onmessage = (event) => {
+    const sendTokenToServer = async (token) => {
       try {
-        const data = JSON.parse(event.data);
-        if (data.message) {
-          // Add notification to the state
-          setNotifications((prev) => [...prev, { id: Date.now(), text: data.message }]);
+        const csrfToken = getCsrfToken();
+        const user_token = getUserToken();
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/fcm_notify_saver`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(csrfToken && { 'X-CSRFToken': csrfToken }),
+          },
+          body: JSON.stringify({ fcm_token: token,  token: user_token }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to submit token: ${response.statusText}`);
         }
       } catch (error) {
-        console.error("Error parsing message:", error);
+        console.error('Error sending token to server:', error);
       }
     };
 
-    ws.onerror = (error) => {
-      console.error("WebSocket error:", error);
+    const getCsrfToken = () => {
+      return document.cookie
+        .split('; ')
+        .find((row) => row.startsWith('csrftoken='))
+        ?.split('=')[1] || null;
     };
 
-    ws.onclose = () => {
-      console.log("WebSocket disconnected.");
-    };
-
-    return () => {
-      ws.close();
-    };
+    registerServiceWorker();
   }, []);
 
-  useEffect(() => {
-    fetchToken();
-    const cleanupWebSocket = initializeWebSocket();
-    return () => {
-      if (cleanupWebSocket) cleanupWebSocket();
-    };
-  }, [initializeWebSocket]);
-
-  const removeNotification = (id) => {
-    setNotifications((prev) => prev.filter((notif) => notif.id !== id));
-  };
-  useEffect(() => {
-    const timers = notifications.map((notif) =>
-      setTimeout(() => removeNotification(notif.id), 5000)
-    );
-    return () => timers.forEach((timer) => clearTimeout(timer));
-  }, [notifications]);
-  
-
-  return (
-    <>
-      <div className="notification-container">
-        {notifications.map((notif) => (
-          <div
-            key={notif.id}
-            className="notification"
-            onClick={() => removeNotification(notif.id)}
-          >
-            {notif.text}
-          </div>
-        ))}
-      </div>
-      <style jsx>{`
-        .notification-container {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          z-index: 9999;
-        }
-        .notification {
-          background-color: #333;
-          color: #fff;
-          padding: 10px 20px;
-          border-radius: 5px;
-          margin-bottom: 10px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-          cursor: pointer;
-        }
-        .notification:hover {
-          opacity: 0.9;
-        }
-      `}</style>
-    </>
-  );
+  return null;
 };
 
 export default Notification;
