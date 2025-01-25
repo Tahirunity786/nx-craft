@@ -9,6 +9,7 @@ const ChatInbox = () => {
   const [messages, setMessages] = useState([]);
   const [socket, setSocket] = useState(null);
   const [isSocketConnected, setIsSocketConnected] = useState(false);
+  const [primaryId, setPrimaryId] = useState(0);
 
   // Retrieve the JWT token from localStorage
   const getToken = () => {
@@ -52,6 +53,16 @@ const ChatInbox = () => {
       }
     }
   };
+  
+  // Fetch primary user id from localStorage
+  const primaryIdsetter = () => {
+    try {
+      const user = JSON.parse(localStorage.getItem('user_id'));
+      setPrimaryId(user.id);
+    } catch (error) {
+      console.error('Error retrieving user:', error);
+    }
+  };
 
   // Initialize WebSocket connection
   const initializeWebSocket = useCallback(() => {
@@ -67,7 +78,6 @@ const ChatInbox = () => {
 
     ws.onopen = () => {
       setIsSocketConnected(true);
-      console.log('WebSocket connected.');
     };
 
     ws.onmessage = (event) => {
@@ -76,11 +86,12 @@ const ChatInbox = () => {
         console.log('Received data:', data);
 
         if (data.type === 'chat_history' && Array.isArray(data.messages)) {
-          setMessages(data.messages);
+          setMessages(data.messages); // Load chat history
         }
 
         if (data.id && data.message) {
           setMessages((prev) => {
+            // Prevent duplicate messages
             const isDuplicate = prev.some((msg) => msg.id === data.id);
             return isDuplicate ? prev : [...prev, data];
           });
@@ -140,16 +151,13 @@ const ChatInbox = () => {
 
     const messageData = { message };
     socket.send(JSON.stringify(messageData));
-    setMessages((prev) => [
-      ...prev,
-      { id: `temp-${Date.now()}`, message, user: { first_name: 'You' } },
-    ]);
-    setMessage('');
+    setMessage(''); // Reset message input
   };
 
-  // Fetch token on component mount
+  // Fetch token and user data on component mount
   useEffect(() => {
     fetchToken();
+    primaryIdsetter();
   }, []);
 
   return (
@@ -179,14 +187,15 @@ const ChatInbox = () => {
             </div>
             <div className={styles.inboxAll}>
               {messages.map((msg, index) => (
-                <p
+                <div
                   key={index}
-                  className={`${styles.message} ${
-                    msg.user.first_name === 'You' ? styles.userMessage : ''
-                  }`}
+                  className={`${styles.message} ${msg.user.id === primaryId // Replace with the primary user's ID
+                    ? styles.primaryMessage // Right-aligned for primary user
+                    : styles.secondaryMessage // Left-aligned for secondary user
+                    }`}
                 >
-                  {msg.message}
-                </p>
+                  <p className="mb-0">{msg.message}</p>
+                </div>
               ))}
             </div>
             <div className={styles.chatSend}>

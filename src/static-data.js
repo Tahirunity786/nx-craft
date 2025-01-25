@@ -132,7 +132,7 @@ export const technologies = {
 
 export const chatUser = [
 
-    {id:1, first_name:"Brady", last_name:"Burns", chatRoom:"e2237798-51da-466b-ad55-806d4582de52"},
-    {id:3, first_name:"Tatum", last_name:"Ford", chatRoom:"e2237798-51da-466b-ad55-806d4582de41"},
+    // {id:4, first_name:"Usman", last_name:"Ali", chatRoom:"e2237798-51da-466b-ad55-806d4582de52"},
+    {id:35, first_name:"Tatum", last_name:"Ford", chatRoom:"e2237798-51da-466b-ad55-806d4582de41"},
     // {id:3, first_name:"Usman", last_name:"Ali", chatRoom:"e2237798-51da-466b-ad55-806d4582de42"},
 ]

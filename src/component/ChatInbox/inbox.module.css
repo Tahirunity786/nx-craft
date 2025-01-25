@@ -174,3 +174,42 @@
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* back to initial shadow */
   }
 }
+
+.primaryMessage {
+  display: flex;
+  align-self: flex-end;
+  background-color: #d1f7c4; /* Light green for primary user */
+  text-align: right;
+  margin-left: auto;
+}
+
+.secondaryMessage {
+  display: flex;
+  align-self: flex-start;
+  background-color: #f0f0f0; /* Light gray for secondary user */
+  text-align: left;
+  margin-right: auto;
+}
+
+.message {
+  /* padding: 10px; */
+  border-radius: 8px;
+  max-width: 60%;
+  /* margin-bottom: 10px; */
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
+}
+
+.messageSender {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  background-color: #333;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}

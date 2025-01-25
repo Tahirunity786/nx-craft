@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         {/* Google site verification */}
         <meta name="google-site-verification" content="Jr_3Z-ymiNvORdlkdvusQJyKkc8qH_BnZY3ARsR9q0I" />
       </Head>
-      <body>
+      <body className='w-100'>
         {/* Google Analytics */}
         <Notification/>
         <ChatInbox/>
