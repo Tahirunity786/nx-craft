@@ -3,6 +3,7 @@
 import Navbar from "@/component/Navbar/Navbar";
 import Footer from "@/component/Footer/Footer";
 import { usePathname } from "next/navigation";
+import ChatInbox from "@/component/ChatInbox/ChatInbox"; // Import the new client component
 
 export default function ConditionalWrapper({ children }) {
   const pathname = usePathname();
@@ -10,10 +11,12 @@ export default function ConditionalWrapper({ children }) {
 
   const showNavbar = !noNavbarFooterRoutes.includes(pathname);
   const showFooter = !noNavbarFooterRoutes.includes(pathname);
+  const showChatBox = !noNavbarFooterRoutes.includes(pathname);
 
   return (
     <>
       {showNavbar && <Navbar />}
+      {showChatBox && <ChatInbox/>}
       <main className="w-100">{children}</main>
       {showFooter && <Footer />}
     </>

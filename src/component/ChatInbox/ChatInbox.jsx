@@ -2,14 +2,15 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './inbox.module.css';
-
+import EmojiPicker from 'emoji-picker-react';
 const ChatInbox = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [socket, setSocket] = useState(null);
   const [isSocketConnected, setIsSocketConnected] = useState(false);
-  const [primaryId, setPrimaryId] = useState(0);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+
 
   // Retrieve the JWT token from localStorage
   const getToken = () => {
@@ -30,6 +31,13 @@ const ChatInbox = () => {
     }
   };
 
+  const setLocalUser = (user) => {
+    try {
+      localStorage.setItem('user_id', JSON.stringify(user));
+    } catch (error) {
+      console.error('Error saving user:', error);
+    }
+  }
   // Fetch and set the token if not present
   const fetchToken = async () => {
     const token = getToken();
@@ -44,7 +52,11 @@ const ChatInbox = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          if (data.cookie) setToken(data.cookie);
+          if (data.cookie) {
+            setLocalUser(data.user);
+            setToken(data.cookie);
+
+          }
         } else {
           console.error('Failed to fetch token:', response.status);
         }
@@ -53,7 +65,7 @@ const ChatInbox = () => {
       }
     }
   };
-  
+
   // Fetch primary user id from localStorage
   const primaryIdsetter = () => {
     try {
@@ -62,6 +74,9 @@ const ChatInbox = () => {
     } catch (error) {
       console.error('Error retrieving user:', error);
     }
+  };
+  const handleEmojiClick = (emojiObject) => {
+    setMessage((prev) => prev + emojiObject.emoji);
   };
 
   // Initialize WebSocket connection
@@ -83,12 +98,12 @@ const ChatInbox = () => {
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
-        console.log('Received data:', data);
-
+        
         if (data.type === 'chat_history' && Array.isArray(data.messages)) {
-          setMessages(data.messages); // Load chat history
+          setMessages(data.messages);
+          return;
         }
-
+    
         if (data.id && data.message) {
           setMessages((prev) => {
             // Prevent duplicate messages
@@ -97,7 +112,7 @@ const ChatInbox = () => {
           });
         }
       } catch (error) {
-        console.error('Error parsing message:', error);
+        console.error('Message handling error:', error);
       }
     };
 
@@ -157,7 +172,7 @@ const ChatInbox = () => {
   // Fetch token and user data on component mount
   useEffect(() => {
     fetchToken();
-    primaryIdsetter();
+
   }, []);
 
   return (
@@ -177,38 +192,64 @@ const ChatInbox = () => {
 
       {/* Modal */}
       {isModalOpen && (
+
         <div className={styles.modal}>
           <div className={styles.modalContent}>
             <div className={styles.chatHeader}>
-              <h4>Live Chat</h4>
+              <h6 className='mb-0'>Live Chat</h6>
               <button className={styles.closeButton} onClick={toggleModal}>
                 &times;
               </button>
             </div>
             <div className={styles.inboxAll}>
-              {messages.map((msg, index) => (
+              {showEmojiPicker && (
+
+                <EmojiPicker onEmojiClick={handleEmojiClick} height={300} style={{ position: 'absolute', bottom: '60px', left: "50px" }} />
+              )}
+              {
+              messages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`${styles.message} ${msg.user.id === primaryId // Replace with the primary user's ID
+                  className={`${styles.message} ${msg.user.id === JSON.parse(localStorage.getItem('user_id')).id // Replace with the primary user's ID
                     ? styles.primaryMessage // Right-aligned for primary user
                     : styles.secondaryMessage // Left-aligned for secondary user
                     }`}
                 >
-                  <p className="mb-0">{msg.message}</p>
+                  <p className={`mb-0 ${styles.inboxMessage}`}>{msg.message}</p>
                 </div>
               ))}
             </div>
             <div className={styles.chatSend}>
-              <input
-                type="text"
+              <div className={styles.chatUtiles}>
+                <button className="btn btn-light w-100 h-100 rounded-1" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#143A52" className="bi bi-paperclip" viewBox="0 0 16 16">
+                    <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0z" />
+                  </svg>
+                </button>
+                <button
+                  className="btn btn-light w-100 h-100 rounded-1"
+                  type="button"
+                  onClick={() => setShowEmojiPicker((prev) => !prev)}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#143A52" className="bi bi-emoji-smile-fill" viewBox="0 0 16 16">
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8" />
+                  </svg>
+                </button>
+              </div>
+              <textarea
+                rows="1"
                 className={styles.messageInput}
                 placeholder="Type a message..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-              />
-              <button className={styles.sendButton} onClick={sendMessage}>
-                Send
-              </button>
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault(); // Prevent newline in textarea
+                    sendMessage();
+                  }
+                }}
+              ></textarea>
+
             </div>
           </div>
         </div>

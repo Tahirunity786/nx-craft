@@ -3,7 +3,6 @@ import Script from 'next/script';
 import Head from "next/head";
 import ConditionalWrapper from "@/component/ConditionalWrapper/ConditionalWrapper"; // Import the new client component
 import Notification from "@/component/Notification/Notification"; // Import the new client component
-import ChatInbox from "@/component/ChatInbox/ChatInbox"; // Import the new client component
 
 
 
@@ -33,7 +32,7 @@ export default function RootLayout({ children }) {
       <body className='w-100'>
         {/* Google Analytics */}
         <Notification/>
-        <ChatInbox/>
+        
         <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-VCLVSETEK7"
