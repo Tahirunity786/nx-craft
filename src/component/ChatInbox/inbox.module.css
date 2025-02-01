@@ -43,6 +43,7 @@
   border-radius: 10px;
   animation: slideIn 0.5s ease-out;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  position: relative;
 }
  .chatHeader{
   padding: 8px 20px;
@@ -73,6 +74,7 @@
 .inboxAll {
   flex: 1;
   overflow-y: auto;
+  scroll-behavior: smooth;
   padding: 10px;
   background-color: #f9f9f9;
   height: 250px;
@@ -180,15 +182,20 @@
 .primaryMessage {
   display: flex;
   align-self: flex-end;
+  flex-direction: column;
+  
   background-color: var(--nx-color-fourth); /* Light green for primary user */
   color: rgb(52, 52, 52);
   text-align: right;
   margin-left: auto;
+  font-size: small;
 }
 
 .secondaryMessage {
   display: flex;
   align-self: flex-start;
+  flex-direction: column;
+  
   background-color: var(--nx-color-primary); /* Light gray for secondary user */
   text-align: left;
   margin-right: auto;
@@ -232,4 +239,52 @@
   padding-bottom: 10px;
   /* background-color: #f9f9f9; */
   /* border-top: 1px solid #ddd; */
+}
+.dateSeparator {
+  text-align: center;
+  margin: 24px 0;
+  position: relative;
+}
+
+.dateSeparator span {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.4px;
+  backdrop-filter: blur(2px);
+}
+
+.dateSeparator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  
+    .dateSeparator span {
+      background-color: rgba(30, 30, 30, 0.9);
+      color: rgba(255, 255, 255, 0.7);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .dateSeparator::before {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  
 }

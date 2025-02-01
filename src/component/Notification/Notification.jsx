@@ -1,17 +1,24 @@
 'use client';
 
 import { initializeApp } from 'firebase/app';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getMessaging, getToken } from 'firebase/messaging';
-
+import styles from './notification.module.css'
 
 
 // Initialize Firebase app
 
 const Notification = () => {
-  const [primaryId, setPrimaryId] = useState(0);
+  // const [notifications, setNotifications] = useState([]);
 
-  
+ // Add a new notification to the list and auto-remove after 5 seconds.
+//  const addNotification = (message, title = 'New Message') => {
+//   const id = Date.now();
+//   setNotifications(prev => [...prev, { id, title, message }]);
+//   setTimeout(() => {
+//     setNotifications(prev => prev.filter(notif => notif.id !== id));
+//   }, 5000);
+// };
   const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASEAPI_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -63,8 +70,38 @@ const Notification = () => {
       }
     }
   };
+// // Example: Open a WebSocket to listen for notification messages.
+// useEffect(() => {
+  
+//   const token = getUserToken();
+//   console.log(token)
+//   const ws = new WebSocket(
+//     `ws://127.0.0.1:8000/ws/notification/${encodeURIComponent(token)}`
+//   );
+//   ws.onopen = () => {
+//     console.log('Notification WebSocket connected');
+//   };
+//   ws.onmessage = (event) => {
+//     try {
+//       const notificationdata = JSON.parse(event.data);
+//       // send_notification
+//       // Assume the received data has a "message" property (customize as needed).
+//       if (notificationdata && notificationdata.message) {
+//         addNotification(notificationdata.message, notificationdata.title || 'New Message');
+//       }
+//     } catch (error) {
+//       console.error('Error parsing notification message:', error);
+//     }
+//   };
+//   ws.onerror = (error) => {
+//     console.error('WebSocket error:', error);
+//   };
+//   ws.onclose = () => {
+//     console.log('Notification WebSocket closed');
+//   };
 
-
+//   return () => ws.close();
+// }, []);
 
   useEffect(() => {
     const registerServiceWorker = async () => {
@@ -128,6 +165,16 @@ const Notification = () => {
   }, []);
 
   return null;
+  // return (
+  //   <div className={styles.notificationContainer}>
+  //     {notifications.map(notif => (
+  //       <div key={notif.id} className={styles.notification}>
+  //         <div className={styles.title}>{notif.title}</div>
+  //         <div className={styles.body}>{notif.message}</div>
+  //       </div>
+  //     ))}
+  //   </div>
+  // );
 };
 
 export default Notification;

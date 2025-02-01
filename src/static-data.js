@@ -136,3 +136,16 @@ export const chatUser = [
     {id:35, first_name:"Tatum", last_name:"Ford", chatRoom:"e2237798-51da-466b-ad55-806d4582de41"},
     // {id:3, first_name:"Usman", last_name:"Ali", chatRoom:"e2237798-51da-466b-ad55-806d4582de42"},
 ]
+
+const people = [
+    { id: 1, name: 'Person 1', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 2, name: 'Person 2', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 3, name: 'Person 3', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 4, name: 'Person 4', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 5, name: 'Person 5', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 6, name: 'Person 6', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 7, name: 'Person 7', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 8, name: 'Person 8', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+    { id: 9, name: 'Person 9', image: 'https://res.cloudinary.com/dx9xdlbae/image/upload/v1731325427/bojhcktq7c268xsubiko.png' },
+  ];
+  

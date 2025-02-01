@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CldImage } from 'next-cloudinary';
 import Team from '@/component/Team/Team';
 import Form from '@/component/Form/Form';
@@ -9,11 +9,32 @@ import Clendly from '@/component/Clendly/Clendly';
 import './hire.css';
 
 const Page = () => {
+  const [profiles, setProfiles] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0); // State to track the active button
   function handleActive(index) {
     setActiveIndex(index);
 
   }
+
+  async function profileData() {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/small-profile`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log(data);
+      setProfiles(data);
+    } catch (error) {
+      console.error('Error fetching profiles:', error);
+    }
+  }
+  useEffect(() => {
+    profileData();
+  }, []);
+  
 
   const Hire = [
     { id: 1, name: "Web Developer", link:"/hire/process?source=webdevelopment", slogan: "Developers", desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur deserunt adipisci ducimus at animi vero distinctio accusamus!', svg: `<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16"><path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" /><path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0m2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0" /></svg>` },
@@ -41,7 +62,7 @@ const Page = () => {
             </div>
           </div>
           <div className="col-lg-6 pe-4 ps-4" >
-            <Team />
+            <Team data={profiles} />
           </div>
         </div>
         <div className="mb-5 bg-light rounded-2 w-100 p-3">
