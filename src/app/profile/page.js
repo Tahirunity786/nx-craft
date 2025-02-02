@@ -1,15 +1,36 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BorderBottom from '@/component/Border/BorderBottom';
 import styles from './profile.module.css';
 import { CldImage } from 'next-cloudinary';
 import Image from 'next/image';
 import SkillsBox from '@/component/Skills/SkillBox';
+import { useSearchParams } from 'next/navigation';
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "bootstrap", "bootstrap", "bootstrap", "bootstrap", "bootstrap", "bootstrap", "bootstrap", "bootstrap", "Google Workspace developemet"];
 const Page = () => {
+    const [profileDetails, setProfileDetails] = useState([]);
+    const searchParams = useSearchParams();
+    const slug = searchParams.get('source');
 
+    async function profileData() {
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_END_POINT}/control/detail-profile/${slug}`);
 
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log(data);
+            setProfileDetails(data);
+        } catch (error) {
+            console.error('Error fetching profiles:', error);
+        }
+    }
+    useEffect(() => {
+        profileData();
+    }, []);
 
     return (
         <>
@@ -28,6 +49,12 @@ const Page = () => {
                 </div>
                 <div className={styles.profile}>
 
+                    <CldImage
+                        src={profileDetails.image_pb_id}
+                        width="80"
+                        height="60"
+                        alt="Logo"
+                    />
 
                 </div>
                 <div className={styles.nxImage}></div>
@@ -43,15 +70,22 @@ const Page = () => {
                             {/* Profile */}
                             <div className="card-body">
                                 <div className='d-flex align-items-center gap-2'>
-                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", display: "inline-block", position: "relative" }}>
-                                        <Image style={{ position: "absolute", top: "10px", left: "8px" }} src={"/Assets/Images/profile.svg"} height={50} width={50} alt='skills' />
+                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%",position: "relative", display:"flex", justifyContent:"center", alignItems:"center" }}>
+
+                                        <CldImage
+                                            src="e2gi8yrugzqm7qvqchho"
+                                            width="40"
+                                            height="40"
+                                            alt="Logo"
+                                        />
+
                                     </div>
                                     <h4>Profile Details</h4>
 
                                 </div>
-                                <div>
+                                <div className='mt-4'>
                                     <h6>Bio</h6>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p>{profileDetails.experience}</p>
                                 </div>
 
                             </div>
@@ -67,15 +101,21 @@ const Page = () => {
                         /> */}
                             <div className="card-body">
                                 <div className='d-flex align-items-center gap-2'>
-                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", display: "inline-block", position: "relative" }}>
-                                        <Image style={{ position: "absolute", top: "10px", left: "8px" }} src={"/Assets/Images/skills.svg"} height={50} width={50} alt='skills' />
+                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", position: "relative",display:"flex", justifyContent:"center", alignItems:"center" }}>
+                                        <CldImage
+                                            src="kbrhlgzxmhoxegmbwoxj"
+                                            width="40"
+                                            height="40"
+                                            alt="Logo"
+                                        />
+
                                     </div>
                                     <h4>Skills</h4>
                                 </div>
 
 
                                 <div>
-                                    <SkillsBox skills={skills} />
+                                    <SkillsBox skills={profileDetails.skills} />
 
                                 </div>
 
@@ -84,33 +124,29 @@ const Page = () => {
 
                         {/* Education */}
                         <div className="card mb-2" style={{ width: "25rem", backgroundColor: "#CDE3EB" }}>
-                            {/* <img
-                            src="\Assets\Images\download.png"
-                            className="card-img-top"
-                            alt="profile"
-                        /> */}
                             <div className="card-body">
                                 <div className='d-flex align-items-center gap-2'>
-                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", display: "inline-block", position: "relative" }}>
-                                        <Image style={{ position: "absolute", top: "10px", left: "8px" }} src={"/Assets/Images/education.svg"} height={50} width={50} alt='skills' />
+                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", position: "relative", display:"flex", justifyContent:"center", alignItems:"center" }}>
+
+                                        <CldImage
+                                            src="yuh1vbgj0np26c6sqp4w"
+                                            width="50"
+                                            height="40"
+                                            alt="Logo"
+                                        />
+
                                     </div>
                                     <h4>Education</h4>
                                 </div>
-                                <div className={styles.cards} style={{ marginTop: "15px" }}>
-                                    <h5>College Name</h5>
-                                    <h6 className='mb-0'>from -date-to date</h6>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </p>
-                                </div>
-
-                                <div className={styles.cards} style={{ marginTop: "15px" }}>
-                                    <h5>College Name</h5>
-                                    <h6 className='mb-0'>from -date-to date</h6>
-                                    <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    </p>
-                                </div>
+                                {
+                                    profileDetails?.education?.map((data) => (
+                                        <div className={styles.cards} style={{ marginTop: "15px" }} key={data.id}>
+                                            <h5>{data.college_name}</h5>
+                                            <h6 className="mb-0">{data.from_year} - {data.to_year}</h6>
+                                            <p>{data.degree}</p>
+                                        </div>
+                                    ))
+                                }
 
                             </div>
                         </div>
@@ -124,22 +160,28 @@ const Page = () => {
                         /> */}
                             <div className="card-body">
                                 <div className='d-flex align-items-center gap-2'>
-                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", display: "inline-block", position: "relative" }}>
-                                        <Image style={{ position: "absolute", top: "10px", left: "8px" }} src={"/Assets/Images/awards.svg"} height={50} width={50} alt='skills' />
+                                    <div className={styles.circleGradient} style={{ height: "70px", width: "70px", borderRadius: "50%", display: "inline-block", position: "relative",display:"flex", justifyContent:"center", alignItems:"center" }}>
+
+                                        <CldImage
+                                            src="he2wxfjvudg6ehvbmtvj"
+                                            width="40"
+                                            height="40"
+                                            alt="Logo"
+                                        />
                                     </div>
                                     <h4>Awards</h4>
                                 </div>
-                                <div className={styles.cards} style={{ marginTop: "15px" }}>
-                                    <h5>Institute Name</h5>
-                                    <h6 className='mb-0'>Issue date</h6>
 
-                                </div>
+                                {
+                                    profileDetails?.awards?.map((data) => (
+                                        <div className={styles.cards} style={{ marginTop: "15px" }} key={data.id}>
+                                            <h5>{data.award_name}</h5>
+                                            <h6>{data.institue_name}</h6>
+                                            <p className='mb-0'>{data.year}</p>
 
-                                <div className={styles.cards} style={{ marginTop: "15px" }}>
-                                    <h5>Institute Name</h5>
-                                    <h6 className='mb-0'>Issue date</h6>
-
-                                </div>
+                                        </div>
+                                    ))
+                                }
 
                             </div>
                         </div>

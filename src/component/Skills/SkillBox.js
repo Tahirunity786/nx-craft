@@ -32,27 +32,23 @@ const SkillItem = styled.div`
   }
 `;
 
-const SkillsBox = ({ skills }) => {
+const SkillsBox = ({ skills = [] }) => {
   return (
-
-
     <SkillsGrid>
       {skills.map((skill, index) => (
-        <SkillItem
-          key={index}
-        >
-          {skill}
-        </SkillItem>
+        <SkillItem key={index}>{skill.skill_name}</SkillItem>
       ))}
     </SkillsGrid>
-
   );
 };
 
 SkillsBox.propTypes = {
-  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
-  activeSkill: PropTypes.string,
-  setActiveSkill: PropTypes.func.isRequired,
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      skill_name: PropTypes.string.isRequired
+    })
+  ).isRequired,
 };
 
 export default SkillsBox;

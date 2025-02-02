@@ -10,14 +10,14 @@ const Team = ({data}) => {
     {data.map((person) => (
       <div key={person.slug} className={styles.card}>
         <div className={styles.cover}>
-          <Link href={`/profile/${person.slug}`}>
+          <Link href={`/profile?source=${person.slug}`}>
             Profile
           </Link>
         </div>
         <CldImage 
         src={person.image_pb_id}
         alt='profile'
-        style={styles.image}
+        className={styles.image}
         width={100}
         height={100}
         />

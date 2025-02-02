@@ -12,6 +12,9 @@
     position: absolute;
     top:120px;
     left: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 
